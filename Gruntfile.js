@@ -78,7 +78,8 @@ module.exports = function (grunt) {
     bake: {
       build: {
         files: {
-            'dist/index.html': 'templates/structure/index.html'
+            'dist/index.html': 'templates/structure/index.html',
+            'dist/template1.html': 'templates/layout/template1.html'
         }
       }
     },

@@ -346,3 +346,23 @@ footer {
   &.h140 { height: 140px; }
   &.h160 { height: 160px; }
 }
+
+/******************************
+* GRID OVERLAY
+******************************/
+#grid-overlay {
+  /*display: none;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  overflow: hidden;
+
+  div span {
+    display: block;
+    height: 2000px;
+    background: red;
+  }
+}
