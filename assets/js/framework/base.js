@@ -39,6 +39,20 @@ $(function () {
     e.preventDefault();
   });
 
+  //Header image carousel
+  $('#js-header-hero-carousel').owlCarousel({
+    singleItem: true,
+    pagination: true,
+    responsive: true,
+    responsiveRefreshRate : 200,
+    responsiveBaseWidth: window
+  });
+  
+  //IMAGE SCALE
+  $("img.scale").imageScale({
+    rescaleOnResize: true
+  });
+
   // Only run this stuff if page is fully loaded
   // This is needed to prevent onreadystatechange being run twice
   var ready = false;

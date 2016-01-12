@@ -79,7 +79,8 @@ module.exports = function (grunt) {
       build: {
         files: {
             'dist/index.html': 'templates/structure/index.html',
-            'dist/template1.html': 'templates/layout/template1.html'
+            'dist/template1.html': 'templates/layout/template1.html',
+            'dist/header-image.html': 'templates/components/header-image.html'
         }
       }
     },
