@@ -359,6 +359,10 @@ footer {
   @media (min-width: 1200px) {    
     height: 645px;
   }
+  
+  .owl-item {
+    width: 100vw!important;
+  }
 
   .owl-controls {
     position: relative;
