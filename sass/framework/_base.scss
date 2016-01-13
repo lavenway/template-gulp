@@ -348,10 +348,53 @@ footer {
 }
 
 /******************************
+* HEADER IMAGE / CAROUSEL
+******************************/
+.header-image, .owl-item .item {
+  height: 207px;
+  overflow: hidden;
+  @media (min-width: 1024px) {    
+    height: 461px;
+  }
+  @media (min-width: 1200px) {    
+    height: 645px;
+  }
+}
+
+.header-image {
+  .owl-item {
+    width: 100vw!important;
+  }
+
+  .owl-controls {
+    position: relative;
+    top: -32px;
+    margin: 0;
+    @media (min-width: 1024px) {    
+      top: -42px;
+    }
+    .owl-page span {
+      width: 8px;
+      height: 8px;
+      opacity: 1;
+      filter: none;
+      background: $white;
+      @media (min-width: 1024px) {    
+        width: 17px;
+        height: 17px;
+      }
+    }
+    .owl-page.active span {
+      background: $pink;
+    }
+  }
+}
+
+/******************************
 * GRID OVERLAY
 ******************************/
 #grid-overlay {
-  /*display: none;*/
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
