@@ -359,15 +359,27 @@ footer {
   @media (min-width: 1200px) {    
     height: 645px;
   }
-  
+}
+
+.header-image {
   .owl-item {
     width: 100vw!important;
   }
 
   .owl-controls {
     position: relative;
-    top: -40px;
-    margin: 0; 
+    top: -42px;
+    margin: 0;
+    .owl-page span {
+      width: 17px;
+      height: 17px;
+      opacity: 1;
+      filter: none;
+      background: $white;
+    }
+    .owl-page.active span {
+      background: $pink;
+    }
   }
 }
 
