@@ -368,14 +368,21 @@ footer {
 
   .owl-controls {
     position: relative;
-    top: -42px;
+    top: -32px;
     margin: 0;
+    @media (min-width: 1024px) {    
+      top: -42px;
+    }
     .owl-page span {
-      width: 17px;
-      height: 17px;
+      width: 8px;
+      height: 8px;
       opacity: 1;
       filter: none;
       background: $white;
+      @media (min-width: 1024px) {    
+        width: 17px;
+        height: 17px;
+      }
     }
     .owl-page.active span {
       background: $pink;
