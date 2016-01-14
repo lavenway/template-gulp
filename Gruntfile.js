@@ -82,7 +82,8 @@ module.exports = function (grunt) {
             'dist/template1.html': 'templates/layout/template1.html',
             'dist/header-image.html': 'templates/components/header-image.html',
             'dist/standfirst.html': 'templates/components/standfirst.html',
-            'dist/title.html': 'templates/components/title.html'
+            'dist/title.html': 'templates/components/title.html',
+            'dist/bodycopy.html': 'templates/components/bodycopy.html'
         }
       }
     },
