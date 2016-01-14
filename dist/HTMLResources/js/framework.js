@@ -53,6 +53,14 @@ $(function () {
     rescaleOnResize: true
   });
 
+  //DROPCAP
+
+  // We retrieve our drop cap elements using a class selector...
+    var dropcaps = document.querySelectorAll(".dropcap"); 
+    // ...then give them a height of three lines. 
+    // By default, the drop cap's baseline will also be the third paragraph line.
+    window.Dropcap.layout(dropcaps, 2.2, 2); 
+
   // Only run this stuff if page is fully loaded
   // This is needed to prevent onreadystatechange being run twice
   var ready = false;

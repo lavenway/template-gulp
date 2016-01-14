@@ -207,6 +207,19 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.dropcap {
+  font-family: 'MajesticBanner';
+  font-weight: 400;
+  background-color: $peach;
+  color: $white;
+  height: 65px!important;
+  width: 65px!important;
+  font-size: 57px!important;
+  padding-top: 10px!important;
+  padding-left: 14px!important;
+  margin-right: 10px;
+}
+
 #wrapper {
   min-height: 100%;
   margin: 0 auto -30px; //sticky footer
