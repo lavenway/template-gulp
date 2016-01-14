@@ -82,10 +82,15 @@ module.exports = function (grunt) {
             'dist/template1.html': 'templates/layout/template1.html',
             'dist/header-image.html': 'templates/components/header-image.html',
             'dist/standfirst.html': 'templates/components/standfirst.html',
+<<<<<<< HEAD
             'dist/title.html': 'templates/components/title.html',
             'dist/subtitle.html': 'templates/components/subtitle.html',
-            'dist/bodycopy.html': 'templates/components/bodycopy.html',
             'dist/quote.html': 'templates/components/quote.html'
+=======
+            'dist/title.html': 'templates/components/title.html',            
+            'dist/subtitle.html': 'templates/components/subtitle.html',
+            'dist/bodycopy.html': 'templates/components/bodycopy.html'
+>>>>>>> master
         }
       }
     },
