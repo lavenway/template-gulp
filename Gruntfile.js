@@ -86,6 +86,7 @@ module.exports = function (grunt) {
             'dist/subtitle.html': 'templates/components/subtitle.html',
             'dist/bodycopy.html': 'templates/components/bodycopy.html',
             'dist/quote.html': 'templates/components/quote.html',
+            'dist/words.html': 'templates/components/words.html',
             'dist/pull-out-one.html': 'templates/components/pull-out-one.html'
         }
       }

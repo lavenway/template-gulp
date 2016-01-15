@@ -1,0 +1,38 @@
+.component.words-photography {
+	text-align: center;
+
+	.words, .photography {
+		display: none;
+	}
+
+	&.show-words {
+		.words { 
+			display: block;
+
+			@media all and (min-width: 480px) {
+				display: inline-block;
+			}
+		}
+	}
+
+	&.show-photography {
+		.photography { 
+			display: block;
+
+			@media all and (min-width: 480px) {
+				display: inline-block;
+			}
+		}
+	}
+
+	p {
+		font-family: 'SinkinSans';
+		font-weight: 100;
+		font-size: 10px;
+		font-size: 1rem;
+		line-height: 12px;
+		line-height: 10px;
+		margin-right: 10px;
+
+	}
+}
