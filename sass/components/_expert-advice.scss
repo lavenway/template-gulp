@@ -2,6 +2,7 @@
 	position: relative;
 	background: rgba($grey,0.3);
 	border-bottom: 5px solid $green;
+	margin-bottom: 40px;
 	padding-bottom: 40px;
 
 	.heading {
@@ -18,15 +19,14 @@
 	}
 
 	.pic {
-		display: inline-block;
+		float: left;
 		max-width: 105px;
 		border-radius: 50px;
-		margin: 10px 15px;
+		margin: 10px 7px;
 		vertical-align: top;
 	}
 
 	.content {
-		display: inline-block;
 		margin: 15px 0 0 0;
 		vertical-align: top;
 	}
