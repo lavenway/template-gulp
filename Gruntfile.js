@@ -88,7 +88,8 @@ module.exports = function (grunt) {
             'dist/quote.html': 'templates/components/quote.html',
             'dist/words.html': 'templates/components/words.html',
             'dist/expert-advice.html': 'templates/components/expert-advice.html',
-            'dist/pull-out-one.html': 'templates/components/pull-out-one.html'
+            'dist/pull-out-one.html': 'templates/components/pull-out-one.html',
+            'dist/expert-tip.html': 'templates/components/expert-tip.html'
         }
       }
     },
