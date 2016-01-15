@@ -5,7 +5,7 @@ blockquote.component.quote {
   	position: absolute;
   	left: 50%;
   	width: 56px;
-  	height: 42px;
+  	height: 40px;
   	margin-left: -28px;
   	background-repeat: no-repeat;
   	@media all and (min-width: 480px) {
@@ -15,11 +15,11 @@ blockquote.component.quote {
   }
   &:before {
   	top: 0;
-  	background-image: url('../img/components/quote-left-icon.png');
+    @include icons-sprite(quote-left-icon);
   }
   &:after {
   	bottom: 0;
-  	background-image: url('../img/components/quote-right-icon.png');
+  	@include icons-sprite(quote-right-icon);
   }
   position: relative;
   margin: 30px 0;
