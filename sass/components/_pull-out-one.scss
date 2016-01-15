@@ -52,8 +52,9 @@
 .component.has-icon ol li {
   &:before {
       content: "";
-      border-radius: none;
-      //@include icons-sprite(heart-icon);
+      height: 37px;
+      border-radius: 0;
+      @include icons-sprite(heart-icon);
       background-color: transparent;
     }
 }
