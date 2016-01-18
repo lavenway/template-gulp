@@ -80,3 +80,23 @@
   font-weight: 100;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Archer';
+  src: url('../fonts/Archer-BoldItal.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'SinkinSans';
+  src: url('../fonts/SinkinSans-500Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MajesticBanner';
+  src: url('../fonts/Majesti-Banner-Bold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}

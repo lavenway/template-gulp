@@ -1,0 +1,84 @@
+.component.expert-advice {
+	position: relative;
+	background: rgba($grey,0.3);
+	border-bottom: 5px solid $green;
+	margin-bottom: 40px;
+	padding-bottom: 40px;
+
+	.heading {
+		font-family: 'Archer';
+		font-weight: 400;
+		font-size: 20px;
+		font-size: 2rem;
+		line-height: 30px;
+		line-height: 3rem;
+		color: $black;
+		background: $green;
+		text-align: center;
+		display: block;
+	}
+
+	.pic {
+		float: left;
+		max-width: 105px;
+		border-radius: 50px;
+		margin: 10px 7px;
+		vertical-align: top;
+	}
+
+	.content {
+		margin: 15px 0 0 0;
+		vertical-align: top;
+	}
+
+	.name, .title, .text {		
+		font-family: 'Archer';
+		font-size: 20px;
+		font-size: 2rem;
+		line-height: 24px;
+		line-height: 2.4rem;
+		display: block;
+	}
+
+	.name, .title {
+		font-weight: 800;
+		font-style: italic;
+	}
+
+	.text {
+		font-weight: 400;
+		color: $green;
+	}
+
+	.read-more {
+		position: absolute;
+		bottom: -40px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		background: url(../img/components/bg-read-more.png) no-repeat center transparent;
+		background-size: contain;
+		padding: 15px 10px 23px;
+		font-family: 'SinkinSans';
+		font-weight: 500;
+		font-size: 13px;
+		font-size: 1.3rem;
+		line-height: 15px;
+		line-height: 1.5rem;
+		max-width: 60px;
+		color: $white;
+		text-align: center;
+		display: inline-block;
+		@include font-smoothing(subpixel-antialiased);
+
+		.icon {
+			font-family: 'SinkinSans';
+			font-weight: 300;
+			font-size: 24px;
+			font-size: 2.4rem;
+			line-height: 9px;
+			line-height: .9rem;
+			display: block;
+		}
+	}
+}

@@ -15,7 +15,11 @@
 	"components/standfirst-archer",
   "components/quote",
   "components/words-photography",
+<<<<<<< HEAD
   "components/pull-out-one",
-  "components/pull-out-two",
+  "components/pull-out-two"
+=======
   "components/expert-advice",
+  "components/pull-out-one",
   "components/expert-tip"
+>>>>>>> master

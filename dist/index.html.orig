@@ -81,9 +81,12 @@
                 <h5>Batch 2</h5>
                 <ul>
                   <li><p><a href="pull-out-one.html">Pull Out One</a></p></li>
+<<<<<<< HEAD
                   <li><p><a href="pull-out-two.html">Pull Out Two</a></p></li>
+=======
                   <li><p><a href="expert-advice.html">Expert advice</a></p></li>
                   <li><p><a href="expert-tip.html">Expert tip</a></p></li>
+>>>>>>> master
                 </ul>
 
                 <p class="push h40"></p>  
