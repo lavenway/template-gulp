@@ -19,6 +19,9 @@
   "components/expert-tip",  
   "components/pull-out-two",
   "components/expert-advice",
-  "components/bookit",
+<<<<<<< HEAD
   "components/expert-tip",
   "components/related-articles"
+=======
+  "components/bookit"
+>>>>>>> master
