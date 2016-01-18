@@ -89,7 +89,8 @@ module.exports = function (grunt) {
             'dist/words.html': 'templates/components/words.html',
             'dist/expert-advice.html': 'templates/components/expert-advice.html',
             'dist/pull-out-one.html': 'templates/components/pull-out-one.html',
-            'dist/expert-tip.html': 'templates/components/expert-tip.html'
+            'dist/expert-tip.html': 'templates/components/expert-tip.html',
+            'dist/bookit.html': 'templates/components/bookit.html'
         }
       }
     },

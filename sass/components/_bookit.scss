@@ -1,0 +1,20 @@
+.component.bookit{
+	.bookit-icon {
+		float: left;
+	  width: 53px;
+    margin-right: 5px;
+
+    @media (min-width: 480px) {    
+	    width: 56px;
+			margin-right: 10px;
+	  }		
+	}
+
+	.bookit-text {
+		font-family: 'SinkinSans';
+		font-weight: 400;
+		font-style: italic;
+		line-height: 18px;
+		line-height: 1.8rem;
+	}
+}
