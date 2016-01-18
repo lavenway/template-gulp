@@ -47,6 +47,17 @@ $(function () {
     responsiveRefreshRate : 200,
     responsiveBaseWidth: window
   });
+
+  //Product component carousel
+  $('#js-related-articles-carousel').owlCarousel({
+    items : 4,
+    itemsDesktopSmall : [979,3],
+    itemsTablet : [768,3],
+    itemsMobile : [479,2],
+    responsive: true,
+    responsiveRefreshRate : 200,
+    responsiveBaseWidth: window
+  });
   
   //IMAGE SCALE
   $("img.scale").imageScale({

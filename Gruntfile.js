@@ -90,7 +90,8 @@ module.exports = function (grunt) {
             'dist/pull-out-one.html': 'templates/components/pull-out-one.html',
             'dist/pull-out-two.html': 'templates/components/pull-out-two.html',
             'dist/expert-advice.html': 'templates/components/expert-advice.html',
-            'dist/expert-tip.html': 'templates/components/expert-tip.html'
+            'dist/expert-tip.html': 'templates/components/expert-tip.html',
+            'dist/related-articles.html': 'templates/components/related-articles.html'
         }
       }
     },
