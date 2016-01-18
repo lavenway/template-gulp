@@ -88,10 +88,14 @@ module.exports = function (grunt) {
             'dist/quote.html': 'templates/components/quote.html',
             'dist/words.html': 'templates/components/words.html',
             'dist/pull-out-one.html': 'templates/components/pull-out-one.html',
+<<<<<<< HEAD
             'dist/expert-tip.html': 'templates/components/expert-tip.html',
+            'dist/bookit.html': 'templates/components/bookit.html'
+=======
             'dist/pull-out-two.html': 'templates/components/pull-out-two.html',
             'dist/expert-advice.html': 'templates/components/expert-advice.html',
-            'dist/bookit.html': 'templates/components/bookit.html'
+            'dist/expert-tip.html': 'templates/components/expert-tip.html'
+>>>>>>> master
         }
       }
     },

@@ -16,7 +16,11 @@
   "components/quote",
   "components/words-photography",
   "components/pull-out-one",
-  "components/expert-tip",  
+<<<<<<< HEAD
+  "components/expert-tip",
+  "components/bookit"
+=======
   "components/pull-out-two",
   "components/expert-advice",
-  "components/bookit"
+  "components/expert-tip"
+>>>>>>> master
