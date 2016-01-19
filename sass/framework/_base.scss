@@ -68,13 +68,22 @@ body {
 
 
 a {
-  color: $black;
-  text-decoration: underline;
+  font-weight: 600;
+  font-style: normal;
+  color: $blue;
   &:hover, &:focus, &:active {
     color: $black;
   }
   &:focus, &:active {
       outline: none
+  }
+  span {
+    color: $black;
+    text-decoration: underline;
+
+    em {
+      font-weight: normal;
+    }
   }
 }
 

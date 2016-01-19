@@ -93,7 +93,8 @@ module.exports = function (grunt) {
             'dist/expert-tip.html': 'templates/components/expert-tip.html',
             'dist/bookit.html': 'templates/components/bookit.html',
             'dist/related-articles.html': 'templates/components/related-articles.html',
-            'dist/image.html': 'templates/components/image.html'
+            'dist/image.html': 'templates/components/image.html',
+            'dist/list-one.html': 'templates/components/list-one.html'
         }
       }
     },

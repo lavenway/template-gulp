@@ -1,0 +1,49 @@
+.component.list-one {
+	ol {
+		list-style-position: inside;
+	}
+
+	ol li {
+		list-style-type: none;
+		font-family: 'Archer';
+	  font-weight: 800;
+	  font-style: normal;
+		font-size: 25px;
+		font-size: 2.5rem;
+		color: $red;
+
+		h4 {
+			margin-bottom: 8px;
+			padding: 0;
+			text-transform: none;
+			border: none;
+		}
+
+		.top, .bottom {
+			display: none;
+			margin: 40px 0;
+		}
+
+		p {
+			color: $black;
+		}
+	}
+}
+
+.component.list-one.show-numbers {
+	ol li {
+		list-style-type: decimal;
+	}
+}
+
+.component.list-one.show-image-above {
+	.top {
+		display: block;
+	}
+}
+
+.component.list-one.show-image-below {
+	.bottom {
+		display: block;
+	}
+}
