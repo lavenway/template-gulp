@@ -21,6 +21,12 @@
 
     p {
       margin-bottom: 12px;
+
+      a {
+        font-weight: normal;
+        color: $black;
+        text-decoration: underline;
+      }
     }
 
     @media all and (min-width: 768px) {
