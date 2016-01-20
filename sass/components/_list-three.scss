@@ -1,0 +1,80 @@
+.component.list-three {
+	ol {
+		list-style-position: inside;
+	}
+
+	ol li {
+		list-style-type: none;
+	  font-weight: 800;
+	  font-style: normal;
+		font-size: 13px;
+		font-size: 1.3rem;
+		color: $red;
+
+		h4 {
+			display: initial;
+			margin-bottom: 8px;
+			padding: 0;
+			font-family: 'SinkinSans';
+		  font-weight: 600;
+		  font-style: normal;
+			font-size: inherit;
+			text-transform: none;
+			border: none;
+		}
+
+		.image {
+			display: none;
+			position: relative;
+			margin: 40px 0;
+
+			img {
+				margin: 0 auto;
+				@media (min-width: 480px) {    
+					margin: 0;
+		  	}
+			}
+		}
+
+		p {
+			color: $black;
+		}
+	}
+}
+
+.component.list-three.show-numbers {
+	ol li {
+		list-style-type: decimal;
+	}
+}
+
+.component.list-three.show-image {
+	.image {
+		display: block;
+		.caption {
+			display: none;
+		}
+	}
+}
+
+.component.list-three.show-image-number {
+	.image {
+		display: block;
+		.caption {
+			display: block;
+			position: absolute;
+			top: 0;
+			width: 41px;
+			height: 41px;
+			font-family: 'MajesticBanner';
+		  font-weight: 400;
+		  font-style: italic;
+			font-size: 28px;
+			font-size: 2.8rem;
+			color: $white;
+			text-align: center;
+			border-radius: 50%;
+			background: $black;
+		}
+	}
+}
