@@ -95,7 +95,8 @@ module.exports = function (grunt) {
             'dist/related-articles.html': 'templates/components/related-articles.html',
             'dist/image.html': 'templates/components/image.html',
             'dist/list-one.html': 'templates/components/list-one.html',
-            'dist/list-three.html': 'templates/components/list-three.html'
+            'dist/list-three.html': 'templates/components/list-three.html',
+            'dist/hack-feature.html': 'templates/components/hack-feature.html'
         }
       }
     },

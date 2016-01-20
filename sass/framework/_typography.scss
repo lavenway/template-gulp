@@ -48,6 +48,13 @@
 
 @font-face {
   font-family: 'Archer';
+  src: url('../fonts/Archer-MediumItal.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Archer';
   src: url('../fonts/Archer-Bold.otf') format('opentype');
   font-weight: 800;
   font-style: normal;
