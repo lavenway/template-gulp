@@ -10,17 +10,27 @@
 
       <div class="container">
         <!-- START: COMPONENT DETAILS -->
+<<<<<<< HEAD
+          <h2>Component: Quote</h2>
+          <p class="push h20"></p>
+          <p><strong>Description:</strong>Quote component uses blockquote</p>        
+=======
           <h2>Component: Video</h2>
           <p class="push h20"></p>
           <p><strong>Description:</strong>Video component uses class 'video'.</p>
+>>>>>>> master
         <!-- END: COMPONENT DETAILS -->
 
         <p class="push h100"></p>
 
         <div class="row">        
           <div class="col-xs-12">
+<<<<<<< HEAD
+            <!--(bake /templates/components/_quote.html)-->
+=======
             <p>Default</p>
             <!--(bake /templates/components/_video.html)-->
+>>>>>>> master
           </div>
         </div>
 

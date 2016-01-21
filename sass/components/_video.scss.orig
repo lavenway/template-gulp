@@ -1,4 +1,11 @@
 .component.video {
+<<<<<<< HEAD
+  video {
+    width: 100%;
+    max-width: 480px;
+    border: 5px solid $black;
+  }
+=======
 	video {
 		width: 100%;
 		border: 5px solid $black;
@@ -6,4 +13,5 @@
 			max-width: 480px;
 		}
 	}
+>>>>>>> master
 }
