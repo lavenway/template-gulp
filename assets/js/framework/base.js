@@ -48,12 +48,23 @@ $(function () {
     responsiveBaseWidth: window
   });
 
-  //Product component carousel
+  //Related articles component carousel
   $('#js-related-articles-carousel').owlCarousel({
     items : 4,
     itemsDesktopSmall : [979,3],
     itemsTablet : [768,3],
     itemsMobile : [479,2],
+    responsive: true,
+    responsiveRefreshRate : 200,
+    responsiveBaseWidth: window
+  });
+
+  //Product component carousel
+  $('#js-product-carousel').owlCarousel({
+    items : 4,
+    itemsDesktopSmall : [979,4],
+    itemsTablet : [768,2],
+    itemsMobile : [479,1],
     responsive: true,
     responsiveRefreshRate : 200,
     responsiveBaseWidth: window

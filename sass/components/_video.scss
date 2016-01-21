@@ -1,0 +1,9 @@
+.component.video {
+	video {
+		width: 100%;
+		border: 5px solid $black;
+		@media all and (min-width: 480px) {
+			max-width: 480px;
+		}
+	}
+}
