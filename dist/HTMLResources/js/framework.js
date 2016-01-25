@@ -13,7 +13,28 @@ $(function () {
 
   var body = $('body'),
       html = $('html'),
-      $doc = $(document);
+      $doc = $(document),
+      $productGrid = $("#js-product-grid"),
+      $productGridProduct = $("#js-product-grid .product"),
+      $productGridInfo = $("#js-product-grid .info"),
+
+      handleInfoBox = function (e) {
+        var $this = $(this),
+            $parent = $this.parent();
+
+        if ($parent.hasClass('active')) {
+            $parent.removeClass('active').next('.info').slideUp('medium');
+        } else if ($('#js-product-grid .row div').hasClass('active')) {
+            $('#js-product-grid .row div').removeClass('active').next('.info').slideUp('medium');
+            $parent.addClass('active').next('.info').slideDown('medium');
+        } else {
+            $parent.addClass('active').next('.info').slideDown('medium');
+        }
+      };
+
+
+
+
 
   //remove touch delay on touch devices
   var attachFastClick = Origami.fastclick;
@@ -74,6 +95,57 @@ $(function () {
   $("img.scale").imageScale({
     rescaleOnResize: true
   });
+
+  
+
+
+  enquire.register("screen and (max-width:480px)", {
+    // OPTIONAL
+    // If supplied, triggered when a media query matches.
+    match : function() {
+      
+      $('#js-product-grid .product').on('click', handleInfoBox);
+
+      $productGridInfo.each(function(index) {
+        $productGrid.addClass("mobile-layout");
+        $(this).parent().after(this);      
+      });
+    },      
+                                
+    // OPTIONAL
+    // If supplied, triggered when the media query transitions 
+    // *from a matched state to an unmatched state*.
+    unmatch : function() {
+      
+      $('#js-product-grid .product').unbind( "click" );
+
+      $productGridInfo.each(function(index) {
+        $productGrid.removeClass("mobile-layout");
+        $(this).removeAttr('style').prev().append(this);
+        $(this).parent().removeClass('active');
+      });
+    },    
+    
+    // OPTIONAL
+    // If supplied, triggered once, when the handler is registered.
+    setup : function() {},    
+                                
+    // OPTIONAL, defaults to false
+    // If set to true, defers execution of the setup function 
+    // until the first time the media query is matched
+    deferSetup : true,
+                                
+    // OPTIONAL
+    // If supplied, triggered when handler is unregistered. 
+    // Place cleanup code here
+    destroy : function() {}
+      
+  });
+
+
+
+
+
 
   //DROPCAP
 

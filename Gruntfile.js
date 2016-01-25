@@ -98,7 +98,8 @@ module.exports = function (grunt) {
             'dist/list-three.html': 'templates/components/list-three.html',
             'dist/hack-feature.html': 'templates/components/hack-feature.html',
             'dist/video.html': 'templates/components/video.html',
-            'dist/product-carousel.html': 'templates/components/product-carousel.html'
+            'dist/product-carousel.html': 'templates/components/product-carousel.html',
+            'dist/product-grid.html': 'templates/components/product-grid.html'
         }
       }
     },

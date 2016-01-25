@@ -118,3 +118,23 @@ $red: #cc0000;
   }
   
 }
+
+a.btn {
+      display: inline-block;
+      position: relative;
+      left: 50%;
+      width: 80px;
+      margin: 20px 0 0 -40px;
+      padding: 16px 0 12px;
+      font-family: 'SinkinSans';
+      font-weight: 600;
+      font-style: normal;
+      font-size: 17px;
+      font-size: 1.7rem;
+      line-height: 20px;
+      line-height: 2rem;
+      color: $bluedark;
+      text-align: center;
+      border-radius: 6px;
+      background-color: $bluelight;
+    }
