@@ -269,15 +269,19 @@ h6 {
 /*************** NAV ***************/
 
 .navbar-default {
-  box-shadow: none;
-  background-color: #fff;
-  position: relative;
   z-index: 999;
-  box-shadow: 0px 7px 12px -7px rgba(50,50,50,0.75);
+  position: relative;
+  padding: 8px 0 5px;
+  border-bottom: 1px solid $black;
+  background-color: $black;
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  @media (min-width: 480px) {    
+    background-color: $white;
+  }
+
 
   &.slideOutUp {
     animation-name: slideOutUp!important;
@@ -288,9 +292,344 @@ h6 {
     animation-duration: 350ms!important;
   }
 
-  a {
+  .pull-left {
+    margin-top: 2px;
+
+    .menu {
+      .icon {
+        @include icons-sprite(menu-icon-white);
+
+        /*@media (min-width: 480px) {    
+          @include icons-sprite(menu-icon-white);
+        }*/
+      }
+    }
+  }
+
+  .center-block {
+    width: 30%;
+  }
+
+  .pull-right {
+    position: relative;
+    margin-top: -43px;
+
+    .share { 
+      display: none;
+
+      @media (min-width: 480px) {    
+        display: inline-block;
+      }
+
+      .icon {
+        @include icons-sprite(share-icon);
+      }
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 56px;
+      right: -20px;
+      box-shadow: -4px 8px 18px #333;
+      background: $white;
+
+      @media (min-width: 480px) {    
+        right: 86px;
+        box-shadow: none;
+      }
+    }
+
+    .share-dropdown {
+      width: 320px;
+      padding: 18px 34px;
+
+      .close {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 40px;
+        height: 40px;
+        @include icons-sprite(share-close-icon);
+      }
+
+      li.title {
+        margin: 0;
+        padding-bottom: 16px;
+        font-family: 'Archer';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 27px;
+        font-size: 2.7rem;
+        line-height: 32px;
+        line-height: 3.2rem;
+        text-align: center;
+      }
+
+      li {
+        list-style-type: none;
+        font-family: 'SinkinSans';
+        font-weight: 600;
+        font-style: normal;
+        font-size: 17px;
+        font-size: 1.7rem;
+        line-height: 15px;
+        line-height: 1.5rem;        
+        border-bottom: 1px solid $black;
+
+        a {
+          display: block;
+          padding: 10px 20px;
+          color: $black;
+
+          &:hover {
+            color: $pink;
+          }
+
+          i {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-right: 40px;
+            vertical-align: middle;
+          }
+
+          span {
+            vertical-align: middle;
+            color: inherit;
+          }
+        }
+      }
+
+      .fb i { @include icons-sprite(social-fb-icon); }
+      .tw i { @include icons-sprite(social-tw-icon); }
+      .pi i { @include icons-sprite(social-pi-icon); }
+      .gp i { @include icons-sprite(social-gp-icon); }
+      .wa i { @include icons-sprite(social-wa-icon); }
+      .email i { @include icons-sprite(social-mail-icon); }
+      .copy i { @include icons-sprite(social-copy-icon); }
+    }
+
+    .basket {  
+      margin-left: 40px;
+
+      .icon {
+        @include icons-sprite(basket-icon-white);
+
+        /*@media (min-width: 480px) {    
+          @include icons-sprite(basket-icon);
+        }*/
+
+        span {
+          display: block;
+          position: relative;
+          top: -8px;
+          left: -14px;
+          width: 25px;
+          height: 25px;
+          font-size: 14px;
+          color: $bluedark;
+          line-height: 29px;
+          text-align: center;
+          border-radius: 50%;
+          background: $bluelight;
+        }
+      }
+    }
+
+    .basket-dropdown {
+      width: 285px;
+      padding: 38px 15px 20px;
+      text-align: center;
+
+      .back {
+        display: block;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        text-align: left;
+        font-family: 'ZurichBT';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 13px;
+        font-size: 1.3rem;
+        line-height: 22px;
+        line-height: 2.2rem;
+        color: $black;
+        @include icons-sprite(arrow-left-blue-icon);
+
+        &:hover {
+          color: $pink;
+        }
+      }
+
+      .title {
+        font-family: 'AgBookRounded';
+        font-weight: 500;
+        font-style: normal;
+        font-size: 27px;
+        font-size: 2.7rem;
+        line-height: 32px;
+        line-height: 3.2rem;
+      }
+
+      .total-price {
+        font-family: 'ZurichBT';
+        font-weight: 800;
+        font-style: normal;
+        margin-bottom: 30px;
+        font-size: 18px;
+        font-size: 1.8rem;
+        line-height: 15px;
+        line-height: 1.5rem;
+      }
+
+      .item {
+        margin-bottom: 20px;
+        text-align: left;
+
+        .image {
+          border: 1px solid $grey;
+          border-radius: 6px;
+        }
+
+        .desc {
+          font-family: 'AgBookRounded';
+          font-weight: 500;
+          font-style: normal;
+          font-size: 12px;
+          font-size: 1.2rem;
+          line-height: 15px;
+          line-height: 1.5rem;
+          letter-spacing: 0.04em;
+        }
+
+        .offer {
+          margin: 10px 0;
+          font-family: 'ZurichBT';
+          font-weight: 800;
+          font-style: normal;
+          color: $red;
+        }
+
+        .delete {
+          display: block;
+          width: 26px;
+          height: 26px;
+          @include icons-sprite(basket-remove-icon);
+        }
+
+        .quantity {
+          position: relative;
+          width: 70px;
+
+          select {
+            z-index: 1;
+            position: relative;
+            width: 100%;
+            padding: 10px 32px 10px 12px;
+            -webkit-appearance: none;
+            border: 1px solid #808080;
+            border-radius: 0;
+            background: transparent;
+          }
+
+          i {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 35px;
+            height: 100%;
+            @include icons-sprite(dropdown-arrow-icon);
+          }
+        }
+
+        .price {
+          text-align: right;
+          font-family: 'SinkinSans';
+          font-weight: 700;
+
+          span {
+            font-weight: 400;
+          }
+        }
+
+      }
+
+      .footer {
+        .checkout {
+          position: relative;
+          margin-bottom: 20px;
+
+          a {
+            left: 0;
+            width: auto;
+            margin: 0;
+            padding: 8px 20px;
+            font-size: 20px;
+            font-size: 2rem;
+            line-height: 24px;
+            line-height: 2.4rem;
+            color: $white;
+            background: $bluedark;
+          }
+        }
+
+        p {
+          display: none;
+          margin-bottom: 20px;
+          font-size: 11px;
+          font-size: 1.1rem;
+          line-height: 12px;
+          line-height: 1.2rem;
+
+          @media (min-width: 480px) {    
+            display: block;
+          }
+        }
+
+        a.empty {
+          display: block;
+          font-size: 12px;
+          font-size: 1.2rem;
+          line-height: 15px;
+          line-height: 1.5rem;       
+          text-decoration: underline;
+          color: $black;
+
+          &:hover {
+            color: $pink;
+          }
+        }
+      }      
+    }
+  }
+
+  .cta {
+    display: inline-block;
+    line-height: normal;
+
+    .icon {
+      display: block;
+      width: 32px;
+      height: 32px;
+      margin: 0 auto 4px;
+    }
+  }
+
+  a, a span {
     &:hover, &:active, &:focus {
       text-decoration: none;
+      color: $pink;
+    }
+  }
+
+  a span {
+    color: $white;
+    text-decoration: none;
+
+    @media (min-width: 480px) {
+      color: $black;
     }
   }
 }
@@ -439,8 +778,26 @@ footer {
   margin: 0;
   box-sizing: border-box;
   position: relative;
-  background: #7d7d7d;
-  background: rgba(125,125,125, .8);
+  background: $grey;
+}
+
+footer {
+  ul {
+    li {
+      display: inline-block;
+      padding: 0 20px;
+      border-right: 1px solid $black;
+
+      a {
+        font-family: 'Archer';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        color: $black;
+        line-height: 30px;
+      }
+    }
+  }
 }
 
 .push {

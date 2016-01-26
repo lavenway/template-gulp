@@ -13,6 +13,13 @@
 */
 @font-face {
   font-family: 'Archer';
+  src: url('../fonts/Archer-Semibold-2.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Archer';
   src: url('../fonts/Archer-SembdItal-2.otf') format('opentype');
   font-weight: 600;
   font-style: italic;
@@ -133,5 +140,39 @@
   font-family: 'SinkinSans';
   src: url('../fonts/SinkinSans-700Bold.otf') format('opentype');
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AgBookRounded';
+  src: url('../fonts/ag-book-rounded-medium-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ag-book-rounded-medium-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ag-book-rounded-medium-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ag-book-rounded-medium-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ag-book-rounded-medium-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ag-book-rounded-medium-webfont.svg#AgBookRounded') format('svg'); /* Legacy iOS */
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ZurichBT';
+  src: url('../fonts/ZurichBT-Roman.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ZurichBT-Roman.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ZurichBT-Roman.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ZurichBT-Roman.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ZurichBT-Roman.svg#ZurichBT') format('svg'); /* Legacy iOS */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ZurichBT';
+  src: url('../fonts/ZurichBT-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ZurichBT-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ZurichBT-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ZurichBT-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ZurichBT-Bold.svg#ZurichBT') format('svg'); /* Legacy iOS */
+  font-weight: 800;
   font-style: normal;
 }
