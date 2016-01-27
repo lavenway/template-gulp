@@ -299,9 +299,9 @@ h6 {
       .icon {
         @include icons-sprite(menu-icon-white);
 
-        /*@media (min-width: 480px) {    
-          @include icons-sprite(menu-icon-white);
-        }*/
+        @media (min-width: 480px) {    
+          background-position: 0px -354px;
+        }
       }
     }
   }
@@ -338,11 +338,6 @@ h6 {
         right: 86px;
         box-shadow: none;
       }
-    }
-
-    .share-dropdown {
-      width: 320px;
-      padding: 18px 34px;
 
       .close {
         position: absolute;
@@ -352,6 +347,11 @@ h6 {
         height: 40px;
         @include icons-sprite(share-close-icon);
       }
+    }
+
+    .share-dropdown {
+      width: 320px;
+      padding: 18px 34px;
 
       li.title {
         margin: 0;
@@ -416,9 +416,9 @@ h6 {
       .icon {
         @include icons-sprite(basket-icon-white);
 
-        /*@media (min-width: 480px) {    
-          @include icons-sprite(basket-icon);
-        }*/
+        @media (min-width: 480px) {    
+          background-position: 0px -48px;
+        }
 
         span {
           display: block;
@@ -441,26 +441,6 @@ h6 {
       width: 285px;
       padding: 38px 15px 20px;
       text-align: center;
-
-      .back {
-        display: block;
-        margin-bottom: 10px;
-        padding-left: 20px;
-        text-align: left;
-        font-family: 'ZurichBT';
-        font-weight: 400;
-        font-style: normal;
-        font-size: 13px;
-        font-size: 1.3rem;
-        line-height: 22px;
-        line-height: 2.2rem;
-        color: $black;
-        @include icons-sprite(arrow-left-blue-icon);
-
-        &:hover {
-          color: $pink;
-        }
-      }
 
       .title {
         font-family: 'AgBookRounded';

@@ -14,6 +14,10 @@ $(function () {
   var body = $('body'),
       html = $('html'),
       $doc = $(document),
+      $navCloseDropdown = $('.navbar-header .dropdown .close'),
+      $navtoggleDropdown = $('.navbar-header a.cta'),    
+      $navToggleDropdownActive = $('body'),
+      $navHiddenDropdown = $('.navbar-header .dropdown'),
       $productGrid = $("#js-product-grid"),
       $productGridProduct = $("#js-product-grid .product"),
       $productGridInfo = $("#js-product-grid .info"),
@@ -30,10 +34,46 @@ $(function () {
         } else {
             $parent.addClass('active').next('.info').slideDown('medium');
         }
+      },
+
+      handleHeaderDropdown = function (e) {
+
+        var $this = $(this),
+            $activeDropdown = $this.hasClass('active-tab'),
+            $hasDropdown = $this.next('.dropdown'),
+            $toggleTab = $navToggleDropdownActive.hasClass('header-nav-active');
+
+        if ($this.next().is($hasDropdown)) {
+          e.preventDefault();
+          if ($toggleTab) {
+              if ($activeDropdown) {
+                  $this.next($navHiddenDropdown).stop().slideUp();
+                  $this.toggleClass('active-tab');
+                  $navToggleDropdownActive.toggleClass('header-nav-active');
+              }
+              else {
+                  $navtoggleDropdown.removeClass('active-tab');
+                  $navHiddenDropdown.slideUp();
+                  
+                  if ($navHiddenDropdown.is(':animated')) {
+                      // activate next nav/content 
+                      $this.next($navHiddenDropdown).stop().delay(600).slideToggle(200);
+                      $this.toggleClass('active-tab');
+                  }
+              }
+          } else {
+              $navToggleDropdownActive.addClass('header-nav-active');
+              $this.toggleClass('active-tab');
+              $this.next($navHiddenDropdown).stop().slideToggle();
+          }
+        }
+      },
+
+      handleCloseHeaderDropdown = function (e) {
+        $navToggleDropdownActive.removeClass('header-nav-active');
+        $navtoggleDropdown.removeClass('active-tab');
+        $navHiddenDropdown.slideUp();
       };
-
-
-
 
 
   //remove touch delay on touch devices
@@ -96,9 +136,6 @@ $(function () {
     rescaleOnResize: true
   });
 
-  
-
-
   enquire.register("screen and (max-width:480px)", {
     // OPTIONAL
     // If supplied, triggered when a media query matches.
@@ -142,18 +179,19 @@ $(function () {
       
   });
 
-
-
-
-
-
   //DROPCAP
 
   // We retrieve our drop cap elements using a class selector...
     var dropcaps = document.querySelectorAll(".dropcap"); 
     // ...then give them a height of three lines. 
     // By default, the drop cap's baseline will also be the third paragraph line.
-    window.Dropcap.layout(dropcaps, 2.2, 2); 
+    window.Dropcap.layout(dropcaps, 2.2, 2);
+
+  // MAIN NAV TOGGLE DROPDOWNS
+  $navtoggleDropdown.on('click', handleHeaderDropdown);
+
+  //MAIN NAV CLOSE DROPDOWNS
+  $navCloseDropdown.on('click', handleCloseHeaderDropdown);
 
   // Only run this stuff if page is fully loaded
   // This is needed to prevent onreadystatechange being run twice
