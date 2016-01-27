@@ -300,14 +300,14 @@ h6 {
         @include icons-sprite(menu-icon-white);
 
         @media (min-width: 480px) {    
-          background-position: 0px -354px;
+          background: url(../img/structure/menu-icon.png);
         }
       }
     }
   }
 
   .center-block {
-    width: 30%;
+    width: 32%;
   }
 
   .pull-right {
@@ -417,7 +417,7 @@ h6 {
         @include icons-sprite(basket-icon-white);
 
         @media (min-width: 480px) {    
-          background-position: 0px -48px;
+          background: url(../img/structure/basket-icon.png);
         }
 
         span {
