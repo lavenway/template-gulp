@@ -260,6 +260,15 @@ h6 {
   margin-right: 10px;
 }
 
+.border-stripes {
+  border: 10px solid transparent;
+  border-image: repeating-linear-gradient( 45deg, $grey, $grey 1px, #fff 0px, #fff 10px) 10;
+
+  border-image-source: url(../img/components/border-stripes.png);
+  border-image-slice: 10 10;
+  border-image-repeat: round;
+}
+
 #wrapper {
   min-height: 100%;
   margin: 0 auto -30px; //sticky footer
