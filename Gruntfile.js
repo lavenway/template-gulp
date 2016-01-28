@@ -80,6 +80,7 @@ module.exports = function (grunt) {
         files: {
             'dist/index.html': 'templates/structure/index.html',
             'dist/template1.html': 'templates/layout/template1.html',
+            'dist/test-article.html': 'templates/layout/test-article.html',
             'dist/header-image.html': 'templates/components/header-image.html',
             'dist/standfirst.html': 'templates/components/standfirst.html',
             'dist/title.html': 'templates/components/title.html',
