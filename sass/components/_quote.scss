@@ -35,9 +35,11 @@ blockquote.component.quote {
   color: $pink;
   @media all and (min-width: 480px) {
     text-align: left;
-  }
-  @media all and (min-width: 1024px) {
     line-height: 40px;
     line-height: 4.0rem;
+  }
+  @media all and (min-width: 1024px) {
+    line-height: 30px;
+    line-height: 3.0rem;
   }
 }
