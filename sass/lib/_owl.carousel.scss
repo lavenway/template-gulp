@@ -218,6 +218,8 @@
       height: 12px;
       margin: 5px 7px;
       background: #869791;
+      filter: Alpha(Opacity=50);
+      opacity: 0.5;
       display: block;
       -webkit-backface-visibility: visible;
       -webkit-transition: opacity 200ms ease;
@@ -229,7 +231,9 @@
       -moz-border-radius: 30px;
       border-radius: 30px; }
     .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-      background: #869791; }
+      background: #869791;
+      filter: Alpha(Opacity=100);
+      opacity: 1; }
 
 
 // /* 

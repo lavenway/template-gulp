@@ -106,7 +106,10 @@ $(function () {
     loop : true,
     loadedClass: 'owl-loaded owl-theme',
     responsiveRefreshRate : 200,
-    responsiveBaseElement: window
+    responsiveBaseElement: window,
+    onResized: function (e) {
+      $("img.scale").imageScale();
+    }
   });
 
   //Related articles component carousel
