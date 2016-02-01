@@ -1,5 +1,8 @@
+.header-image {
+  width: 100vw;
+}
 .header-image, .owl-item .item {
-  height: 207px;
+  height: 207px;  
   overflow: hidden;
   @media (min-width: 768px) {    
     height: 461px;
@@ -14,26 +17,35 @@
     width: 100vw!important;
   }
 
-  .owl-controls {
+  .owl-controls, .owl-dots {
     position: relative;
     top: -32px;
     margin: 0;
+    text-align: center;
     @media (min-width: 1024px) {    
       top: -42px;
     }
-    .owl-page span {
-      width: 8px;
-      height: 8px;
-      opacity: 1;
-      filter: none;
-      background: $white;
-      @media (min-width: 1024px) {    
-        width: 17px;
-        height: 17px;
+    .owl-page, .owl-dot {
+      display: inline-block;
+      span {
+        width: 8px;
+        height: 8px;
+        margin: 5px 7px;
+        opacity: 1;
+        filter: none;
+        background: $white;
+        display: block;
+        border-radius: 20px;
+        @media (min-width: 1024px) {    
+          width: 17px;
+          height: 17px;
+        }
       }
     }
-    .owl-page.active span {
-      background: $pink;
+    .owl-page, .owl-dot {
+      &.active span {
+        background: $pink;
+      }
     }
   }
 }

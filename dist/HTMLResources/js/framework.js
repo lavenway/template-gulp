@@ -102,31 +102,45 @@ $(function () {
 
   //Header image carousel
   $('#js-header-hero-carousel').owlCarousel({
-    singleItem: true,
-    pagination: true,
-    responsive: true,
+    items: 1,
+    loop : true,
+    loadedClass: 'owl-loaded owl-theme',
     responsiveRefreshRate : 200,
-    responsiveBaseWidth: window
+    responsiveBaseElement: window
   });
 
   //Related articles component carousel
   $('#js-related-articles-carousel').owlCarousel({
-    items : 4,
-    itemsDesktopSmall : [979,3],
-    itemsTablet : [768,3],
-    itemsMobile : [479,2],
-    responsive: true,
+    responsive : {
+      0 : {
+        items : 2
+      },
+      480 : {
+        items : 3
+      },
+      980 : {
+        items : 4
+      }
+    },
+    loadedClass: 'owl-loaded owl-theme',
     responsiveRefreshRate : 200,
     responsiveBaseWidth: window
   });
 
   //Product component carousel
   $('#js-product-carousel').owlCarousel({
-    items : 4,
-    itemsDesktopSmall : [979,4],
-    itemsTablet : [768,2],
-    itemsMobile : [479,1],
-    responsive: true,
+    responsive : {
+      0 : {
+        items : 1
+      },
+      480 : {
+        items : 2
+      },
+      980 : {
+        items : 4
+      }
+    },
+    loadedClass: 'owl-loaded owl-theme',
     responsiveRefreshRate : 200,
     responsiveBaseWidth: window
   });
