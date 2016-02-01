@@ -11,27 +11,8 @@
 ≡≡≡≡≡≡   FONT FACE                                                              ≡≡≡≡≡≡≡≡≡≡≡≡
 ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
 */
-@font-face {
-  font-family: 'Archer';
-  src: url('../fonts/Archer-Semibold-2.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'Archer';
-  src: url('../fonts/Archer-SembdItal-2.otf') format('opentype');
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'SinkinSans';
-  src: url('../fonts/SinkinSans-400Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
-
+/* ARCHER */
 @font-face {
   font-family: 'Archer';
   src: url('../fonts/Archer-Book.otf') format('opentype');
@@ -62,36 +43,22 @@
 
 @font-face {
   font-family: 'Archer';
-  src: url('../fonts/Archer-Bold.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'MajesticBanner';
-  src: url('../fonts/Majesti-Banner-Medium.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'MajesticBanner';
-  src: url('../fonts/Majesti-Banner-MediumItalic.otf') format('opentype');
-  font-weight: 400;
+  src: url('../fonts/Archer-SembdItal-2.otf') format('opentype');
+  font-weight: 600;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'SinkinSans';
-  src: url('../fonts/SinkinSans-600SemiBold.otf') format('opentype');
-  font-weight: 600;
+  font-family: 'Archer';
+  src: url('../fonts/Archer-Semibold-2.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SinkinSans';
-  src: url('../fonts/SinkinSans-300Light.otf') format('opentype');
-  font-weight: 100;
+  font-family: 'Archer';
+  src: url('../fonts/Archer-Bold.otf') format('opentype');
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -101,53 +68,139 @@
   font-weight: 800;
   font-style: italic;
 }
+
+
+/* MAJESTIC BANNER */
 @font-face {
-  font-family: 'SinkinSans';
-  src: url('../fonts/SinkinSans-500Medium.otf') format('opentype');
-  font-weight: 500;
+  font-family: 'MajesticBanner';
+  src: url('../fonts/MajestiBanner-Medium.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/MajestiBanner-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/MajestiBanner-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/MajestiBanner-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/MajestiBanner-Medium.svg#MajesticBanner') format('svg'); /* Legacy iOS */
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'MajesticBanner';
-  src: url('../fonts/Majesti-Banner-Bold.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'SinkinSans';
-  src: url('../fonts/SinkinSans-400Italic.otf') format('opentype');
+  src: url('../fonts/MajestiBanner-MediumItalic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/MajestiBanner-MediumItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/MajestiBanner-MediumItalic.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/MajestiBanner-MediumItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/MajestiBanner-MediumItalic.svg#MajesticBanner') format('svg'); /* Legacy iOS */
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
+  font-family: 'MajesticBanner';
+  src: url('../fonts/MajestiBanner-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/MajestiBanner-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/MajestiBanner-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/MajestiBanner-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/MajestiBanner-Bold.svg#MajesticBanner') format('svg'); /* Legacy iOS */
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+
+/* SINKIN SANS */
+@font-face {
   font-family: 'SinkinSans';
-  src: url('../fonts/SinkinSans-300LightItalic.otf') format('opentype');
+  src: url('../fonts/SinkinSans-300Light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SinkinSans-300Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SinkinSans-300Light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SinkinSans-300Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SinkinSans-300Light.svg#SinkinSans') format('svg'); /* Legacy iOS */
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SinkinSans';
+  src: url('../fonts/SinkinSans-300LightItalic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SinkinSans-300LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SinkinSans-300LightItalic.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SinkinSans-300LightItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SinkinSans-300LightItalic.svg#SinkinSans') format('svg'); /* Legacy iOS */
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'SinkinSans';
-  src: url('../fonts/SinkinSans-600SemiBoldItali.otf') format('opentype');
+  src: url('../fonts/SinkinSans-400Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SinkinSans-400Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SinkinSans-400Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SinkinSans-400Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SinkinSans-400Regular.svg#SinkinSans') format('svg'); /* Legacy iOS */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SinkinSans';
+  src: url('../fonts/SinkinSans-400Italic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SinkinSans-400Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SinkinSans-400Italic.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SinkinSans-400Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SinkinSans-400Italic.svg#SinkinSans') format('svg'); /* Legacy iOS */
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SinkinSans';
+  src: url('../fonts/SinkinSans-500Medium.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SinkinSans-500Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SinkinSans-500Medium.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SinkinSans-500Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SinkinSans-500Medium.svg#SinkinSans') format('svg'); /* Legacy iOS */
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SinkinSans';
+  src: url('../fonts/SinkinSans-600SemiBold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SinkinSans-600SemiBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SinkinSans-600SemiBold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SinkinSans-600SemiBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SinkinSans-600SemiBold.svg#SinkinSans') format('svg'); /* Legacy iOS */
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SinkinSans';
+  src: url('../fonts/SinkinSans-600SemiBoldItali.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SinkinSans-600SemiBoldItali.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SinkinSans-600SemiBoldItali.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SinkinSans-600SemiBoldItali.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SinkinSans-600SemiBoldItali.svg#SinkinSans') format('svg'); /* Legacy iOS */
   font-weight: 600;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'SinkinSans';
-  src: url('../fonts/SinkinSans-700Bold.otf') format('opentype');
+  src: url('../fonts/SinkinSans-700Bold.otf.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SinkinSans-700Bold.otf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SinkinSans-700Bold.otf.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SinkinSans-700Bold.otf.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SinkinSans-700Bold.otf.svg#SinkinSans') format('svg'); /* Legacy iOS */
   font-weight: 700;
   font-style: normal;
 }
 
+
+/* AG ROUNDED */
 @font-face {
   font-family: 'AgBookRounded';
   src: url('../fonts/ag-book-rounded-medium-webfont.eot'); /* IE9 Compat Modes */
   src: url('../fonts/ag-book-rounded-medium-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/ag-book-rounded-medium-webfont.woff2') format('woff2'), /* Super Modern Browsers */
        url('../fonts/ag-book-rounded-medium-webfont.woff') format('woff'), /* Pretty Modern Browsers */
        url('../fonts/ag-book-rounded-medium-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
        url('../fonts/ag-book-rounded-medium-webfont.svg#AgBookRounded') format('svg'); /* Legacy iOS */
@@ -155,6 +208,8 @@
   font-style: normal;
 }
 
+
+/* ZURICH BT */
 @font-face {
   font-family: 'ZurichBT';
   src: url('../fonts/ZurichBT-Roman.eot'); /* IE9 Compat Modes */
