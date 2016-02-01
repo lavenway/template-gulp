@@ -1,6 +1,13 @@
 .component.related-articles {
+  margin-left: -20px;
+  margin-right: -20px;
   padding: 15px 20px 20px;
   background: rgba($grey, 0.2);
+
+  @media all and (min-width: 1024px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   h4 {
     font-family: 'Archer';

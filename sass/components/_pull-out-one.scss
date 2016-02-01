@@ -1,6 +1,8 @@
 .component.pull-out-one {
+  margin-left: -20px;
+  margin-right: -20px;
   padding: 15px 15px 25px;
-  background: rgba($pinkTint, 0.1);
+  background: rgba($pinkTint, 0.1);  
   @media all and (min-width: 480px) {
     padding: 40px 60px;
     h4, p.standfirst {
@@ -8,6 +10,8 @@
     }
   }
   @media all and (min-width: 1024px) {
+    margin-left: 0;
+    margin-right: 0;
     padding: 40px 100px;
   }
   img {

@@ -21,7 +21,12 @@
 
 		.top, .bottom {
 			display: none;
-			margin: 40px 0;
+			margin: 40px -20px;
+
+			@media all and (min-width: 480px) {
+		    margin-left: 0;
+		    margin-right: 0;
+	  	}
 		}
 
 		p {
