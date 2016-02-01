@@ -1,4 +1,16 @@
 .component.list-one {
+	a {
+		&:hover, &:active, &:focus {
+			filter: alpha(opacity=50);
+			opacity: 0.5;
+			color: $blue;
+
+			span {
+				color: $black;
+			}
+		}
+	}
+	
 	ol {
 		list-style-position: inside;
 	}
@@ -21,7 +33,7 @@
 
 		.top, .bottom {
 			display: none;
-			margin: 40px -20px;
+			margin: 22px -20px;
 
 			@media all and (min-width: 480px) {
 		    margin-left: 0;

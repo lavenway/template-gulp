@@ -1,4 +1,16 @@
 .component.list-three {
+	a {
+		&:hover, &:active, &:focus {
+			filter: alpha(opacity=50);
+			opacity: 0.5;
+			color: $blue;
+
+			span {
+				color: $black;
+			}
+		}
+	}
+	
 	ol {
 		list-style-position: inside;
 	}
