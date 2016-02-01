@@ -1,12 +1,15 @@
+<<<<<<< HEAD
 .header-image {
   width: 100%;
 }
+=======
 .container .header-image {
   .owl-item {
     width: inherit !important;
   }
  }
 
+>>>>>>> master
 .header-image, .owl-item .item {
   height: 207px;  
   overflow: hidden;
@@ -32,9 +35,7 @@
       top: -42px;
     }
     .owl-page, .owl-dot {
-      &.active span {
-        background: $pink;
-      }            
+      display: inline-block;
       span {
         width: 8px;
         height: 8px;
@@ -48,6 +49,11 @@
           width: 17px;
           height: 17px;
         }
+      }
+    }
+    .owl-page, .owl-dot {
+      &.active span {
+        background: $pink;
       }
     }
   }
