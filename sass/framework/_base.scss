@@ -278,16 +278,43 @@ h6 {
 
 /*************** TEMPLATE STYLING ***************/
 
-.negative-container #wrapper > .container {
-  margin-top: -30px;
-  padding-top: 30px;
+.negative-container {
 
-  @media all and (min-width: 1024px) {
-    position: relative;
-    margin-top: -218px;
-    background: $white;
+ #wrapper {
+
+    > .container {
+      margin-top: -30px;
+      padding-top: 30px;
+
+      @media all and (min-width: 1024px) {
+        position: relative;
+        margin-top: -154px;
+        background: $white;
+      }
+    }
   }
 }
+
+.narrow-container {
+
+  #wrapper {
+
+    > .container {
+      padding-top: 30px;
+    }
+
+    .header-image {
+      max-width: 1000px;
+      height: 207px;
+      margin: 0 auto;
+
+      @media (min-width: 480px) {    
+        height: 471px;
+      }
+    }
+  }
+}
+
 
 /*************** NAV ***************/
 
@@ -301,8 +328,13 @@ h6 {
   animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+
   @media (min-width: 480px) {    
     background-color: $white;
+  }
+
+  .container {
+    background: transparent;
   }
 
 
