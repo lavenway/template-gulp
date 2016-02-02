@@ -33,8 +33,8 @@ html {
 }
 
 body {
-  height: calc(100% - 66px);
-  margin-top: 66px;
+  height: calc(100% - 64px);
+  margin-top: 64px;
   font-family: "SinkinSans",Arial,sans-serif;
   font-weight: normal;
   font-size: 100%;
@@ -277,9 +277,20 @@ h6 {
 }
 
 /*************** TEMPLATE STYLING ***************/
+.hidden-header-image {
+  #wrapper {
+
+    > .container {
+      padding-top: 30px;
+    }
+
+    .header-image {
+      display: none;
+    }
+  }
+}
 
 .negative-container {
-
  #wrapper {
 
     > .container {
@@ -296,7 +307,6 @@ h6 {
 }
 
 .narrow-container {
-
   #wrapper {
 
     > .container {
@@ -310,6 +320,14 @@ h6 {
 
       @media (min-width: 480px) {    
         height: 471px;
+      }
+
+      .owl-item{
+        .item {
+          @media (min-width: 480px) {    
+            height: 471px;
+          }
+        }
       }
     }
   }
