@@ -43,6 +43,7 @@ body {
   letter-spacing: 0;
   -webkit-tap-highlight-color: transparent;
   outline: none;
+  background: rgba($pinkTint, 0.1);
   @include font-smoothing();
 }
 
@@ -122,7 +123,7 @@ h1, .title {
   font-size: 4.2rem;
   line-height: 36px;
   line-height: 3.6rem;
-  margin: 0 0 10px;  
+  margin: 0 0 15px !important;  
   color: inherit;
   text-align: center;
 
@@ -269,6 +270,10 @@ h6 {
 #wrapper {
   min-height: 100%;
   margin: 0 auto -30px; //sticky footer
+}
+
+.container {
+  background: $white;
 }
 
 /*************** TEMPLATE STYLING ***************/
@@ -451,9 +456,11 @@ h6 {
           left: -14px;
           width: 25px;
           height: 25px;
-          font-size: 14px;
+          font-family: arial;
+          font-size: 12px;
+          font-weight: normal;
           color: $bluedark;
-          line-height: 29px;
+          line-height: 26px;
           text-align: center;
           border-radius: 50%;
           background: $bluelight;
