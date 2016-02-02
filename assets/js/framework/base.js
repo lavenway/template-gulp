@@ -169,6 +169,11 @@ $(function () {
     e.preventDefault();
   });
 
+  $doc.on('click', '.js-close-banner', function (e) {
+    $(this).parents('.component').addClass('slideOutUp');
+    e.preventDefault();
+  });
+
   enquire.register("screen and (max-width:480px)", {
     // OPTIONAL
     // If supplied, triggered when a media query matches.
