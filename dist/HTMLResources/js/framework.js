@@ -153,6 +153,22 @@ $(function () {
     rescaleOnResize: true
   });
 
+  $doc.on('click', '.js-read-more', function (e) {
+    var $parent = $(this).parents('.component'),
+        $content = $parent.find('.js-to-show');
+
+        if ($parent.hasClass('expanded')) {
+          $content.slideUp('medium', function () {
+            $parent.removeClass('expanded');
+          });
+        } else {
+          $content.slideDown('medium', function () {
+            $parent.addClass('expanded');
+          });
+        }    
+    e.preventDefault();
+  });
+
   enquire.register("screen and (max-width:480px)", {
     // OPTIONAL
     // If supplied, triggered when a media query matches.

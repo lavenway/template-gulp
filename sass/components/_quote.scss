@@ -28,9 +28,9 @@ blockquote.component.quote {
   font-size: 3.2rem;
   font-weight: 100;
   font-style: normal;
-  line-height: 30px;
-  line-height: 3.0rem;
-  letter-spacing: 0.03em;
+  line-height: 33px;
+  line-height: 3.3rem;
+  letter-spacing: -0.01em;
   text-align: center;
   color: $pink;
   @media all and (min-width: 480px) {
@@ -39,7 +39,7 @@ blockquote.component.quote {
     line-height: 4.0rem;
   }
   @media all and (min-width: 1024px) {
-    line-height: 30px;
-    line-height: 3.0rem;
+    line-height: 33px;
+    line-height: 3.3rem;
   }
 }

@@ -51,6 +51,80 @@
       display: inline;
     }
   }
+
+  .read-more { /* read more button */
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background: url(../img/components/bg-read-more.png) no-repeat center transparent;
+      background-size: contain;
+      padding: 15px 10px 23px;
+      font-family: 'SinkinSans';
+      font-weight: 500;
+      font-size: 13px;
+      font-size: 1.3rem;
+      line-height: 15px;
+      line-height: 1.5rem;
+      max-width: 60px;
+      color: $white;
+      text-align: center;
+      display: none;
+      @include font-smoothing(subpixel-antialiased);
+
+      .icon {
+        &:after {
+          content: '+';
+          font-family: 'SinkinSans';
+          font-weight: 300;
+          font-size: 24px;
+          font-size: 2.4rem;
+          line-height: 9px;
+          line-height: .9rem;
+          color: $white;
+          text-decoration: none;
+        }        
+        display: block;
+      }
+
+      span {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+
+  &.read-more {
+
+    #wrapper & {
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+    }
+
+    &.expanded {
+      .more { display: none; }
+      .less { display: block; }
+      .read-more .icon:after {
+        content: '-'
+      }
+    }
+    .preview-content {
+      // margin-bottom: 20px;
+    }
+    .js-to-show {
+      display: none;
+    }   
+
+    .read-more {
+      display: inline-block;      
+    }
+
+    .more, .less {
+      display: block;
+    }
+
+    .less {display: none;}
+  }
 }
 
 .component.has-icon ol li {
