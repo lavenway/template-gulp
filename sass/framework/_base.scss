@@ -524,7 +524,7 @@ h6 {
       text-align: center;
 
       .title {
-        font-family: 'AgBookRounded';
+        font-family: 'VAGRounded';
         font-weight: 500;
         font-style: normal;
         font-size: 27px;
@@ -534,7 +534,7 @@ h6 {
       }
 
       .total-price {
-        font-family: 'ZurichBT';
+        font-family: Arial,sans-serif;
         font-weight: 800;
         font-style: normal;
         margin-bottom: 30px;
@@ -554,7 +554,7 @@ h6 {
         }
 
         .desc {
-          font-family: 'AgBookRounded';
+          font-family: 'VAGRounded';
           font-weight: 500;
           font-style: normal;
           font-size: 12px;
@@ -566,7 +566,7 @@ h6 {
 
         .offer {
           margin: 10px 0;
-          font-family: 'ZurichBT';
+          font-family: Arial,sans-serif;
           font-weight: 800;
           font-style: normal;
           color: $red;
