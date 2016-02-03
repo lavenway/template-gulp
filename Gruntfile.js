@@ -81,6 +81,7 @@ module.exports = function (grunt) {
             'dist/index.html': 'templates/structure/index.html',
             'dist/template1.html': 'templates/layout/template1.html',
             'dist/template2.html': 'templates/layout/template2.html',
+            'dist/holding-page.html': 'templates/layout/holding-page.html',
             'dist/header-image-hidden.html': 'templates/layout/header-image-hidden.html',
             'dist/header-image-narrow.html': 'templates/layout/header-image-narrow.html',
             'dist/header-image-fullwidth.html': 'templates/layout/header-image-fullwidth.html',
@@ -107,7 +108,8 @@ module.exports = function (grunt) {
             'dist/product-carousel.html': 'templates/components/product-carousel.html',
             'dist/product-grid.html': 'templates/components/product-grid.html',
             'dist/border-stripes.html': 'templates/components/border-stripes.html',
-            'dist/old-content-banner.html': 'templates/components/old-content-banner.html'
+            'dist/old-content-banner.html': 'templates/components/old-content-banner.html',
+            'dist/footnote.html': 'templates/components/footnote.html'
         }
       }
     },

@@ -10,9 +10,14 @@
 			}
 		}
 	}
-	
-	ol {
-		list-style-position: inside;
+
+	&.style2 {
+		h4 {			    
+    	font-family: 'MajesticBanner';
+    	font-style: italic;
+    	font-size: 38px;
+    	font-size: 3.8rem;
+		}
 	}
 
 	ol li {
@@ -24,7 +29,12 @@
 		font-size: 2.5rem;
 		color: $red;
 
+		span.number {
+			display: none;
+		}
+
 		h4 {
+			display: initial;
 			margin-bottom: 8px;
 			padding: 0;
 			text-transform: none;
@@ -49,7 +59,9 @@
 
 .component.list-one.show-numbers {
 	ol li {
-		list-style-type: decimal;
+		span.number {
+			display: initial;
+		}
 	}
 }
 

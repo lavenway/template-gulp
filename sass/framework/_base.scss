@@ -333,6 +333,29 @@ h6 {
   }
 }
 
+/*************** VERTICAL CENTERING ***************/
+//  Usage:
+//
+//  <div class="wrapper-vertically-center">
+//    <div class="content-vertically-center">
+//      ...
+//    </div>
+//  </div>
+
+.wrapper-vertically-center {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+.content-vertically-center {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100vh;
+}
+
 
 /*************** NAV ***************/
 

@@ -28,4 +28,16 @@
 		line-height: 2.5rem;
 		margin-top: 20px;
 	}
+
+	&.with-bg {
+		text-align: center;
+		padding: 10px;
+		margin-left: -20px;
+    margin-right: -20px;
+
+    @media all and (min-width: 1024px) {
+    	margin-left: 0;
+    	margin-right: 0;
+    }
+	}
 }
