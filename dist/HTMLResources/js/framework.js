@@ -14,8 +14,11 @@ $(function () {
   var body = $('body'),
       html = $('html'),
       $doc = $(document),
+      $mainNav = $('.navbar-default'),
+      $mobileFooterNavtoggleDropdown = $('.mobile-nav a.share'),
+      $navToggleDropdownActive = $('body'),
       $navCloseDropdown = $('.navbar-header .dropdown .close'),
-      $navtoggleDropdown = $('.navbar-header a.cta'),    
+      $navtoggleDropdown = $('.navbar-header a.cta'),
       $navToggleDropdownActive = $('body'),
       $navHiddenDropdown = $('.navbar-header .dropdown'),
       $productGrid = $("#js-product-grid"),
@@ -73,8 +76,36 @@ $(function () {
         $navToggleDropdownActive.removeClass('header-nav-active');
         $navtoggleDropdown.removeClass('active-tab');
         $navHiddenDropdown.slideUp();
-      };
+      },
 
+      handleFooterDropdown = function (e) {
+        var $this = $(this),
+            $activeDropdown = $this.hasClass('active-tab'),
+            $headerShareDropdown = $('.navbar .navbar-header .share-dropdown'),
+            $toggleTab = $navToggleDropdownActive.hasClass('header-nav-active');
+
+        e.preventDefault();
+
+        if ($toggleTab) {
+          if ($activeDropdown) {
+            $navHiddenDropdown.slideUp();
+            $this.toggleClass('active-tab');
+            $headerShareDropdown.stop().delay(600).slideToggle(200);
+          } else {
+            $navtoggleDropdown.removeClass('active-tab');
+            $navHiddenDropdown.slideUp();
+            $headerShareDropdown.stop().delay(600).slideToggle(200);
+            $this.toggleClass('active-tab');
+          }
+        } else {
+          $navToggleDropdownActive.addClass('header-nav-active');
+          $this.addClass('active-tab');
+          $headerShareDropdown.stop().delay(600).slideToggle(200);
+        }
+          
+        $mainNav.addClass('slideInDown').removeClass('slideOutUp');
+
+      };
 
   //remove touch delay on touch devices
   var attachFastClick = Origami.fastclick;
@@ -225,11 +256,20 @@ $(function () {
     // By default, the drop cap's baseline will also be the third paragraph line.
     window.Dropcap.layout(dropcaps, 2.2, 2);
 
+  // MOBILE FOOTER NAV TOGGLE DROPDOWN
+  $mobileFooterNavtoggleDropdown.on('click', handleFooterDropdown);
+
   // MAIN NAV TOGGLE DROPDOWNS
   $navtoggleDropdown.on('click', handleHeaderDropdown);
 
   //MAIN NAV CLOSE DROPDOWNS
   $navCloseDropdown.on('click', handleCloseHeaderDropdown);
+
+  $(window).scroll(function(){
+    $navHiddenDropdown.slideUp();
+    $navtoggleDropdown.removeClass('active-tab');
+    $navToggleDropdownActive.removeClass('header-nav-active');
+  });
 
   // Only run this stuff if page is fully loaded
   // This is needed to prevent onreadystatechange being run twice

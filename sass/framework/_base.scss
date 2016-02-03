@@ -424,16 +424,32 @@ h6 {
         right: 6px;
         width: 40px;
         height: 40px;
-        @include icons-sprite(share-close-icon);
+        @include icons-sprite(share-close-icon-white);
+
+        @media (min-width: 480px) {    
+          background: url(../img/structure/share-close-icon.png);
+        }
       }
     }
 
     .share-dropdown {
-      width: 320px;
+      position: fixed;
+      top: 64px;
+      right: 0;
+      width: 100%;
       padding: 18px 34px;
+      background-color: rgba($pink,0.8);
+
+      @media (min-width: 480px) {    
+        position: absolute;
+        top: 54px;
+        right: 86px;
+        width: 320px;
+        background: $white;
+      }
 
       li.title {
-        margin: 0;
+        margin: 0 !important;
         padding-bottom: 16px;
         font-family: 'Archer';
         font-style: normal;
@@ -443,6 +459,11 @@ h6 {
         line-height: 32px;
         line-height: 3.2rem;
         text-align: center;
+        color: $white;
+
+        @media (min-width: 480px) {
+          color: $black;
+        }
       }
 
       li {
@@ -453,13 +474,23 @@ h6 {
         font-size: 17px;
         font-size: 1.7rem;
         line-height: 15px;
-        line-height: 1.5rem;        
-        border-bottom: 1px solid $black;
+        line-height: 1.5rem;
+        margin-bottom: 10px;
+
+        @media (min-width: 480px) {
+          margin-bottom: 0;
+          border-bottom: 1px solid $black;
+        }
 
         a {
           display: block;
-          padding: 10px 20px;
+          padding: 0 24px;
           color: $black;
+          background-color: $white;
+
+          @media (min-width: 480px) {
+            padding: 10px 20px;
+          }
 
           &:hover {
             color: $pink;
@@ -477,6 +508,10 @@ h6 {
             vertical-align: middle;
             color: inherit;
           }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
         }
       }
 
