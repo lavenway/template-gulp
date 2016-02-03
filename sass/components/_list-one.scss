@@ -10,10 +10,6 @@
 			}
 		}
 	}
-	
-	ol {
-		list-style-position: inside;
-	}
 
 	ol li {
 		list-style-type: none;
@@ -24,7 +20,12 @@
 		font-size: 2.5rem;
 		color: $red;
 
+		span.number {
+			display: none;
+		}
+
 		h4 {
+			display: initial;
 			margin-bottom: 8px;
 			padding: 0;
 			text-transform: none;
@@ -49,7 +50,9 @@
 
 .component.list-one.show-numbers {
 	ol li {
-		list-style-type: decimal;
+		span.number {
+			display: initial;
+		}
 	}
 }
 
