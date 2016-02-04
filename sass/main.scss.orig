@@ -29,6 +29,9 @@
   "components/product-grid",
   "components/border-stripes",
   "components/old-content-banner",
-  "components/mobile-nav",
+<<<<<<< HEAD
+  "components/mobile-nav"
+=======
   "components/footnote",
   "components/holding-page"
+>>>>>>> master
