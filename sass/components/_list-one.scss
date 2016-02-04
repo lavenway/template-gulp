@@ -12,11 +12,15 @@
 	}
 
 	&.style2 {
-		h4 {			    
+		h4, .number {			    
     	font-family: 'MajesticBanner';
     	font-style: italic;
-    	font-size: 38px;
-    	font-size: 3.8rem;
+    	font-size: 32px;
+    	font-size: 3.2rem;
+    	@media all and (min-width: 480px) {
+				font-size: 38px;
+    		font-size: 3.8rem;
+    	}    	
 		}
 	}
 
