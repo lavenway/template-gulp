@@ -22,12 +22,21 @@
     counter-reset: li;
     margin-left: 0;
     padding-left: 0;
+
+    @media all and (min-width: 480px) {
+      margin: 0 -45px;
+    }
+
+    @media all and (min-width: 1024px) {
+      margin: 0 -85px;
+    }
   }
   ol li {
     &:before {
       content: counter(li);
       counter-increment: li;
       float: left;
+      z-index: 1;
       position: relative;
       width: 40px;
       height: 40px;
@@ -41,12 +50,21 @@
       line-height: 4.0rem;
       text-align: center;
       color: $white;
-      border-radius: 50%;
-      background-color: $orange;
     }
     position: relative;
     margin-top: 35px;
     list-style: none;
+
+    span.number {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $orange;
+    }
+
     p {
       display: inline;
     }
@@ -129,12 +147,16 @@
 
 .component.has-icon ol li {
   &:before {
-      content: "";
-      height: 37px;
-      border-radius: 0;
-      @include icons-sprite(heart-icon);
-      background-color: transparent;
-    }
+    content: "";
+    height: 37px;
+    border-radius: 0;
+    @include icons-sprite(heart-icon);
+    background-color: transparent;
+  }
+
+  span.number {
+    display: none;
+  }
 }
 
 .component.has-image img {
