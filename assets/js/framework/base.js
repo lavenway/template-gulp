@@ -205,6 +205,11 @@ $(function () {
     e.preventDefault();
   });
 
+  $doc.on('click', '.js-close-ratings', function (e) {
+    $(this).parents('.component').removeClass('show');
+    e.preventDefault();
+  });
+
   enquire.register("screen and (max-width:480px)", {
     // OPTIONAL
     // If supplied, triggered when a media query matches.
@@ -293,6 +298,43 @@ $(function () {
     }
   };
 
+  function cookiesEnabled() {
+    var cookieEnabled = (navigator.cookieEnabled) ? true : false;
+
+    if (typeof navigator.cookieEnabled == "undefined" && !cookieEnabled) { 
+        document.cookie="testcookie";
+        cookieEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
+    }
+    return (cookieEnabled);
+  }
+
+  function showRating() {
+    $('.component.ratings-banner').addClass('show');
+  }
+
+  function ratingCookie() {
+    var dateNow = moment().date();
+
+    if (docCookies.getItem('visited') === null) {
+      setTimeout(showRating, 120000);
+      docCookies.setItem('visited', dateNow, 31536000);
+      docCookies.setItem('shown_rating', true, 31536000); 
+      return;
+    } else {
+      docCookies.setItem('visited', dateNow, 31536000); 
+    }
+
+    if (docCookies.getItem('visited') < 15) {
+      docCookies.setItem('shown_rating', false, 31536000);
+      return
+    };
+
+    if (docCookies.getItem('visited') >= 15 && docCookies.getItem('shown_rating') === 'false') {
+      setTimeout(showRating, 120000);
+      docCookies.setItem('shown_rating', true, 31536000);
+    }
+  }
+
   // Only run this stuff if page is fully loaded
   // This is needed to prevent onreadystatechange being run twice
   var ready = false;
@@ -307,7 +349,11 @@ $(function () {
     if (document.readyState == 'interactive' || document.readyState == 'complete') {
       ready = true;
 
-      // YOUR STUFF HERE
+      if (cookiesEnabled() === false) {
+        return;
+      } else {        
+        ratingCookie();
+      }
     }
   };  
 });

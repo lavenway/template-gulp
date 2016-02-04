@@ -1,0 +1,98 @@
+.component.ratings-banner {
+	width: 320px;
+	padding: 20px;
+	background: $white;
+	box-shadow: -6px 7px 19px -7px rgba(50,50,50,0.75);
+	position: fixed;
+	top: -100%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	transition: top 1s ease;
+
+	&.show {
+		top: 250px;
+	}
+
+	.close {
+	  position: absolute;
+	  top: 6px;
+	  right: 6px;
+	  width: 40px;
+	  height: 40px;   
+	  background: url(../img/structure/share-close-icon.png);
+	}
+
+	h3 {
+		font-family: 'Archer';
+		font-weight: 700;
+		font-size: 27px;
+		font-size: 2.7rem;
+		line-height: 32px;
+		line-height: 3.2rem;
+		color: #d5016b;
+		text-align: center;
+	}
+
+	p {
+
+		&.one {
+			font-family: 'SinkinSans';
+			font-weight: 400;
+			font-size: 12px;
+			font-size: 1.2rem;
+			line-height: 20px;
+			line-height: 2rem;		
+			margin-bottom: 20px;
+		}
+		&.two {
+			font-family: 'Archer';
+			font-weight: 700;
+			font-size: 18px;
+			font-size: 1.8rem;
+			line-height: 20px;
+			line-height: 2rem;		
+			margin-bottom: 15px;
+		}
+
+		text-align: center;
+	}
+
+	.rate {
+		text-align: center;
+	}
+
+	.poor, .great {
+		font-family: 'Archer';
+		font-weight: 100;
+		font-size: 18px;
+		font-size: 1.8rem;
+		line-height: 20px;
+		line-height: 2rem;	
+	}
+
+	.poor {
+		float: left;
+	}
+
+	.great {
+		float: right;
+	}
+	.stars {
+		display: inline-block;
+	}
+
+	.btn {
+		background: #d5016b;
+		color: $white;
+		padding: 7px 0;
+    display: block;
+    margin: 20px auto 0;
+    position: static;
+    width: 60%;
+
+		&:hover, &:focus, &:active {
+			color: $black;
+		}
+	}
+}
