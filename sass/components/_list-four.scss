@@ -1,12 +1,4 @@
 .component.list-four {
-	margin-left: -20px;
-  margin-right: -20px;
-
-  @media all and (min-width: 1024px) {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   ol {
     list-style-type: none;
 
