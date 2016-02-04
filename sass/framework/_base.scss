@@ -33,8 +33,6 @@ html {
 }
 
 body {
-  height: calc(100% - 64px);
-  margin-top: 64px;
   font-family: "SinkinSans",Arial,sans-serif;
   font-weight: normal;
   font-size: 100%;
@@ -294,11 +292,11 @@ h6 {
  #wrapper {
 
     > .container {
+      position: relative;
       margin-top: -30px;
       padding-top: 30px;
 
       @media all and (min-width: 1024px) {
-        position: relative;
         margin-top: -154px;
         background: $white;
       }

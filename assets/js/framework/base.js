@@ -266,10 +266,32 @@ $(function () {
   $navCloseDropdown.on('click', handleCloseHeaderDropdown);
 
   $(window).scroll(function(){
+    
+    hideNavDropdown();
+    parallaxHeaderImageIfExists();
+
+  }).scroll();
+
+  function hideNavDropdown() {
     $navHiddenDropdown.slideUp();
     $navtoggleDropdown.removeClass('active-tab');
     $navToggleDropdownActive.removeClass('header-nav-active');
-  });
+  };
+
+  function parallaxHeaderImageIfExists() {
+    var $headerImage = $(".header-image img");
+
+    if ($headerImage.length) {
+      var scrolled = $(window).scrollTop();
+      
+      if ($(window).scrollTop() < $(window).height()) {
+          $headerImage.css('top', (scrolled * 1.1 + 'px'));
+      }
+      else {
+          $headerImage.css('top', '0');
+      }
+    }
+  };
 
   // Only run this stuff if page is fully loaded
   // This is needed to prevent onreadystatechange being run twice
