@@ -284,9 +284,10 @@ $(function () {
   };
 
   function parallaxHeaderImageIfExists() {
-    var $headerImage = $(".header-image img");
+    var $parallaxHeaderImage = body.hasClass('parallax-header-image'),
+        $headerImage = $(".header-image img");
 
-    if ($headerImage.length) {
+    if ($parallaxHeaderImage) {
       var scrolled = $(window).scrollTop();
       
       if ($(window).scrollTop() < $(window).height()) {
