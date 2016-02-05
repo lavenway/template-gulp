@@ -248,3 +248,17 @@
   font-weight: 500;
   font-style: normal;
 }
+
+
+/* MUSEO SANS */
+@font-face {
+    font-family: 'MuseoSans300';
+    src: url('../fonts/MuseoSans-Regular.eot');
+    src: url('../fonts/MuseoSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/MuseoSans-Regular.woff2') format('woff2'),
+         url('../fonts/MuseoSans-Regular.woff') format('woff'),
+         url('../fonts/MuseoSans-Regular.ttf') format('truetype'),
+         url('../fonts/MuseoSans-Regular.svg#MuseoSans') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}

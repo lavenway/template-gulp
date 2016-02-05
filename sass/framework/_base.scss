@@ -315,7 +315,9 @@ h6 {
     .header-image {
       max-width: 1000px;
       height: 207px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
 
       @media (min-width: 480px) {    
         height: 471px;
@@ -732,6 +734,9 @@ h6 {
 
   .cta {
     display: inline-block;
+    font-family: 'MuseoSans300';
+    font-size: 12px;
+    font-weight: 400;
     line-height: normal;
 
     .icon {
