@@ -17,9 +17,13 @@
     	font-style: italic;
     	font-size: 32px;
     	font-size: 3.2rem;
+    	line-height: 32px;
+    	line-height: 3.2rem;
     	@media all and (min-width: 480px) {
 				font-size: 38px;
     		font-size: 3.8rem;
+    		line-height: 38px;
+    		line-height: 3.8rem;
     	}    	
 		}
 	}
@@ -64,7 +68,8 @@
 .component.list-one.show-numbers {
 	ol li {
 		span.number {
-			display: initial;
+			display: block;
+			float: left;
 		}
 	}
 }

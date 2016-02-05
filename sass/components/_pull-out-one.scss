@@ -50,20 +50,11 @@
       line-height: 4.0rem;
       text-align: center;
       color: $black;
+      border-radius: 50%;
     }
     position: relative;
     margin-top: 35px;
     list-style: none;
-
-    span.number {
-      position: absolute;
-      top: 4px;
-      left: 0;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: $aqua;
-    }
 
     p {
       display: inline;
@@ -153,9 +144,11 @@
     @include icons-sprite(heart-icon);
     background-color: transparent;
   }
+}
 
-  span.number {
-    display: none;
+.component.show-numbers ol li {
+  &:before {
+    background-color: $aqua;
   }
 }
 
