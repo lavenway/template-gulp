@@ -194,6 +194,10 @@ h2 {
       text-align: center;
       color: $pink;
   }
+  &.subtitle.style2 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $pink;
+  }
 }
 
 h3 {
