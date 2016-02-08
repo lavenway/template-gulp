@@ -261,7 +261,7 @@ h6 {
   height: 65px!important;
   width: 65px!important;
   font-size: 57px!important;
-  padding-top: 14px!important;
+  padding-top: 12px!important;
   padding-left: 14px!important;
   margin-right: 10px;
 }
@@ -1107,12 +1107,12 @@ footer {
 
   img {
     @media all and (min-width: 768px) {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
   }
 
   h2 {
-    margin-bottom: 5px;
+    margin-bottom: 5px !important;
     text-align: left;
     font-size: 12px;
     font-size: 1.2rem;
@@ -1134,6 +1134,11 @@ footer {
     @media all and (min-width: 768px) {
       text-align: center;
     }
+  }
+
+  .standfirst {
+    margin-bottom: 30px;
+    line-height: normal;
   }
 
   hr {

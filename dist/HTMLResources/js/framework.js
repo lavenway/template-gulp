@@ -304,12 +304,20 @@ $(function () {
   //BACK TO TOP
   $backToTop.on('click', handleBackToTopScroll);
 
-  $(window).scroll(function(){
-    
+  $(window).scroll(function(){    
     hideNavDropdown();
     parallaxHeaderImageIfExists();
-
+    checkScrollPositionForMobileNav();
   }).scroll();
+
+  function checkScrollPositionForMobileNav() {
+    if ($(window).height() + $(window).scrollTop() >= $(document).height()-30) {
+      // unbind the scroll event so we don't come here again
+      body.addClass('scrolled-bottom');
+    } else {
+      body.removeClass('scrolled-bottom');
+    }
+  };
 
   function hideNavDropdown() {
     $navHiddenDropdown.slideUp();

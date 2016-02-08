@@ -1,7 +1,11 @@
 .component.mobile-nav {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 	padding: 6px 20px;
 	border-bottom: 1px solid $black;
 	background: $grey;
+	transition: all 250ms ease;
 
 	.center-block {
 		width: 32%;
@@ -49,4 +53,8 @@
 	@media all and (min-width: 480px) {
 		display: none;
   }
+}
+
+.scrolled-bottom .component.mobile-nav {
+	bottom: 30px;
 }
