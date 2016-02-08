@@ -14,6 +14,7 @@ $(function () {
   var body = $('body'),
       html = $('html'),
       $doc = $(document),
+      $backToTop = $('.back-to-top'),
       $mainNav = $('.navbar-default'),
       $mobileFooterNavtoggleDropdown = $('.mobile-nav a.share'),
       $navToggleDropdownActive = $('body'),
@@ -24,6 +25,8 @@ $(function () {
       $productGrid = $("#js-product-grid"),
       $productGridProduct = $("#js-product-grid .product"),
       $productGridInfo = $("#js-product-grid .info"),
+      $productLinkToggle = $(".list-one a"),
+      $productLinkPopUp = $(".product-pop-up"),
 
       handleInfoBox = function (e) {
         var $this = $(this),
@@ -105,7 +108,26 @@ $(function () {
           
         $mainNav.addClass('slideInDown').removeClass('slideOutUp');
 
+      },
+
+      handleProductPopUp = function (e) {
+        var $activeProductPopUp = body.hasClass('product-pop-up-active');
+        e.preventDefault();
+
+        if ($activeProductPopUp) {
+          $productLinkPopUp.fadeOut(800).removeClass('show');
+          $productLinkPopUp.delay(200).addClass('show').toggle();
+        } else {
+          body.addClass('product-pop-up-active');
+
+          $productLinkPopUp.addClass('show').toggle();
+        } 
+      },
+
+      handleBackToTopScroll = function () {
+        body.animate({ scrollTop: 0 }, "slow");
       };
+      
 
   //remove touch delay on touch devices
   var attachFastClick = Origami.fastclick;
@@ -210,6 +232,12 @@ $(function () {
     e.preventDefault();
   });
 
+  $doc.on('click', '.product-pop-up .close', function (e) {
+    body.removeClass('product-pop-up-active');
+
+    $(this).parents('.component').toggle().removeClass('show');
+  });
+
   enquire.register("screen and (max-width:480px)", {
     // OPTIONAL
     // If supplied, triggered when a media query matches.
@@ -269,6 +297,12 @@ $(function () {
 
   //MAIN NAV CLOSE DROPDOWNS
   $navCloseDropdown.on('click', handleCloseHeaderDropdown);
+
+  //MAIN NAV CLOSE DROPDOWNS
+  $productLinkToggle.on('click', handleProductPopUp);
+
+  //BACK TO TOP
+  $backToTop.on('click', handleBackToTopScroll);
 
   $(window).scroll(function(){
     
