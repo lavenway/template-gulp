@@ -108,6 +108,7 @@ module.exports = function (grunt) {
             'dist/video.html': 'templates/components/video.html',
             'dist/product-carousel.html': 'templates/components/product-carousel.html',
             'dist/product-grid.html': 'templates/components/product-grid.html',
+            'dist/product-list.html': 'templates/components/product-list.html',
             'dist/border-stripes.html': 'templates/components/border-stripes.html',
             'dist/old-content-banner.html': 'templates/components/old-content-banner.html',
             'dist/footnote.html': 'templates/components/footnote.html'

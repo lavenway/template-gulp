@@ -16,6 +16,7 @@ $(function () {
       $doc = $(document),
       $backToTop = $('.back-to-top'),
       $mainNav = $('.navbar-default'),
+      $mobileNav = $('.mobile-nav'),
       $mobileFooterNavtoggleDropdown = $('.mobile-nav a.share'),
       $navToggleDropdownActive = $('body'),
       $navCloseDropdown = $('.navbar-header .dropdown .close'),
@@ -139,6 +140,7 @@ $(function () {
   // construct an instance of Headroom, passing the element and options
   var headroom  = new Headroom(getNav, {
     "tolerance": 5,
+    "offset": 64,
     "classes": {
       "initial": "",
       "pinned": "slideInDown",
@@ -311,9 +313,15 @@ $(function () {
   }).scroll();
 
   function checkScrollPositionForMobileNav() {
-    if ($(window).height() + $(window).scrollTop() >= $(document).height()-30) {
-      // unbind the scroll event so we don't come here again
-      body.addClass('scrolled-bottom');
+    if ($mobileNav.is(':visible')) {
+      if ($(window).height() + $(window).scrollTop() >= $(document).height()-50) {
+        // unbind the scroll event so we don't come here again
+        //$(window).unbind('scroll');
+        body.addClass('scrolled-bottom');
+      }
+       else {
+        body.removeClass('scrolled-bottom');
+      }
     } else {
       body.removeClass('scrolled-bottom');
     }
@@ -333,7 +341,7 @@ $(function () {
       var scrolled = $(window).scrollTop();
       
       if ($(window).scrollTop() < $(window).height()) {
-          $headerImage.css('top', (scrolled * 1.1 + 'px'));
+          $headerImage.css('top', (scrolled * 0.2 + 'px'));
       }
       else {
           $headerImage.css('top', '0');

@@ -1,6 +1,8 @@
 .header-image {
   width: 100%;
+  margin-top: 62px;
 }
+
 .container .header-image {
   .owl-item {
     width: inherit !important;
@@ -8,14 +10,13 @@
  }
 
 .header-image, .owl-item .item {
-  height: 335px;  
+  height: 207px;  
   overflow: hidden;
-  margin-top: -64px;
   @media (min-width: 768px) {    
-    height: 599px;
+    height: 475px;
   }
   @media (min-width: 1024px) {    
-    height: 773px;
+    height: 649px;
   }
 }
 
