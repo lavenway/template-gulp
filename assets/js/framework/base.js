@@ -140,7 +140,7 @@ $(function () {
   // construct an instance of Headroom, passing the element and options
   var headroom  = new Headroom(getNav, {
     "tolerance": 5,
-    "offset": 64,
+    "offset": 58,
     "classes": {
       "initial": "",
       "pinned": "slideInDown",
@@ -314,7 +314,7 @@ $(function () {
 
   function checkScrollPositionForMobileNav() {
     if ($mobileNav.is(':visible')) {
-      if ($(window).height() + $(window).scrollTop() >= $(document).height()-50) {
+      if ($(window).height() + $(window).scrollTop() >= $(document).height()-30) {
         // unbind the scroll event so we don't come here again
         //$(window).unbind('scroll');
         body.addClass('scrolled-bottom');

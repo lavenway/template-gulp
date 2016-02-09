@@ -285,6 +285,10 @@ h6 {
 
     > .container {
       padding-top: 15px;
+
+      @media all and (min-width: 1024px) {
+        padding-top: 27px;
+      }
     }
 
     .header-image {
@@ -303,6 +307,7 @@ h6 {
 
       @media all and (min-width: 1024px) {
         margin-top: -154px;
+        padding-top: 27px;
         background: $white;
       }
     }
@@ -314,6 +319,10 @@ h6 {
 
     > .container {
       padding-top: 15px;
+
+      @media all and (min-width: 1024px) {
+        padding-top: 27px;
+      }
     }
 
     .header-image {
@@ -367,7 +376,7 @@ h6 {
 .navbar-default {
   z-index: 999;
   position: relative;
-  padding: 8px 0 5px;
+  padding: 5px 0 0;
   border-bottom: 1px solid $black;
   background-color: $black;
   -webkit-animation-duration: 0.5s;
@@ -394,8 +403,6 @@ h6 {
   }
 
   .pull-left {
-    margin-top: 2px;
-
     .menu {
       .icon {
         @include icons-sprite(menu-icon-white);
@@ -409,9 +416,11 @@ h6 {
 
   .center-block {
     width: 32%;
+    text-align: center;
 
     .logo {
       img {
+        width: 107px;
         margin: 0 auto;
       }
     }
@@ -419,7 +428,7 @@ h6 {
 
   .pull-right {
     position: relative;
-    margin-top: -43px;
+    margin-top: -51px;
 
     .share { 
       display: none;
@@ -457,7 +466,7 @@ h6 {
 
     .share-dropdown {
       position: fixed;
-      top: 62px;
+      top: 58px;
       right: 0;
       width: 100%;
       padding: 18px 34px;
@@ -559,6 +568,7 @@ h6 {
       margin-left: 40px;
 
       .icon {
+        font-style: normal;
         @include icons-sprite(basket-icon-white);
 
         @media (min-width: 480px) {    
@@ -568,7 +578,7 @@ h6 {
         span {
           display: block;
           position: relative;
-          top: -8px;
+          top: -4px;
           left: -14px;
           width: 25px;
           height: 25px;
@@ -738,9 +748,10 @@ h6 {
 
   .cta {
     display: inline-block;
-    font-family: 'MuseoSans300';
+    font-family: 'Open Sans', sans-serif;
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 600;
+    font-style: normal;
     line-height: normal;
 
     .icon {
@@ -751,10 +762,36 @@ h6 {
     }
   }
 
-  a, a span {
+  a {
     &:hover, &:active, &:focus {
-      text-decoration: none;
-      color: $pink;
+      span {
+        text-decoration: none;
+        color: $pink;
+      }
+    }
+  }
+
+  .menu {
+    &:hover {
+      .icon {
+        background: url(../img/structure/menu-icon-pink.png);
+      }
+    }
+  }
+
+  .share {
+    &:hover {
+      .icon {
+        background: url(../img/structure/share-icon-pink.png);
+      }
+    }
+  }
+
+  .basket {
+    &:hover {
+      .icon {
+        background: url(../img/structure/basket-icon-pink.png);
+      }
     }
   }
 
@@ -921,6 +958,10 @@ footer {
       display: inline-block;
       padding: 0 20px;
       border-right: 1px solid $black;
+      
+      &:last-child {
+        border-right: none;
+      }
 
       a {
         font-family: 'Archer';
@@ -934,6 +975,12 @@ footer {
   }
 }
 
+.scrolled-bottom {
+  footer {
+    position: relative;
+    top: -58px;
+  }
+}
 
 /******************************
 * PRODUCT POP UP
@@ -941,13 +988,18 @@ footer {
 .product-pop-up {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 58px;
   left: 50%;
-  margin: -204px 0 0 -160px;
+  margin-left: -160px;
   width: 320px;
   padding: 30px 15px;
   box-shadow: -4px 8px 18px #333;
   background: $white;
+
+  @media (min-width: 480px) {
+    top: 50%;
+    margin-top: -204px;
+  }
 
   .close {
     position: absolute;
@@ -1016,7 +1068,7 @@ footer {
   text-align: center;
 
   .container {
-    padding: 20px 0;
+    padding-bottom: 30px;
 
     a {
       padding: 5px 25px;
@@ -1032,7 +1084,7 @@ footer {
 }
 
 .scrolled-bottom .back-to-top {
-  padding-bottom: 65px;
+  padding-bottom: 58px;
 }
 
 

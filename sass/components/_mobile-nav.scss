@@ -3,8 +3,8 @@
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	padding: 6px 20px;
-	border-bottom: 1px solid $black;
+	padding: 3px 20px 2px;
+	border-top: 1px solid $black;
 	background: $grey;
 	transition: all 250ms ease;
 
@@ -15,10 +15,15 @@
 
 	.pull-right {
 		position: relative;
-    margin-top: -46px;
+    margin-top: -52px;
 	}
 
 	a.cta {
+		font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+
 		i.icon {
 			display: block;
 			width: 32px;
@@ -54,8 +59,4 @@
 	@media all and (min-width: 480px) {
 		display: none;
   }
-}
-
-.scrolled-bottom .component.mobile-nav {
-	bottom: 30px;
 }
