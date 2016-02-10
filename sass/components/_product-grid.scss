@@ -38,6 +38,7 @@
 			.product {
 				.image {
 					height: 190px;
+					overflow: hidden;
 					.toggle {
 						position: absolute;
 						top: 5px;
@@ -51,6 +52,8 @@
 					}
 
 					img {
+						width: auto;
+						max-height: 190px;
 						margin: 0 auto;
 					}
 				}

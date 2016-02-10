@@ -19,6 +19,9 @@
     	font-size: 3.2rem;
     	line-height: 32px;
     	line-height: 3.2rem;
+    	-webkit-font-smoothing: auto;
+    	-moz-osx-font-smoothing: auto;
+
     	@media all and (min-width: 480px) {
 				font-size: 38px;
     		font-size: 3.8rem;
