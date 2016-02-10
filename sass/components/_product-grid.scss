@@ -3,6 +3,10 @@
 		margin: 0 -20px;
 		border-top: 1px solid $black;
 
+		@media all and (min-width: 480px) {
+      margin: 0;
+    }
+
 		> div {
 			float: none;
 			display: inline-block;
@@ -33,6 +37,7 @@
 
 			.product {
 				.image {
+					height: 190px;
 					.toggle {
 						position: absolute;
 						top: 5px;
@@ -79,6 +84,8 @@
 	      p {
 	      	font-size: 12px;
 	      	font-size: 1.2rem;
+	      	line-height: 20px;
+	      	line-height: 2rem;
 	      }
 			}
 	}
