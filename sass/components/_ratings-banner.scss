@@ -24,7 +24,7 @@
 	}
 
 	h3 {
-		font-family: 'Archer';
+		font-family: "Archer A", "Archer B";
 		font-weight: 700;
 		font-size: 27px;
 		font-size: 2.7rem;
@@ -46,7 +46,7 @@
 			margin-bottom: 20px;
 		}
 		&.two {
-			font-family: 'Archer';
+			font-family: "Archer A", "Archer B";
 			font-weight: 700;
 			font-size: 18px;
 			font-size: 1.8rem;
@@ -63,8 +63,8 @@
 	}
 
 	.poor, .great {
-		font-family: 'Archer';
-		font-weight: 100;
+		font-family: "Archer A", "Archer B";
+		font-weight: 500;
 		font-size: 18px;
 		font-size: 1.8rem;
 		line-height: 20px;

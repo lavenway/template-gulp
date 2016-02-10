@@ -139,9 +139,9 @@ h1, .title {
   }
 
   &.style3 {
-    font-family: 'Archer';
+    font-family: "Archer A", "Archer B";
     font-style: normal;
-    font-weight: 100;
+    font-weight: 500;
     font-size: 23px;
     font-size: 2.3rem;
     line-height: 20px;
@@ -160,9 +160,9 @@ h1, .title {
   }
 
   &.style4 {
-    font-family: 'Archer';
+    font-family: "Archer A", "Archer B";
     font-style: normal;
-    font-weight: 100;
+    font-weight: 500;
     font-size: 40px;
     font-size: 4rem;
     line-height: 42px;
@@ -201,11 +201,11 @@ h2 {
 }
 
 h3 {
-  font-family: 'Archer';
+  font-family: "Archer A", "Archer B";
   font-size: 35px;
   font-size: 3.5rem;
   font-style: normal;
-  font-weight: 100;
+  font-weight: 500;
   line-height: 25px;
   line-height: 2.5rem;
   margin-bottom: 10px;
@@ -218,7 +218,7 @@ h3 {
 h4 {
   margin-bottom: 12px;
   padding-bottom: 12px;
-  font-family: 'Archer';
+  font-family: "Archer A", "Archer B";
   font-size: 20px;
   font-size: 2rem;
   font-weight: 800;
@@ -391,7 +391,7 @@ h6 {
   z-index: 999;
   position: relative;
   padding: 5px 0 0;
-  border-bottom: 1px solid $black;
+  border-bottom: 1px solid $greyDark;
   background-color: $black;
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
@@ -505,7 +505,7 @@ h6 {
       li.title {
         margin: 0 !important;
         padding-bottom: 16px;
-        font-family: 'Archer';
+        font-family: "Archer A", "Archer B";
         font-style: normal;
         font-weight: 700;
         font-size: 27px;
@@ -963,7 +963,12 @@ footer {
   margin: 0;
   box-sizing: border-box;
   position: relative;
+  border-bottom: 1px solid $black;
   background: $grey;
+
+  @media (min-width: 480px) {    
+    border-bottom: none;
+  }
 }
 
 footer {
@@ -978,8 +983,8 @@ footer {
       }
 
       a {
-        font-family: 'Archer';
-        font-weight: 400;
+        font-family: "Archer A", "Archer B";
+        font-weight: 600;
         font-style: normal;
         font-size: 14px;
         color: $black;
@@ -1085,9 +1090,10 @@ footer {
     padding-bottom: 30px;
 
     a {
+      display: inline-block;
       padding: 5px 25px;
-      font-family: 'Archer';
-      font-weight: 400;
+      font-family: "Archer A", "Archer B";
+      font-weight: 600;
       font-size: 20px;
       font-size: 2rem;
       font-style: normal;
@@ -1136,9 +1142,9 @@ footer {
 
   h1 {
     margin-bottom: 10px;
-    font-family: 'Archer';
+    font-family: "Archer A", "Archer B";
     font-style: normal;
-    font-weight: 100;
+    font-weight: 500;
     font-size: 23px;
     font-size: 2.3rem;
     line-height: 14px;
