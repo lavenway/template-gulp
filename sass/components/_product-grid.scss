@@ -84,6 +84,15 @@
 	        border: none;
 	      }
 
+	      h4 {
+					display: none;
+					margin-bottom: 4px;
+					padding: 0;
+	      	border: none;
+	      	text-transform: initial;
+	      	color: $peach;
+	      }
+
 	      p {
 	      	font-size: 12px;
 	      	font-size: 1.2rem;
@@ -105,6 +114,14 @@
       }
 	}
 
+}
+
+.component.product-grid.show-title {
+	.info {
+		h4 {
+			display: block;
+		}
+	}
 }
 
 .component.product-grid.mobile-layout {

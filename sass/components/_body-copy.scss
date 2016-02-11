@@ -7,3 +7,9 @@
 	  background-color: $peach;
 	}
 }
+
+.component.body-copy.circle-dropcap {
+	.dropcap {
+		border-radius: 50%;
+	}
+}

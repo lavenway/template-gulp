@@ -279,6 +279,26 @@ h6 {
   background: $white;
 }
 
+.container-border-stripes {
+  background: url(../img/components/container-background-stripes.png);
+
+  #wrapper, .back-to-top {
+    > .container {
+      border-left: 17px solid transparent;
+      border-right: 17px solid transparent;
+      border-image: repeating-linear-gradient( 45deg, $grey, $grey 1px, #fff 0px, #fff 17px) 17;
+
+      border-image-source: url(../img/components/container-border-stripes.png);
+      border-image-slice: 2 17;
+      border-image-repeat: round;
+
+      @media all and (min-width: 480px) {
+        border: none;
+      }  
+    }
+  }
+}
+
 .unavailable {
   display: block;
   width: 50%;
@@ -292,6 +312,7 @@ h6 {
   line-height: 2rem;
   color: $blue;
 }
+
 
 /*************** TEMPLATE STYLING ***************/
 .hidden-header-image {
@@ -460,7 +481,7 @@ h6 {
     .dropdown {
       display: none;
       position: absolute;
-      top: 54px;
+      top: 52px;
       right: -10px;
       box-shadow: -4px 8px 18px #333;
       background: $white;
@@ -990,6 +1011,10 @@ footer {
         font-size: 14px;
         color: $black;
         line-height: 30px;
+
+        &:visited {
+          color: $black;
+        }
       }
     }
   }

@@ -26,7 +26,7 @@ $(function () {
       $productGrid = $("#js-product-grid"),
       $productGridProduct = $("#js-product-grid .product"),
       $productGridInfo = $("#js-product-grid .info"),
-      $productLinkToggle = $(".list-one a"),
+      /*$productLinkToggle = $(".list-one a"),*/
       $productLinkPopUp = $(".product-pop-up"),
 
       handleInfoBox = function (e) {
@@ -111,7 +111,7 @@ $(function () {
 
       },
 
-      handleProductPopUp = function (e) {
+      /*handleProductPopUp = function (e) {
         var $activeProductPopUp = body.hasClass('product-pop-up-active');
         e.preventDefault();
 
@@ -123,7 +123,7 @@ $(function () {
 
           $productLinkPopUp.addClass('show').toggle();
         } 
-      },
+      },*/
 
       handleBackToTopScroll = function () {
         body.animate({ scrollTop: 0 }, "slow");
@@ -308,7 +308,7 @@ $(function () {
   $navCloseDropdown.on('click', handleCloseHeaderDropdown);
 
   //MAIN NAV CLOSE DROPDOWNS
-  $productLinkToggle.on('click', handleProductPopUp);
+  /*$productLinkToggle.on('click', handleProductPopUp);*/
 
   //BACK TO TOP
   $backToTop.on('click', handleBackToTopScroll);
@@ -318,6 +318,15 @@ $(function () {
     parallaxHeaderImageIfExists();
     checkScrollPositionForMobileNav();
   }).scroll();
+
+  // CLOSE DROPDOWNS WHEN CLICKING ANYWHERE //
+  $doc.mouseup(function (e) {
+    if (!$navHiddenDropdown.is(e.target) // if the target of the click isn't the container...
+        && $navHiddenDropdown.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        hideNavDropdown();
+    }
+  });
 
   function checkScrollPositionForMobileNav() {
     if ($mobileNav.is(':visible')) {
