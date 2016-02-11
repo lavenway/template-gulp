@@ -18,7 +18,6 @@ $(function () {
       $mainNav = $('.navbar-default'),
       $mobileNav = $('.mobile-nav'),
       $mobileFooterNavtoggleDropdown = $('.mobile-nav a.share'),
-      $navToggleDropdownActive = $('body'),
       $navCloseDropdown = $('.navbar-header .dropdown .close'),
       $navtoggleDropdown = $('.navbar-header a.cta'),
       $navToggleDropdownActive = $('body'),
@@ -44,7 +43,6 @@ $(function () {
       },
 
       handleHeaderDropdown = function (e) {
-
         var $this = $(this),
             $activeDropdown = $this.hasClass('active-tab'),
             $hasDropdown = $this.next('.dropdown'),
@@ -320,13 +318,13 @@ $(function () {
   }).scroll();
 
   // CLOSE DROPDOWNS WHEN CLICKING ANYWHERE //
-  $doc.mouseup(function (e) {
-    if (!$navHiddenDropdown.is(e.target) // if the target of the click isn't the container...
-        && $navHiddenDropdown.has(e.target).length === 0) // ... nor a descendant of the container
+  /*$doc.mouseup(function (e) {
+    if (!$navHiddenDropdown.is(e.target)
+        && $navHiddenDropdown.has(e.target).length === 0)
     {
         hideNavDropdown();
     }
-  });
+  });*/
 
   function checkScrollPositionForMobileNav() {
     if ($mobileNav.is(':visible')) {
