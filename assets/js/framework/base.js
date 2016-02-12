@@ -29,6 +29,7 @@ $(function () {
       $productGridInfo = $('#js-product-grid .info'),
       /*$productLinkToggle = $('.list-one a'),*/
       $productLinkPopUp = $('.product-pop-up'),
+      $shareDropdown = $('.navbar-header .share-dropdown'),
       $dropdownOverlay = $('.navbar .dropdown-overlay'),
 
       handleInfoBox = function (e) {
@@ -49,8 +50,7 @@ $(function () {
         var $this = $(this),
             $activeDropdown = $this.hasClass('active-tab'),
             $hasDropdown = $this.next('.dropdown'),
-            $toggleTab = $navToggleDropdownActive.hasClass('header-nav-active'),
-            $mobileViewport = $('body').hasClass('mobile-viewport');
+            $toggleTab = $navToggleDropdownActive.hasClass('header-nav-active');
 
         if ($this.next().is($hasDropdown)) {
           e.preventDefault();
@@ -58,11 +58,6 @@ $(function () {
           $dropdownOverlay.show();
 
           basketCalculations();
-
-          /*if ($mobileViewport) {
-            var $dropdownHeight = $(window).height();
-            $navHiddenDropdown.css({'height':(($dropdownHeight))+'px'});
-          }*/
 
           if ($toggleTab) {
               if ($activeDropdown) {
@@ -99,9 +94,12 @@ $(function () {
         var $this = $(this),
             $activeDropdown = $this.hasClass('active-tab'),
             $headerShareDropdown = $('.navbar .navbar-header .share-dropdown'),
-            $toggleTab = $navToggleDropdownActive.hasClass('header-nav-active');
+            $toggleTab = $navToggleDropdownActive.hasClass('header-nav-active'),
+            $dropdownHeight = $(window).height();
             
         e.preventDefault();
+
+        shareCalculations();
 
         if ($toggleTab) {
           if ($activeDropdown) {
@@ -405,6 +403,7 @@ $(function () {
 
   $(window).resize(function(){    
     basketCalculations();
+    shareCalculations();
   });
 
   // CLOSE DROPDOWNS WHEN CLICKING ANYWHERE //
@@ -421,6 +420,15 @@ $(function () {
 
     $basketdropdown.css({'height':(($dropdownHeight))+'px'});
     $basketdropdownItemWrapper.css({'max-height':(($dropdownHeight -260))+'px'});
+  }
+
+  function shareCalculations() {
+    var $dropdownHeight = $(window).height(),
+        $mobileViewport = $('body').hasClass('mobile-viewport');
+
+    if ($mobileViewport) {
+      $shareDropdown.css({'height':(($dropdownHeight))+'px'});
+    }
   }
 
   function checkScrollPositionForMobileNav() {

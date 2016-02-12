@@ -429,6 +429,7 @@ h6 {
 
   .dropdown-overlay {
     display: none;
+    z-index: 2;
     position: fixed;
     top: 0;
     left: 0;
@@ -495,6 +496,7 @@ h6 {
 
     .dropdown {
       display: none;
+      z-index: 3;
       position: absolute;
       top: -6px;
       right: -10px;
@@ -512,17 +514,18 @@ h6 {
 
     .share-dropdown {
       position: fixed;
-      top: 58px;
+      top: 0;
       right: 0;
       width: 100%;
       padding: 18px 34px;
-      background-color: rgba($pink,0.8);
+      background-color: rgba($pink,0.7);
 
       @media (min-width: 480px) {    
         position: absolute;
-        top: 54px;
+        top: -6px;
         right: 86px;
         width: 320px;
+        height: auto;
         background: $white;
       }
 
@@ -652,7 +655,8 @@ h6 {
 
       .item-wrapper {
         padding-right: 20px;
-        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
       }
 
       .footer {
