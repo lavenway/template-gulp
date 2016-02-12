@@ -18,7 +18,6 @@ $(function () {
       $mainNav = $('.navbar-default'),
       $mobileNav = $('.mobile-nav'),
       $mobileFooterNavtoggleDropdown = $('.mobile-nav a.share'),
-      $navToggleDropdownActive = $('body'),
       $navCloseDropdown = $('.navbar-header .dropdown .close'),
       $navtoggleDropdown = $('.navbar-header a.cta'),
       $navToggleDropdownActive = $('body'),
@@ -44,7 +43,6 @@ $(function () {
       },
 
       handleHeaderDropdown = function (e) {
-
         var $this = $(this),
             $activeDropdown = $this.hasClass('active-tab'),
             $hasDropdown = $this.next('.dropdown'),
@@ -252,6 +250,8 @@ $(function () {
     // If supplied, triggered when a media query matches.
     match : function() {
       
+      body.addClass('mobile-viewport');
+
       $('#js-product-grid .product').on('click', handleInfoBox);
 
       $productGridInfo.each(function(index) {
@@ -265,6 +265,8 @@ $(function () {
     // *from a matched state to an unmatched state*.
     unmatch : function() {
       
+      body.removeClass('mobile-viewport');
+
       $('#js-product-grid .product').unbind( "click" );
 
       $productGridInfo.each(function(index) {
@@ -288,6 +290,68 @@ $(function () {
     // Place cleanup code here
     destroy : function() {}
       
+  });
+
+  enquire.register("screen and (min-width:481px) and (max-width:768px)", {
+    // OPTIONAL
+    // If supplied, triggered when a media query matches.
+    match : function() {
+      
+      body.addClass('tablet-viewport');
+    }, 
+
+    // OPTIONAL
+    // If supplied, triggered when the media query transitions 
+    // *from a matched state to an unmatched state*.
+    unmatch : function() {
+      
+      body.removeClass('tablet-viewport');
+    },
+
+    // OPTIONAL
+    // If supplied, triggered once, when the handler is registered.
+    setup : function() {},    
+                                
+    // OPTIONAL, defaults to false
+    // If set to true, defers execution of the setup function 
+    // until the first time the media query is matched
+    deferSetup : true,
+                                
+    // OPTIONAL
+    // If supplied, triggered when handler is unregistered. 
+    // Place cleanup code here
+    destroy : function() {}
+  });
+
+  enquire.register("screen and (min-width:769px)", {
+    // OPTIONAL
+    // If supplied, triggered when a media query matches.
+    match : function() {
+      
+      body.addClass('desktop-viewport');
+    }, 
+
+    // OPTIONAL
+    // If supplied, triggered when the media query transitions 
+    // *from a matched state to an unmatched state*.
+    unmatch : function() {
+      
+      body.removeClass('desktop-viewport');
+    },
+
+    // OPTIONAL
+    // If supplied, triggered once, when the handler is registered.
+    setup : function() {},    
+                                
+    // OPTIONAL, defaults to false
+    // If set to true, defers execution of the setup function 
+    // until the first time the media query is matched
+    deferSetup : true,
+                                
+    // OPTIONAL
+    // If supplied, triggered when handler is unregistered. 
+    // Place cleanup code here
+    destroy : function() {}
   });
 
   //DROPCAP
@@ -320,13 +384,13 @@ $(function () {
   }).scroll();
 
   // CLOSE DROPDOWNS WHEN CLICKING ANYWHERE //
-  $doc.mouseup(function (e) {
-    if (!$navHiddenDropdown.is(e.target) // if the target of the click isn't the container...
-        && $navHiddenDropdown.has(e.target).length === 0) // ... nor a descendant of the container
+  /*$doc.mouseup(function (e) {
+    if (!$navHiddenDropdown.is(e.target)
+        && $navHiddenDropdown.has(e.target).length === 0)
     {
         hideNavDropdown();
     }
-  });
+  });*/
 
   function checkScrollPositionForMobileNav() {
     if ($mobileNav.is(':visible')) {
