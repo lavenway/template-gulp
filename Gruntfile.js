@@ -112,7 +112,8 @@ module.exports = function (grunt) {
             'dist/border-stripes.html': 'templates/components/border-stripes.html',
             'dist/old-content-banner.html': 'templates/components/old-content-banner.html',
             'dist/footnote.html': 'templates/components/footnote.html',
-            'dist/crosshead.html': 'templates/components/crosshead.html'
+            'dist/crosshead.html': 'templates/components/crosshead.html',
+            'dist/trend-tool.html': 'templates/components/trend-tool.html'
         }
       }
     },

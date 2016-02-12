@@ -1154,6 +1154,14 @@ footer {
 /******************************
 * CONTENT TEMPLATE
 ******************************/
+.content-template.negative-container {
+  #wrapper {
+    > .container {
+      padding-top: 27px;
+    }
+  }
+}
+
 .content-template {
 
   .row.border {
@@ -1167,7 +1175,7 @@ footer {
   }
 
   h1 {
-    margin-bottom: 10px;
+    margin: 0 !important;
     font-family: "Archer A", "Archer B";
     font-style: normal;
     font-weight: 500;
@@ -1175,6 +1183,15 @@ footer {
     font-size: 2.3rem;
     line-height: 14px;
     line-height: 1.4rem;
+
+    @media all and (min-width: 768px) {
+      margin-bottom: 40px !important;
+      padding-bottom: 20px;
+      font-size: 45px;
+      font-size: 4.5rem;
+      line-height: 40px;
+      line-height: 4rem;
+    }
 
     span {
       position: relative;
@@ -1196,20 +1213,11 @@ footer {
         font-style: italic;
       }
     }
-
-    @media all and (min-width: 768px) {
-      margin-bottom: 40px;
-      padding-bottom: 20px;
-      font-size: 45px;
-      font-size: 4.5rem;
-      line-height: 40px;
-      line-height: 4rem;
-    }
   }
 
   img {
     @media all and (min-width: 768px) {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
   }
 
@@ -1230,6 +1238,26 @@ footer {
   h3 {
     font-family: 'MajesticBanner';
     font-weight: 400;
+    font-size: 23px;
+    font-size: 2.3rem;
+    line-height: 20px;
+    line-height: 2rem;
+
+    @media all and (min-width: 768px) {
+      font-size: 35px;
+      font-size: 3.5rem;
+      line-height: 25px;
+      line-height: 2.5rem;
+    }
+
+    @media all and (min-width: 1024px) {
+      line-height: 30px;
+      line-height: 3rem;
+    }
+
+    a {
+      color: $black;
+    }
   }
 
   h2, h3, .standfirst {
@@ -1239,16 +1267,25 @@ footer {
   }
 
   .standfirst {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     line-height: normal;
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 15px;
+    line-height: 1.5rem;
   }
 
   hr {
+    margin: 10px 0;
     border-color: $black;
 
     @media all and (min-width: 768px) {
       display: none;
     }
+  }
+
+  .back-to-top {
+    display: none;
   }
 }
 

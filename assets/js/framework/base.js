@@ -250,6 +250,8 @@ $(function () {
     // If supplied, triggered when a media query matches.
     match : function() {
       
+      body.addClass('mobile-viewport');
+
       $('#js-product-grid .product').on('click', handleInfoBox);
 
       $productGridInfo.each(function(index) {
@@ -263,6 +265,8 @@ $(function () {
     // *from a matched state to an unmatched state*.
     unmatch : function() {
       
+      body.removeClass('mobile-viewport');
+
       $('#js-product-grid .product').unbind( "click" );
 
       $productGridInfo.each(function(index) {
@@ -286,6 +290,68 @@ $(function () {
     // Place cleanup code here
     destroy : function() {}
       
+  });
+
+  enquire.register("screen and (min-width:481px) and (max-width:768px)", {
+    // OPTIONAL
+    // If supplied, triggered when a media query matches.
+    match : function() {
+      
+      body.addClass('tablet-viewport');
+    }, 
+
+    // OPTIONAL
+    // If supplied, triggered when the media query transitions 
+    // *from a matched state to an unmatched state*.
+    unmatch : function() {
+      
+      body.removeClass('tablet-viewport');
+    },
+
+    // OPTIONAL
+    // If supplied, triggered once, when the handler is registered.
+    setup : function() {},    
+                                
+    // OPTIONAL, defaults to false
+    // If set to true, defers execution of the setup function 
+    // until the first time the media query is matched
+    deferSetup : true,
+                                
+    // OPTIONAL
+    // If supplied, triggered when handler is unregistered. 
+    // Place cleanup code here
+    destroy : function() {}
+  });
+
+  enquire.register("screen and (min-width:769px)", {
+    // OPTIONAL
+    // If supplied, triggered when a media query matches.
+    match : function() {
+      
+      body.addClass('desktop-viewport');
+    }, 
+
+    // OPTIONAL
+    // If supplied, triggered when the media query transitions 
+    // *from a matched state to an unmatched state*.
+    unmatch : function() {
+      
+      body.removeClass('desktop-viewport');
+    },
+
+    // OPTIONAL
+    // If supplied, triggered once, when the handler is registered.
+    setup : function() {},    
+                                
+    // OPTIONAL, defaults to false
+    // If set to true, defers execution of the setup function 
+    // until the first time the media query is matched
+    deferSetup : true,
+                                
+    // OPTIONAL
+    // If supplied, triggered when handler is unregistered. 
+    // Place cleanup code here
+    destroy : function() {}
   });
 
   //DROPCAP
