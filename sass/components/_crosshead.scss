@@ -1,3 +1,9 @@
+h2.component.crosshead{
+  margin:0 0 0 !important;
+  &.style5,&.style6{
+    margin:0 0 6px !important;
+  }
+}
 .component .crosshead,.component.crosshead {
   font-size:25pt;
   line-height:25pt;
@@ -38,6 +44,9 @@
     font-size:20pt;
     line-height:25pt;
     text-transform: uppercase;
+    padding-bottom:12px;
+    margin-bottom:12px;
+    border-bottom:1px solid $black;
     @media all and (min-width: 480px) {
       font-size: 25pt;
     }
@@ -60,14 +69,14 @@
     letter-spacing: -2px;
     @media all and (min-width: 480px) {
       font-size: 38pt;
-      line-height: 45.6pt;
+      line-height: 30.6pt;
     }
   }
 
   &.style8{
     font-family: 'MajesticBanner';
     font-size:25pt;
-    line-height:31pt;
+    line-height:16pt;
   }
 
   &.style9{
