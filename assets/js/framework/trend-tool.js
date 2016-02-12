@@ -55,31 +55,41 @@ $(function () {
 	
 	statusBar()
 	// Option animate on load
-	function animateOption() {
-		setTimeout(function() {
-	        $('.options .option').addClass('appear');
-	    }, 1700);
-	}
+	// function animateOption() {
+	// 	setTimeout(function() {
+	//         var secID = $(this).('.option');
+	//         secID.addClass('appear');
+	//     }, 100);
+	// }
 	// Toggle between sections - follow the rabit
 	$('#tt-section0').click(function() {
 		$(this).removeClass('tt-active');
 		$('#tt-section1').addClass('tt-active tt-opened');
 		showStatusBar();
-		animateOption();
+		setTimeout(function() {
+	        var secID = $('#tt-section1 .option');
+	        secID.addClass('appear');
+	    }, 100);
 	});
 	$('.option-age').click(function() {
 		var mainSection = $('.tt-section');
 		mainSection.removeClass('tt-active');
 		$('#tt-section2').addClass('tt-active tt-opened');
 		showStatusBar();
-		animateOption();
+		setTimeout(function() {
+	        var secID = $('#tt-section2 .option');
+	        secID.addClass('appear');
+	    }, 100);
 	});
 	$('.option-tone').click(function() {
 		var mainSection = $('.tt-section');
 		mainSection.removeClass('tt-active');
 		$('#tt-section3').addClass('tt-active tt-opened');
 		showStatusBar();
-		animateOption();
+		setTimeout(function() {
+	        var secID = $('#tt-section3 .option');
+	        secID.addClass('appear');
+	    }, 100);
 	});
 	$('.option-eye').click(function() {
 		var mainSection = $('.tt-section');
