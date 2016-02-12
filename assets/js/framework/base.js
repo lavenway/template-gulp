@@ -15,6 +15,8 @@ $(function () {
       html = $('html'),
       $doc = $(document),
       $backToTop = $('.back-to-top'),
+      $basketdropdown = $('.navbar-header .basket-dropdown'),
+      $basketdropdownItemWrapper = $('.basket-dropdown .item-wrapper'),
       $mainNav = $('.navbar-default'),
       $mobileNav = $('.mobile-nav'),
       $mobileFooterNavtoggleDropdown = $('.mobile-nav a.share'),
@@ -22,11 +24,12 @@ $(function () {
       $navtoggleDropdown = $('.navbar-header a.cta'),
       $navToggleDropdownActive = $('body'),
       $navHiddenDropdown = $('.navbar-header .dropdown'),
-      $productGrid = $("#js-product-grid"),
-      $productGridProduct = $("#js-product-grid .product"),
-      $productGridInfo = $("#js-product-grid .info"),
-      /*$productLinkToggle = $(".list-one a"),*/
-      $productLinkPopUp = $(".product-pop-up"),
+      $productGrid = $('#js-product-grid'),
+      $productGridProduct = $('#js-product-grid .product'),
+      $productGridInfo = $('#js-product-grid .info'),
+      /*$productLinkToggle = $('.list-one a'),*/
+      $productLinkPopUp = $('.product-pop-up'),
+      $dropdownOverlay = $('.navbar .dropdown-overlay'),
 
       handleInfoBox = function (e) {
         var $this = $(this),
@@ -46,10 +49,21 @@ $(function () {
         var $this = $(this),
             $activeDropdown = $this.hasClass('active-tab'),
             $hasDropdown = $this.next('.dropdown'),
-            $toggleTab = $navToggleDropdownActive.hasClass('header-nav-active');
+            $toggleTab = $navToggleDropdownActive.hasClass('header-nav-active'),
+            $mobileViewport = $('body').hasClass('mobile-viewport');
 
         if ($this.next().is($hasDropdown)) {
           e.preventDefault();
+
+          $dropdownOverlay.show();
+
+          basketCalculations();
+
+          /*if ($mobileViewport) {
+            var $dropdownHeight = $(window).height();
+            $navHiddenDropdown.css({'height':(($dropdownHeight))+'px'});
+          }*/
+
           if ($toggleTab) {
               if ($activeDropdown) {
                   $this.next($navHiddenDropdown).stop().slideUp();
@@ -78,6 +92,7 @@ $(function () {
         $navToggleDropdownActive.removeClass('header-nav-active');
         $navtoggleDropdown.removeClass('active-tab');
         $navHiddenDropdown.slideUp();
+        $dropdownOverlay.hide();
       },
 
       handleFooterDropdown = function (e) {
@@ -85,7 +100,7 @@ $(function () {
             $activeDropdown = $this.hasClass('active-tab'),
             $headerShareDropdown = $('.navbar .navbar-header .share-dropdown'),
             $toggleTab = $navToggleDropdownActive.hasClass('header-nav-active');
-
+            
         e.preventDefault();
 
         if ($toggleTab) {
@@ -274,6 +289,8 @@ $(function () {
         $(this).removeAttr('style').prev().append(this);
         $(this).parent().removeClass('active');
       });
+
+      $navHiddenDropdown.css('height','');
     },    
     
     // OPTIONAL
@@ -371,17 +388,24 @@ $(function () {
   //MAIN NAV CLOSE DROPDOWNS
   $navCloseDropdown.on('click', handleCloseHeaderDropdown);
 
-  //MAIN NAV CLOSE DROPDOWNS
+  //DROPDOWN OVERLAY CLOSE DROPDOWNS
+  $dropdownOverlay.on('click', handleCloseHeaderDropdown);
+
+  //PRODUCT LINK TOGGLE
   /*$productLinkToggle.on('click', handleProductPopUp);*/
 
   //BACK TO TOP
   $backToTop.on('click', handleBackToTopScroll);
 
   $(window).scroll(function(){    
-    hideNavDropdown();
+    /*hideNavDropdown();*/
     parallaxHeaderImageIfExists();
     checkScrollPositionForMobileNav();
   }).scroll();
+
+  $(window).resize(function(){    
+    basketCalculations();
+  });
 
   // CLOSE DROPDOWNS WHEN CLICKING ANYWHERE //
   /*$doc.mouseup(function (e) {
@@ -391,6 +415,13 @@ $(function () {
         hideNavDropdown();
     }
   });*/
+
+  function basketCalculations() {
+    var $dropdownHeight = $(window).height();
+
+    $basketdropdown.css({'height':(($dropdownHeight))+'px'});
+    $basketdropdownItemWrapper.css({'max-height':(($dropdownHeight -260))+'px'});
+  }
 
   function checkScrollPositionForMobileNav() {
     if ($mobileNav.is(':visible')) {
@@ -407,11 +438,11 @@ $(function () {
     }
   };
 
-  function hideNavDropdown() {
+  /*function hideNavDropdown() {
     $navHiddenDropdown.slideUp();
     $navtoggleDropdown.removeClass('active-tab');
     $navToggleDropdownActive.removeClass('header-nav-active');
-  };
+  };*/
 
   function parallaxHeaderImageIfExists() {
     var $parallaxHeaderImage = body.hasClass('parallax-header-image'),

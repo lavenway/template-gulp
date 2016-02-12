@@ -408,6 +408,9 @@ h6 {
 
 
 /*************** NAV ***************/
+.header-nav-active {
+  overflow: hidden;
+}
 
 .navbar-default {
   z-index: 999;
@@ -422,6 +425,18 @@ h6 {
 
   @media (min-width: 480px) {    
     background-color: $white;
+  }
+
+  .dropdown-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+    background: $black;
   }
 
   .container {
@@ -481,15 +496,10 @@ h6 {
     .dropdown {
       display: none;
       position: absolute;
-      top: 52px;
+      top: -6px;
       right: -10px;
       box-shadow: -4px 8px 18px #333;
       background: $white;
-
-      @media (min-width: 480px) {    
-        right: 86px;
-        box-shadow: none;
-      }
 
       .close {
         position: absolute;
@@ -631,9 +641,25 @@ h6 {
     }
 
     .basket-dropdown {
-      width: 285px;
+      width: 305px;
       padding: 38px 15px 20px;
       text-align: center;
+
+      .wrapper {
+        max-height: 74%;
+        overflow: hidden;
+      }
+
+      .item-wrapper {
+        padding-right: 20px;
+        overflow: auto;
+      }
+
+      .footer {
+        @media (min-width: 480px) {
+          border-top: 10px solid white;
+        }
+      } 
 
       .close {
         background: url(../img/structure/share-close-icon.png);
