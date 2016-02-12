@@ -424,3 +424,43 @@ $(function () {
     }
   };  
 });
+
+/*---------- START COMPETITION COMPONENT ----------*/
+jQuery('body').on('click','button.content-button',function(){
+  var modal_parent    = jQuery(this).parents('.component.competition');
+  var content_holder  = jQuery(this).parent().parent().find('.content-form');
+  if(!content_holder.hasClass('js-open')){
+    // jQuery(this).prop('type', 'submit');
+    content_holder.addClass('js-open');
+  }else{
+    modal_parent.find('.success_modal,.competition-modal-wrapper').addClass('open');
+    jQuery('body').addClass('wrapper-block');
+  }
+})
+
+jQuery('body').on('click', '.terms_modal_link', function(event) {
+  event.preventDefault();
+  var terms_parent          = jQuery(this).parents('.component.competition');
+  var terms_modal_wrapper   = terms_parent.children('.competition-modal-wrapper');
+  var terms_modal           = terms_modal_wrapper.children('.terms_modal');
+  terms_modal_wrapper.toggleClass('open');
+  terms_modal.toggleClass('open');
+  jQuery('body').addClass('wrapper-block');
+});
+
+// jQuery('body').on('click', '.competition-modal-wrapper', function(event) {
+//   event.preventDefault();
+//   event.stopPropagation();
+//   jQuery(this).removeClass('open');
+//   jQuery('.competition-modal').removeClass('open');
+// });
+
+jQuery('body').on('click', '.terms_modal .close,.success_modal .close', function(event) {
+  event.preventDefault();
+  jQuery(this).parent().parent().toggleClass('open');
+  jQuery(this).parents('.competition-modal-wrapper').removeClass('open');
+  jQuery('body').removeClass('wrapper-block');
+});
+
+/*---------- END COMPETITION COMPONENT ----------*/
+

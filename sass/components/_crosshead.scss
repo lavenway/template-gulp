@@ -38,6 +38,9 @@
     font-size:20pt;
     line-height:25pt;
     text-transform: uppercase;
+    padding-bottom:12px;
+    margin-bottom:12px;
+    border-bottom:1px solid $black;
     @media all and (min-width: 480px) {
       font-size: 25pt;
     }
