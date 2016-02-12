@@ -113,6 +113,7 @@ module.exports = function (grunt) {
             'dist/old-content-banner.html': 'templates/components/old-content-banner.html',
             'dist/footnote.html': 'templates/components/footnote.html',
             'dist/crosshead.html': 'templates/components/crosshead.html',
+            'dist/competition.html': 'templates/components/competition.html',
             'dist/trend-tool.html': 'templates/components/trend-tool.html'
         }
       }
