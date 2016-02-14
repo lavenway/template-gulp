@@ -1,0 +1,68 @@
+.component.advertorial{
+  margin: 0 auto;
+  width:320px;
+  padding:15px;
+  &.no-stripes{
+    background:#eee;
+    padding:0 15px;
+    .advertorial-inner{
+      background:#eee;
+      padding:5px 0px 15px;
+    }
+  }
+  @media all and (min-width: 672px) {
+    width:642px;
+  }
+  .advertorial-inner{
+    background:#eee;
+    padding:5px 15px 15px;
+    &.no-promo{
+      padding-top:15px;
+    }
+    .advertorial-head1{
+      font-size:18pt;
+      line-height: 41.6pt;
+      text-align:center;
+      font-family: 'VAGRounded';
+      font-weight:500;
+      margin:0;
+      padding-bottom:0;
+      border:none;
+      text-transform:none;
+    }
+    .body-copy{
+      padding:0;
+      margin-bottom:30px;
+      @media all and (min-width: 768px) {
+        padding: 0 15px 0 0;
+        margin-bottom:0;
+      }
+      .dropcap{
+        font-family: "Archer A", "Archer B";
+      }
+      p.component.standfirst{
+        // font-size:30pt;
+        // line-height:18pt;
+        // font-family: "Archer A", "Archer B";
+        // font-weight:700;
+        // font-style: italic;
+        // margin:0;
+        // margin-bottom:24px;
+        margin-bottom: 24px !important;
+        text-align:left;
+      }
+    }
+    .advertorial-product{
+      background: $white;
+      text-align:center;
+      padding:0 0 15px;
+      img{
+        padding:32px 0 10px; 
+      }
+      .btn{
+        margin: 20px 0 0;
+        left:0;
+      }
+    }
+  }
+}
