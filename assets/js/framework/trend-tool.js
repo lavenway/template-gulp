@@ -124,7 +124,8 @@ $(function () {
 	var resultFilterNav = $('.result-filter-nav li');
 	var resultFilterBody = $('.result-filter-body');
 	var resultFilterCopy = $('.result-filter-copy');
-	resultFilterNav.click(function() {
+	jQuery('body').on('click', '.result-filter-nav li', function(){ 
+	// resultFilterNav.click(function() {
 		var rfId = $(this).attr('data-rf-id');
 		resultFilterBody.removeClass('rf-active');
 		resultFilterCopy.removeClass('rf-active');
