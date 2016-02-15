@@ -667,6 +667,10 @@ h6 {
 
       .close {
         background: url(../img/structure/share-close-icon.png);
+        cursor: pointer;
+        &:hover {
+            background-position: center right;
+          }
       }
 
       .title {
@@ -801,11 +805,14 @@ h6 {
           font-size: 1.2rem;
           line-height: 15px;
           line-height: 1.5rem;       
-          text-decoration: underline;
+          // text-decoration: underline;
           color: $black;
-
+          width: 103px;
+          border-bottom: 1px solid $black;
+          margin: 0 auto;
           &:hover {
             color: $pink;
+            border-bottom: 1px solid $pink;
           }
         }
       }      
