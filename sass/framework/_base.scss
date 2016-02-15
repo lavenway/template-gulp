@@ -447,11 +447,6 @@ h6 {
         right: 6px;
         width: 40px;
         height: 40px;
-        @include icons-sprite(share-close-icon-white);
-
-        @media (min-width: 480px) {    
-          background: url(../img/structure/share-close-icon.png);
-        }
       }
     }
 
@@ -469,6 +464,14 @@ h6 {
         right: 86px;
         width: 320px;
         background: $white;
+      }
+
+      .close {
+        @include icons-sprite(share-close-icon-white);
+
+        @media (min-width: 480px) {    
+          background: url(../img/structure/share-close-icon.png);
+        }
       }
 
       li.title {
@@ -580,6 +583,10 @@ h6 {
       width: 285px;
       padding: 38px 15px 20px;
       text-align: center;
+
+      .close {
+        background: url(../img/structure/share-close-icon.png);
+      }
 
       .title {
         font-family: 'VAGRounded';

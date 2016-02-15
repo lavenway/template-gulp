@@ -103,6 +103,7 @@ module.exports = function (grunt) {
             'dist/image.html': 'templates/components/image.html',
             'dist/list-one.html': 'templates/components/list-one.html',
             'dist/list-three.html': 'templates/components/list-three.html',
+            'dist/list-four.html': 'templates/components/list-four.html',
             'dist/hack-feature.html': 'templates/components/hack-feature.html',
             'dist/video.html': 'templates/components/video.html',
             'dist/product-carousel.html': 'templates/components/product-carousel.html',
