@@ -604,49 +604,75 @@ $(function () {
 	}
 	
 	statusBar()
-	// Option animate on load
-	// function animateOption() {
+
+	// $('body').on('click','.tt-left-nav', function(){
+	// 	var current_id 	= jQuery('.tt-active').attr('data-id');
+	// 	var prev_id 	= current_id - 1;
+	// 	if(current_id != 0){
+	// 		// alert(current_id + ' - ' +prev_id)
+	// 		jQuery('#tt-section'+current_id).removeClass('tt-active tt-opened');
+	// 		jQuery('#tt-section'+prev_id).addClass('tt-active tt-opened');
+	// 	}
+	// })
+
+	var ttool;
+	var sectionNext;
+	var toolCount = jQuery('.ttool').length;
+
+	for (ttool = 0; ttool <= toolCount; ttool++) {
+		jQuery('body').on('click','#ttool'+ttool+' .sec-trigger', function() {
+			var thisParent = jQuery(this).closest('.tt-section');
+			// alert( jQuery(thisParent).attr('class') );
+			jQuery(thisParent).removeClass('tt-active');
+			var sectionNext = jQuery(thisParent).next();
+			sectionNext.addClass('tt-active tt-opened');
+			showStatusBar();
+		});
+	}
+
+
+
+// $('#tt-section0').click(function() {
+// 		$(this).removeClass('tt-active');
+// 		$('#tt-section1').addClass('tt-active tt-opened');
+// 		showStatusBar();
+// 		setTimeout(function() {
+// 	        var secID = $('#tt-section1 .option');
+// 	        secID.addClass('appear');
+// 	    }, 100);
+// 	});
+
+
+	
+
+	
+
+	// $('.option-age').click(function() {
+	// 	var mainSection = $('.tt-section');
+	// 	mainSection.removeClass('tt-active');
+	// 	$('#tt-section2').addClass('tt-active tt-opened');
+	// 	showStatusBar();
 	// 	setTimeout(function() {
-	//         var secID = $(this).('.option');
+	//         var secID = $('#tt-section2 .option');
 	//         secID.addClass('appear');
 	//     }, 100);
-	// }
-	// Toggle between sections - follow the rabit
-	$('#tt-section0').click(function() {
-		$(this).removeClass('tt-active');
-		$('#tt-section1').addClass('tt-active tt-opened');
-		showStatusBar();
-		setTimeout(function() {
-	        var secID = $('#tt-section1 .option');
-	        secID.addClass('appear');
-	    }, 100);
-	});
-	$('.option-age').click(function() {
-		var mainSection = $('.tt-section');
-		mainSection.removeClass('tt-active');
-		$('#tt-section2').addClass('tt-active tt-opened');
-		showStatusBar();
-		setTimeout(function() {
-	        var secID = $('#tt-section2 .option');
-	        secID.addClass('appear');
-	    }, 100);
-	});
-	$('.option-tone').click(function() {
-		var mainSection = $('.tt-section');
-		mainSection.removeClass('tt-active');
-		$('#tt-section3').addClass('tt-active tt-opened');
-		showStatusBar();
-		setTimeout(function() {
-	        var secID = $('#tt-section3 .option');
-	        secID.addClass('appear');
-	    }, 100);
-	});
-	$('.option-eye').click(function() {
-		var mainSection = $('.tt-section');
-		mainSection.removeClass('tt-active');
-		$('#tt-section4').addClass('tt-active tt-opened');
-		showStatusBar();
-	});
+	// });
+	// $('.option-tone').click(function() {
+	// 	var mainSection = $('.tt-section');
+	// 	mainSection.removeClass('tt-active');
+	// 	$('#tt-section3').addClass('tt-active tt-opened');
+	// 	showStatusBar();
+	// 	setTimeout(function() {
+	//         var secID = $('#tt-section3 .option');
+	//         secID.addClass('appear');
+	//     }, 100);
+	// });
+	// $('.option-eye').click(function() {
+	// 	var mainSection = $('.tt-section');
+	// 	mainSection.removeClass('tt-active');
+	// 	$('#tt-section4').addClass('tt-active tt-opened');
+	// 	showStatusBar();
+	// });
 
 	// Custom Scroll
 	function customScroll() {
