@@ -1,0 +1,33 @@
+.footer-page-pop-up {
+	position: fixed;
+	bottom: 30px;
+	background: #eeeeee;
+	padding: 20px 50px 20px 20px;
+	max-width: 1000px;
+	left: 0;
+    right: 0;
+    color: #000;
+    margin: 0 auto;
+    height: 0;
+    opacity: 0;
+    -webkit-transition: all 500ms ease-out 0.2s;
+    -moz-transition: all 500ms ease-out 0.2s;
+    -o-transition: all 500ms ease-out 0.2s;
+    transition: all 500ms ease-out 0.2s;
+    &.fppu-display {
+    	height: auto;
+    	opacity: 1;
+    }
+	div {
+		position: absolute;
+        top: 12px;
+        right: 6px;
+        width: 40px;
+        height: 40px;
+        background: url(../img/structure/share-close-icon.png);
+        background-position: center left;
+        &:hover {
+        	background-position: center right;
+        }
+	}
+}

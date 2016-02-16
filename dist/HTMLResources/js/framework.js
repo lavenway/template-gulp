@@ -567,7 +567,26 @@ jQuery('body').on('click', '.terms_modal .close,.success_modal .close', function
 
 /*---------- END COMPETITION COMPONENT ----------*/
 
+// Pop up on Add click
 
+// jQuery('.pg-add-btn').click(function() {
+jQuery('body').on('click', '.pg-add-btn', function() {
+  jQuery('.add-basket-notice').addClass('abn-display');
+  setTimeout(function() {
+      jQuery('.add-basket-notice').removeClass('abn-display');;
+  }, 2000);
+});
+jQuery('.abn-close-btn').click(function() {
+  jQuery('.add-basket-notice').removeClass('abn-display');
+});
+
+// FOOTER LINKS TO OPEN A POP UP
+jQuery('body').on('click', '.menu-footer-menu-container a', function() {
+  var pagetoOpen = jQuery(this).attr('href');
+  jQuery('.footer-page-pop-up').removeClass('fppu-display');
+  jQuery('#'+pagetoOpen).addClass('fppu-display');
+  return(false);
+});
 'use strict';
 $ = $ || jQuery;
 
@@ -694,7 +713,8 @@ $(function () {
 	var resultFilterNav = $('.result-filter-nav li');
 	var resultFilterBody = $('.result-filter-body');
 	var resultFilterCopy = $('.result-filter-copy');
-	resultFilterNav.click(function() {
+	jQuery('body').on('click', '.result-filter-nav li', function(){ 
+	// resultFilterNav.click(function() {
 		var rfId = $(this).attr('data-rf-id');
 		resultFilterBody.removeClass('rf-active');
 		resultFilterCopy.removeClass('rf-active');

@@ -667,6 +667,10 @@ h6 {
 
       .close {
         background: url(../img/structure/share-close-icon.png);
+        cursor: pointer;
+        &:hover {
+            background-position: center right;
+          }
       }
 
       .title {
@@ -700,7 +704,7 @@ h6 {
         }
 
         .desc {
-          font-family: 'VAGRounded';
+          font-family: 'foundation_sansbold';
           font-weight: 500;
           font-style: normal;
           font-size: 12px;
@@ -753,11 +757,16 @@ h6 {
 
         .price {
           text-align: right;
-          font-family: 'SinkinSans';
-          font-weight: 700;
-
+          // font-family: 'SinkinSans';
+          // font-weight: 700;
+          font-family: 'foundation_sansbold';
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 15px;
           span {
-            font-weight: 400;
+            // font-weight: 400;
+            font-family: 'foundation_sansregular';
+            display: block;
           }
         }
 
@@ -783,13 +792,14 @@ h6 {
         }
 
         p {
+          font-family: 'foundation_sansregular';
           display: none;
           margin-bottom: 20px;
           font-size: 11px;
-          font-size: 1.1rem;
+          // font-size: 1.1rem;
           line-height: 12px;
-          line-height: 1.2rem;
-
+          // line-height: 1.2rem;
+          font-weight: normal;
           @media (min-width: 480px) {    
             display: block;
           }
@@ -801,11 +811,15 @@ h6 {
           font-size: 1.2rem;
           line-height: 15px;
           line-height: 1.5rem;       
-          text-decoration: underline;
+          // text-decoration: underline;
           color: $black;
-
+          width: 103px;
+          border-bottom: 1px solid $black;
+          padding-bottom: 3px;
+          margin: 0 auto;
           &:hover {
             color: $pink;
+            border-bottom: 1px solid $pink;
           }
         }
       }      

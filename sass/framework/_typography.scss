@@ -157,3 +157,27 @@
   font-weight: 500;
   font-style: normal;
 }
+
+/* Foundation Sans */
+@font-face {
+  font-family: 'foundation_sansbold';
+  src: url('../fonts/FoundationSans-Bold-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/FoundationSans-Bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/FoundationSans-Bold-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/FoundationSans-Bold-webfont.woff2') format('woff'), /* Super Modern Browsers */
+       url('../fonts/FoundationSans-Bold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/FoundationSans-Bold-webfont.svg#foundation_sansbold') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'foundation_sansregular';
+  src: url('../fonts/FoundationSans-Roman-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/FoundationSans-Roman-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/FoundationSans-Roman-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/FoundationSans-Roman-webfont.woff2') format('woff'), /* Super Modern Browsers */
+       url('../fonts/FoundationSans-Roman-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/FoundationSans-Roman-webfont.svg#foundation_sansregular') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}

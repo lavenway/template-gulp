@@ -131,3 +131,54 @@
 		}
 	}
 }
+
+// Add to Cart notice
+.add-basket-notice {
+	display: block;
+	position: fixed;
+	width: 97%;
+    left: auto;
+    right: auto;
+    text-align: center;
+    height: 0;
+    z-index: 100;
+    background-color: $pink;
+    top: 52px;
+    max-width: 1000px;
+     -webkit-transition: all 200ms ease-out 0.2s;
+    -moz-transition: all 200ms ease-out 0.2s;
+    -o-transition: all 200ms ease-out 0.2s;
+    transition: all 200ms ease-out 0.2s;
+    opacity: 0;
+	div {
+        position: absolute;
+        top: 12px;
+        right: 6px;
+        width: 40px;
+        height: 40px;
+        background: url(../img/structure/share-close-icon.png);
+        background-position: center right;
+        &:hover {
+        	background-position: center left;
+        }
+    }
+    p {
+    	margin: 20px auto 0;
+    	color: #fff;
+    	font-size: 10px;
+    	line-height: 14px;
+    	font-weight: 600;
+    	width: 65%;
+    }
+    &.abn-display {
+    	// display: block;
+    	height: 60px;
+    	opacity: 1;
+    }
+    @media (min-width: 768px) {
+    	width: 100%;
+    	p {
+    		width: 100%;
+    	}
+    }
+}
