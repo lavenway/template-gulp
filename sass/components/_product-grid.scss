@@ -54,7 +54,11 @@
 					img {
 						width: auto;
 						max-height: 190px;
+						max-width:90%;
 						margin: 0 auto;
+						@media all and (min-width: 480px) {
+							max-width: 100%;
+						}
 					}
 				}
 			}
