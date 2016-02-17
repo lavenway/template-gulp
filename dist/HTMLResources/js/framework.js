@@ -678,14 +678,15 @@ $(function () {
 		}
 		// Skin tone filter
 		jQuery('body').on('click', '.result-filter-nav li', function() { 
-			// var resultFilterBody = jQuery('#'+ttool+' .result-filter-body');
-			var resultFilterBody = jQuery('#'+ttool+' .result-filter-body');
-			var resultFilterCopy = jQuery('#'+ttool+' .result-filter-copy');
+			var ttID = jQuery(this).closest('.ttool').attr('id');
+		
+			var resultFilterBody = jQuery('#'+ttID+' .result-filter-body');
+			var resultFilterCopy = jQuery('#'+ttID+' .result-filter-copy');
 			var rfId = jQuery(this).attr('data-rf-id');
 			resultFilterBody.removeClass('rf-active');
 			resultFilterCopy.removeClass('rf-active');
-			jQuery('#'+ttool+rfId).addClass('rf-active');
-			jQuery('#'+ttool+'copy-'+rfId).addClass('rf-active');
+			jQuery('#'+ttID+rfId).addClass('rf-active');
+			jQuery('#'+ttID+'copy-'+rfId).addClass('rf-active');
 		});
 		
 	});
