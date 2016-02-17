@@ -560,27 +560,27 @@ $(function () {
 	$('.tabs-below').css('height',winHeight);
 
 	// Count Sections
-	function statusBar() {
-		var sections = $('.tt-sections');
-		var sectionCount = sections.children().length-2;
-		var sectionTotal = sectionCount;
-		// Create the bars for status
-		var statusBar = $('.tt-status-bar');
-		var statCount;
-		for (statCount = 1; statCount <= sectionCount; statCount++) {
-			statusBar.append('<div id="tt-status'+statCount+'" class="tt-bar"></div>');
-			statusBar.children().css('width',100/sectionCount+'%');
-			var section = $('.tt-section').attr('tt-data-status');
-		}
-	}
+	// function statusBar() {
+	// 	var sections = $('.tt-sections');
+	// 	var sectionCount = sections.children().length-2;
+	// 	var sectionTotal = sectionCount;
+	// 	// Create the bars for status
+	// 	var statusBar = $('.tt-status-bar');
+	// 	var statCount;
+	// 	for (statCount = 1; statCount <= sectionCount; statCount++) {
+	// 		statusBar.append('<div id="tt-status'+statCount+'" class="tt-bar"></div>');
+	// 		statusBar.children().css('width',100/sectionCount+'%');
+	// 		var section = $('.tt-section').attr('tt-data-status');
+	// 	}
+	// }
 	// Sections
-	function showStatusBar() {
-		$('.tt-section').each(function(){
-			if ( $(this).hasClass('tt-opened') ) {
-				$('#'+ $(this).attr('data-status')).addClass('tt-show');
-			};
-		});
-	}
+	// function showStatusBar() {
+	// 	$('.tt-section').each(function(){
+	// 		if ( $(this).hasClass('tt-opened') ) {
+	// 			$('#'+ $(this).attr('data-status')).addClass('tt-show');
+	// 		};
+	// 	});
+	// }
 	// Result Product Carousel
 	function ttProductCarousel() {
 		$('.tt-products-carousel').slick({
@@ -603,7 +603,7 @@ $(function () {
 		});
 	}
 	
-	statusBar()
+	// statusBar()
 
 	// $('body').on('click','.tt-left-nav', function(){
 	// 	var current_id 	= jQuery('.tt-active').attr('data-id');
@@ -618,17 +618,38 @@ $(function () {
 	var ttool;
 	var sectionNext;
 	var toolCount = jQuery('.ttool').length;
+	jQuery('.ttool').each(function() {
+	// for (ttool = 0; ttool <= toolCount; ttool++) {
+		// Move along sections
+		var ttool = jQuery('.ttool').attr('id');
+		alert(ttool);
 
-	for (ttool = 0; ttool <= toolCount; ttool++) {
-		jQuery('body').on('click','#ttool'+ttool+' .sec-trigger', function() {
-			var thisParent = jQuery(this).closest('.tt-section');
-			// alert( jQuery(thisParent).attr('class') );
+		jQuery('body').on('click','.ttool'+ttool+' .sec-trigger', function() {
+
+			var thisParent  = jQuery(this).closest('.tt-section');
+
 			jQuery(thisParent).removeClass('tt-active');
 			var sectionNext = jQuery(thisParent).next();
 			sectionNext.addClass('tt-active tt-opened');
-			showStatusBar();
+			var secNextAtt = sectionNext.attr('data-stat-id');
+			jQuery('#'+secNextAtt).addClass('tt-show');
+			
 		});
-	}
+		// Status Bar
+		var sections = jQuery('.ttool'+ttool+' .tt-sections');
+		
+		var sectionCount = sections.children().length-2;
+		var sectionTotal = sectionCount;
+		// Create the bars for status
+		var statusBar = jQuery('.ttool'+ttool+' .tt-status-bar');
+		var statCount;
+		for (statCount = 1; statCount <= sectionCount; statCount++) {
+			statusBar.append('<div id="'+ttool+'tt-status'+statCount+'" class="tt-bar"></div>');
+			statusBar.children().css('width',100/sectionCount+'%');
+			var section = jQuery('.tt-section').attr('tt-data-status');
+		}
+		
+	});
 
 
 
