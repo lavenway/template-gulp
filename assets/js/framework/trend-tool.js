@@ -70,6 +70,17 @@ $(function () {
 	var toolCount = jQuery('.ttool').length;
 	jQuery('.ttool').each(function() {
 		var ttool = jQuery(this).attr('id');
+		// Initialize Carousel
+		jQuery('#'+ttool+'tabs a').click(function (e) {
+			e.preventDefault()
+		 	jQuery(this).tab('show')
+		});
+		// Resize trigger for fixing Carousel layout
+		jQuery('#'+ttool+'tabs a.product-kit').click(function (e) {
+			ttProductCarousel(); 
+		 	jQuery('.tt-products-carousel').trigger('resize');
+		});
+		// Hide and Show sections
 		jQuery('body').on('click','.sec-trigger', function() {
 			var thisParent  = jQuery(this).closest('.tt-section');
 			jQuery(thisParent).removeClass('tt-active');
@@ -88,8 +99,7 @@ $(function () {
 			var section = jQuery('.tt-section').attr('tt-data-status');
 		}
 		// Skin tone filter
-		
-		jQuery('body').on('click', '.result-filter-nav li', function(){ 
+		jQuery('body').on('click', '.result-filter-nav li', function() { 
 			// var resultFilterBody = jQuery('#'+ttool+' .result-filter-body');
 			var resultFilterBody = jQuery('#'+ttool+' .result-filter-body');
 			var resultFilterCopy = jQuery('#'+ttool+' .result-filter-copy');
@@ -101,7 +111,8 @@ $(function () {
 		});
 		
 	});
-
+	
+		
 
 
 // $('#tt-section0').click(function() {
@@ -149,14 +160,25 @@ $(function () {
 	// Custom Scroll
 	function customScroll() {
 		var ttoolHeight = $('.ttool').height()-110;
-		$(".options").mCustomScrollbar({
+		jQuery('.options').mCustomScrollbar({
 			setHeight: ttoolHeight,
 			theme:"inset-2-dark",
 			autoDraggerLength: false
 		});
 		var ttoolHeightSC = $('.ttool').height()-150;
-		$(".scrollable-copy").mCustomScrollbar({
+		jQuery('.scrollable-copy').mCustomScrollbar({
 			setHeight: ttoolHeightSC,
+			theme:'inset-2-dark',
+			autoDraggerLength: false
+		});
+		if (winWidth < 768) {
+			var ttoolHeightRFC = $('.ttool').height()-120;
+		} else {
+			var ttoolHeightRFC = $('.ttool').height()-120;
+		}
+		
+		jQuery('.result-filter-copy').mCustomScrollbar({
+			setHeight: ttoolHeightRFC,
 			theme:"inset-2-dark",
 			autoDraggerLength: false
 		});
@@ -180,13 +202,10 @@ $(function () {
 	// 	$('#'+rfId).addClass('rf-active');
 	// 	$('#copy-'+rfId).addClass('rf-active');
 	// });
-	$('.result-tabs a').click(function (e) {
-		e.preventDefault()
-	 	$(this).tab('show')
-	})
-	$('.result-tabs a.product-kit').click(function (e) {
-		ttProductCarousel(); 
-	 	$('.tt-products-carousel').trigger('resize');
-	})
+	
+	// $('.result-tabs a.product-kit').click(function (e) {
+	// 	// ttProductCarousel(); 
+	//  	$('.tt-products-carousel').trigger('resize');
+	// })
 
 });
