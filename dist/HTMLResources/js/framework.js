@@ -619,35 +619,36 @@ $(function () {
 	var sectionNext;
 	var toolCount = jQuery('.ttool').length;
 	jQuery('.ttool').each(function() {
-	// for (ttool = 0; ttool <= toolCount; ttool++) {
-		// Move along sections
-		var ttool = jQuery('.ttool').attr('id');
-		alert(ttool);
-
-		jQuery('body').on('click','.ttool'+ttool+' .sec-trigger', function() {
-
+		var ttool = jQuery(this).attr('id');
+		jQuery('body').on('click','.sec-trigger', function() {
 			var thisParent  = jQuery(this).closest('.tt-section');
-
 			jQuery(thisParent).removeClass('tt-active');
 			var sectionNext = jQuery(thisParent).next();
 			sectionNext.addClass('tt-active tt-opened');
-			var secNextAtt = sectionNext.attr('data-stat-id');
+			var secNextAtt  = sectionNext.attr('data-stat-id');
 			jQuery('#'+secNextAtt).addClass('tt-show');
-			
 		});
 		// Status Bar
-		var sections = jQuery('.ttool'+ttool+' .tt-sections');
-		
-		var sectionCount = sections.children().length-2;
-		var sectionTotal = sectionCount;
-		// Create the bars for status
-		var statusBar = jQuery('.ttool'+ttool+' .tt-status-bar');
+		var sectionCount = jQuery(this).find('.tt-section').length-2;
+		var statusBar    = jQuery(this).find('.tt-status-bar');
 		var statCount;
 		for (statCount = 1; statCount <= sectionCount; statCount++) {
 			statusBar.append('<div id="'+ttool+'tt-status'+statCount+'" class="tt-bar"></div>');
 			statusBar.children().css('width',100/sectionCount+'%');
 			var section = jQuery('.tt-section').attr('tt-data-status');
 		}
+		// Skin tone filter
+		
+		jQuery('body').on('click', '.result-filter-nav li', function(){ 
+			// var resultFilterBody = jQuery('#'+ttool+' .result-filter-body');
+			var resultFilterBody = jQuery('#'+ttool+' .result-filter-body');
+			var resultFilterCopy = jQuery('#'+ttool+' .result-filter-copy');
+			var rfId = jQuery(this).attr('data-rf-id');
+			resultFilterBody.removeClass('rf-active');
+			resultFilterCopy.removeClass('rf-active');
+			jQuery('#'+ttool+rfId).addClass('rf-active');
+			jQuery('#'+ttool+'copy-'+rfId).addClass('rf-active');
+		});
 		
 	});
 
@@ -718,17 +719,17 @@ $(function () {
 	// var tabPaneCount = tabPane.length;
 	// resultTabs.children().css('width',100/tabPaneCount+'%');
 
-	var resultFilterNav = $('.result-filter-nav li');
-	var resultFilterBody = $('.result-filter-body');
-	var resultFilterCopy = $('.result-filter-copy');
-	jQuery('body').on('click', '.result-filter-nav li', function(){ 
-	// resultFilterNav.click(function() {
-		var rfId = $(this).attr('data-rf-id');
-		resultFilterBody.removeClass('rf-active');
-		resultFilterCopy.removeClass('rf-active');
-		$('#'+rfId).addClass('rf-active');
-		$('#copy-'+rfId).addClass('rf-active');
-	});
+	// var resultFilterNav = $('.result-filter-nav li');
+	// var resultFilterBody = $('.result-filter-body');
+	// var resultFilterCopy = $('.result-filter-copy');
+	// jQuery('body').on('click', '.result-filter-nav li', function(){ 
+	// // resultFilterNav.click(function() {
+	// 	var rfId = $(this).attr('data-rf-id');
+	// 	resultFilterBody.removeClass('rf-active');
+	// 	resultFilterCopy.removeClass('rf-active');
+	// 	$('#'+rfId).addClass('rf-active');
+	// 	$('#copy-'+rfId).addClass('rf-active');
+	// });
 	$('.result-tabs a').click(function (e) {
 		e.preventDefault()
 	 	$(this).tab('show')
