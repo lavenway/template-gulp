@@ -93,7 +93,15 @@ $tab-port : 768px;
                 // display: block;
                 left: 0;
                 opacity: 1;
-                z-index: 1;     
+                z-index: 1;
+                .options-wrapper {
+                    .options {
+                        .option {
+                            opacity: 1;
+                            transform: rotateY(360deg);
+                        } 
+                     }  
+                }  
             }
         }
     }
@@ -126,7 +134,7 @@ $tab-port : 768px;
                 margin: 15px auto 0;
                 color: $color-black;
                 text-align: center;
-                font-family: 'Archer', helvetica, arial;
+                font-family: 'Archer A, Archer B';
                 font-style: italic;
                 font-weight: 400;
             }
@@ -190,16 +198,16 @@ $tab-port : 768px;
                     vertical-align: middle;
                     font-size: 20px;
                     line-height: 20px;
-                    font-family: 'Archer', helvetica, arial;
+                    font-family: 'Archer A, Archer B';
                     font-style: italic;
                     padding: 0 20px 0;
                     color: $color-white;
                 }
             }
-            .option.appear {
-                opacity: 1;
-                 transform: rotateY(360deg);
-            }
+            // .option.appear {
+            //     opacity: 1;
+            //      transform: rotateY(360deg);
+            // }
             @media(min-width:$mob-land) {
                 .option-wrapper {
                     margin: 5px 0 8px;
@@ -244,9 +252,12 @@ $tab-port : 768px;
             border-bottom: none;
             width: 100%;
             li {
-                border-left: 1px solid $color-white;
                 position: relative;
                 width: 33.3333%;
+                a {
+                    border-left: 1px solid $color-white;
+                    
+                }
                 span {
                     display: none;
                     position: absolute;
@@ -260,7 +271,9 @@ $tab-port : 768px;
                 }
             }
             li:first-child {
-                border-left: 0;
+                a {
+                    border-left: 0;
+                }
             }
             a {
                 margin-top:20px;
@@ -345,6 +358,7 @@ $tab-port : 768px;
                     list-style: none;
                     display: inline-block;
                     cursor: pointer;
+                    margin: 0 2.5px;
                 }
             }
             .result-filter-body-wrapper, .result-filter-copy-wrapper {
@@ -507,4 +521,16 @@ $tab-port : 768px;
     .mCSB_inside>.mCSB_container {
         margin-right: 15px;
     }
+}
+
+.ttool .result-filter .result-filter-nav li {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+}
+
+.ttool .tabs-below .nav-tabs li a {
+    border-left: 1px solid #fff;
+}
+.ttool .tabs-below .nav-tabs li:first-child a {
+    border-left: none;
 }

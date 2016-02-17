@@ -161,6 +161,21 @@ $(function () {
   // initialise
   headroom.init();
 
+  // get nav for hide/show
+  var getNavMobileFooter = document.querySelector('.mobile-nav');
+  // construct an instance of Headroom, passing the element and options
+  var headroomMobile  = new Headroom(getNavMobileFooter, {
+    "tolerance": 5,
+    "offset": 58,
+    "classes": {
+      "initial": "",
+      "pinned": "mobileSlideInDown",
+      "unpinned": "mobileSlideOutUp"
+    }
+  });
+  // initialise
+  headroomMobile.init();
+
   //Prevent click on image within single image gallery
   $('.gallery-thumb').on('click', function (e) {
     e.preventDefault();
@@ -215,7 +230,7 @@ $(function () {
   });
   
   //IMAGE SCALE
-  $("img.scale").imageScale({
+  $(".negative-container img.scale").imageScale({
     rescaleOnResize: true
   });
 
@@ -431,7 +446,7 @@ $(function () {
     }
   }
 
-  function checkScrollPositionForMobileNav() {
+  /*function checkScrollPositionForMobileNav() {
     if ($mobileNav.is(':visible')) {
       if ($(window).height() + $(window).scrollTop() >= $(document).height()-30) {
         // unbind the scroll event so we don't come here again
@@ -443,6 +458,18 @@ $(function () {
       }
     } else {
       body.removeClass('scrolled-bottom');
+    }
+  };*/
+
+  function checkScrollPositionForMobileNav() {
+    var $scrolledbottom = body.hasClass('scrolled-bottom');
+
+    if (!$scrolledbottom) {
+      if ($(window).height() + $(window).scrollTop() >= $(document).height() -100) {
+        body.addClass('scrolled-bottom');
+      } else {
+          body.removeClass('scrolled-bottom');
+      }
     }
   };
 
@@ -528,48 +555,10 @@ $(function () {
   };  
 });
 
-/*---------- START COMPETITION COMPONENT ----------*/
-jQuery('body').on('click','button.content-button',function(){
-  var modal_parent    = jQuery(this).parents('.component.competition');
-  var content_holder  = jQuery(this).parent().parent().find('.content-form');
-  if(!content_holder.hasClass('js-open')){
-    // jQuery(this).prop('type', 'submit');
-    content_holder.addClass('js-open');
-  }else{
-    modal_parent.find('.success_modal,.competition-modal-wrapper').addClass('open');
-    jQuery('body').addClass('wrapper-block');
-  }
-})
-
-jQuery('body').on('click', '.terms_modal_link', function(event) {
-  event.preventDefault();
-  var terms_parent          = jQuery(this).parents('.component.competition');
-  var terms_modal_wrapper   = terms_parent.children('.competition-modal-wrapper');
-  var terms_modal           = terms_modal_wrapper.children('.terms_modal');
-  terms_modal_wrapper.toggleClass('open');
-  terms_modal.toggleClass('open');
-  jQuery('body').addClass('wrapper-block');
-});
-
-// jQuery('body').on('click', '.competition-modal-wrapper', function(event) {
-//   event.preventDefault();
-//   event.stopPropagation();
-//   jQuery(this).removeClass('open');
-//   jQuery('.competition-modal').removeClass('open');
-// });
-
-jQuery('body').on('click', '.terms_modal .close,.success_modal .close', function(event) {
-  event.preventDefault();
-  jQuery(this).parent().parent().toggleClass('open');
-  jQuery(this).parents('.competition-modal-wrapper').removeClass('open');
-  jQuery('body').removeClass('wrapper-block');
-});
-
-/*---------- END COMPETITION COMPONENT ----------*/
-
 // Pop up on Add click
 
-jQuery('.pg-add-btn').click(function() {
+// jQuery('.pg-add-btn').click(function() {
+jQuery('body').on('click', '.pg-add-btn', function() {
   jQuery('.add-basket-notice').addClass('abn-display');
   setTimeout(function() {
       jQuery('.add-basket-notice').removeClass('abn-display');;
@@ -577,4 +566,12 @@ jQuery('.pg-add-btn').click(function() {
 });
 jQuery('.abn-close-btn').click(function() {
   jQuery('.add-basket-notice').removeClass('abn-display');
+});
+
+// FOOTER LINKS TO OPEN A POP UP
+jQuery('body').on('click', '.menu-footer-menu-container a', function() {
+  var pagetoOpen = jQuery(this).attr('href');
+  jQuery('.footer-page-pop-up').removeClass('fppu-display');
+  jQuery('#'+pagetoOpen).addClass('fppu-display');
+  return(false);
 });

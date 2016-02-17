@@ -114,7 +114,9 @@ module.exports = function (grunt) {
             'dist/footnote.html': 'templates/components/footnote.html',
             'dist/crosshead.html': 'templates/components/crosshead.html',
             'dist/competition.html': 'templates/components/competition.html',
-            'dist/trend-tool.html': 'templates/components/trend-tool.html'
+            'dist/trend-tool.html': 'templates/components/trend-tool.html',
+            'dist/advertorial.html': 'templates/components/advertorial.html',
+            'dist/desktop-nav.html': 'templates/layout/desktop-nav.html'
         }
       }
     },

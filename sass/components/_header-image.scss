@@ -12,13 +12,37 @@
   margin-top: 58px;
 }
 
+.narrow-container .header-image {
+  /*display: none;*/
+  width: 100%;
+}
+
 .container .header-image {
   .owl-item {
     width: inherit !important;
   }
  }
 
+
 .header-image, .owl-item .item {
+  height: 207px;  
+  overflow: hidden;
+  @media (min-width: 509px) {    
+    height: 330px;
+  }
+  @media (min-width: 768px) {    
+    height: 475px;
+  }
+  @media (min-width: 1024px) {    
+    height: 649px;
+  }
+}
+
+.header-image, .owl-item .item img{
+  width:100% !important;
+}
+
+.narrow-container .header-image, .owl-item .item {
   height: 207px;  
   overflow: hidden;
   @media (min-width: 768px) {    
