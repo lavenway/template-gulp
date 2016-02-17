@@ -433,6 +433,7 @@ $(function () {
   function basketCalculations() {
     var $dropdownHeight = $(window).height();
 
+    $dropdownOverlay.css({'height':(($dropdownHeight))+'px'});
     $basketdropdown.css({'height':(($dropdownHeight))+'px'});
     $basketdropdownItemWrapper.css({'max-height':(($dropdownHeight -260))+'px'});
   }

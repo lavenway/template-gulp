@@ -410,7 +410,9 @@ h6 {
 
 /*************** NAV ***************/
 .header-nav-active {
+  position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .navbar-default {
@@ -663,7 +665,7 @@ h6 {
       text-align: center;
 
       .wrapper {
-        max-height: 74%;
+        max-height: 87%;
         overflow: hidden;
       }
 
@@ -671,6 +673,7 @@ h6 {
         padding-right: 20px;
         overflow-x: hidden;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       .footer {
@@ -807,7 +810,6 @@ h6 {
 
         p {
           font-family: 'foundation_sansregular';
-          display: none;
           margin-bottom: 20px;
           font-size: 11px;
           // font-size: 1.1rem;
@@ -910,7 +912,7 @@ h6 {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 1032;
 }
 
 .mobile {
