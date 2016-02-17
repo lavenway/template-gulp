@@ -364,13 +364,13 @@ h6 {
 
     .header-image {
       max-width: 1000px;
-      height: 207px;
+      height: auto;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 0;
 
-      @media (min-width: 480px) {    
-        height: 471px;
+      img {
+        width: 100%;
       }
 
       .owl-item{
@@ -410,7 +410,9 @@ h6 {
 
 /*************** NAV ***************/
 .header-nav-active {
+  position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .navbar-default {
@@ -663,7 +665,7 @@ h6 {
       text-align: center;
 
       .wrapper {
-        max-height: 74%;
+        max-height: 87%;
         overflow: hidden;
       }
 
@@ -671,6 +673,7 @@ h6 {
         padding-right: 20px;
         overflow-x: hidden;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       .footer {
@@ -807,7 +810,6 @@ h6 {
 
         p {
           font-family: 'foundation_sansregular';
-          display: none;
           margin-bottom: 20px;
           font-size: 11px;
           // font-size: 1.1rem;
@@ -899,12 +901,18 @@ h6 {
   }
 }
 
+.scrolled-bottom {
+  .navbar-default.slideOutUp {
+    animation-name: inherit !important;
+  }
+}
+
 .navbar-fixed-top, .navbar-fixed-bottom {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 1032;
 }
 
 .mobile {
@@ -1078,12 +1086,17 @@ footer {
   }
 }
 
+/*
 .scrolled-bottom {
   footer {
-    position: relative;
-    top: -58px;
+    margin-bottom: 58px;
+
+    @media (min-width: 480px) {    
+      margin-bottom: 0;
+    }
   }
-}
+}*/
+
 
 /******************************
 * PRODUCT POP UP
@@ -1187,9 +1200,11 @@ footer {
   }
 }
 
+/*
 .scrolled-bottom .back-to-top {
   padding-bottom: 58px;
 }
+*/
 
 
 /******************************
@@ -1273,9 +1288,11 @@ footer {
     }
   }
 
-  img {
-    @media all and (min-width: 768px) {
-      margin-bottom: 10px;
+  .container {
+    .row img {
+      @media all and (min-width: 768px) {
+        margin-bottom: 10px;
+      }
     }
   }
 

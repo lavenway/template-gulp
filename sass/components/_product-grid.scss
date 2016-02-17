@@ -140,14 +140,14 @@
 .add-basket-notice {
 	display: block;
 	position: fixed;
-	width: 97%;
+	width: 100%;
     left: auto;
     right: auto;
     text-align: center;
     height: 0;
     z-index: 100;
     background-color: $pink;
-    top: 52px;
+    top: 58px;
     max-width: 1000px;
      -webkit-transition: all 200ms ease-out 0.2s;
     -moz-transition: all 200ms ease-out 0.2s;

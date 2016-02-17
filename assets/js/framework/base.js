@@ -161,6 +161,21 @@ $(function () {
   // initialise
   headroom.init();
 
+  // get nav for hide/show
+  var getNavMobileFooter = document.querySelector('.mobile-nav');
+  // construct an instance of Headroom, passing the element and options
+  var headroomMobile  = new Headroom(getNavMobileFooter, {
+    "tolerance": 5,
+    "offset": 58,
+    "classes": {
+      "initial": "",
+      "pinned": "mobileSlideInDown",
+      "unpinned": "mobileSlideOutUp"
+    }
+  });
+  // initialise
+  headroomMobile.init();
+
   //Prevent click on image within single image gallery
   $('.gallery-thumb').on('click', function (e) {
     e.preventDefault();
@@ -215,7 +230,7 @@ $(function () {
   });
   
   //IMAGE SCALE
-  $("img.scale").imageScale({
+  $(".negative-container img.scale").imageScale({
     rescaleOnResize: true
   });
 
@@ -418,6 +433,7 @@ $(function () {
   function basketCalculations() {
     var $dropdownHeight = $(window).height();
 
+    $dropdownOverlay.css({'height':(($dropdownHeight))+'px'});
     $basketdropdown.css({'height':(($dropdownHeight))+'px'});
     $basketdropdownItemWrapper.css({'max-height':(($dropdownHeight -260))+'px'});
   }
@@ -431,7 +447,7 @@ $(function () {
     }
   }
 
-  function checkScrollPositionForMobileNav() {
+  /*function checkScrollPositionForMobileNav() {
     if ($mobileNav.is(':visible')) {
       if ($(window).height() + $(window).scrollTop() >= $(document).height()-30) {
         // unbind the scroll event so we don't come here again
@@ -443,6 +459,18 @@ $(function () {
       }
     } else {
       body.removeClass('scrolled-bottom');
+    }
+  };*/
+
+  function checkScrollPositionForMobileNav() {
+    var $scrolledbottom = body.hasClass('scrolled-bottom');
+
+    if (!$scrolledbottom) {
+      if ($(window).height() + $(window).scrollTop() >= $(document).height() -100) {
+        body.addClass('scrolled-bottom');
+      } else {
+          body.removeClass('scrolled-bottom');
+      }
     }
   };
 

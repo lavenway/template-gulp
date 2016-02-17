@@ -1,11 +1,11 @@
 .component.mobile-nav {
-	z-index: 1;
+	z-index: 1030;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
 	padding: 3px 20px;
 	background: $grey;
-	transition: all 250ms ease;
+	transition: all 200ms ease-in;
 
 	.center-block {
 		width: 32%;
@@ -58,4 +58,25 @@
 	@media all and (min-width: 480px) {
 		display: none;
   }
+}
+
+.scrolled-bottom {
+	.component.mobile-nav.mobileSlideOutUp {
+	  position: relative;
+	  bottom: 0;
+	  animation-name: inherit !important;
+	  transition: none;
+	}
+}
+
+.component.mobile-nav.mobileSlideOutUp {
+  bottom: -58px;
+  animation-name: mobileSlideOutUp!important;
+  animation-duration: 350ms!important;
+}
+
+.component.mobile-nav.mobileSlideInDown {
+  bottom: 0;
+  animation-name: mobileSlideInDown!important;
+  animation-duration: 350ms!important;
 }
