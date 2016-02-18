@@ -462,8 +462,12 @@ $(function () {
     }
   };*/
 
+
+
+  var lastScroll = 0;
+
   function checkScrollPositionForMobileNav() {
-    var $scrolledbottom = body.hasClass('scrolled-bottom');
+    /*var $scrolledbottom = body.hasClass('scrolled-bottom');
 
     if (!$scrolledbottom) {
       if ($(window).height() + $(window).scrollTop() >= $(document).height() -100) {
@@ -471,8 +475,35 @@ $(function () {
       } else {
           body.removeClass('scrolled-bottom');
       }
+    }*/
+
+    //Sets the current scroll position
+    var st = $(this).scrollTop();
+    //Determines up-or-down scrolling
+    if (st > lastScroll){
+       //alert("DOWN");
+       console.log('down');
+      $('#bg').text('DOWN');
+    } 
+    else {
+      //alert("UP");
+      console.log('up');
+      $('#bg').text('UP');
     }
+    //Updates scroll position
+    lastScroll = st;
+
+
+
   };
+
+
+          
+
+
+
+
+
 
   /*function hideNavDropdown() {
     $navHiddenDropdown.slideUp();
