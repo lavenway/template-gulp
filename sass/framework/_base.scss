@@ -410,9 +410,10 @@ h6 {
 
 /*************** NAV ***************/
 .header-nav-active {
-  position: relative;
-  overflow: hidden;
   height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
 }
 
 .navbar-default {
@@ -665,14 +666,14 @@ h6 {
       text-align: center;
 
       .wrapper {
-        max-height: 87%;
+        max-height: 100%;
         overflow: hidden;
       }
 
       .item-wrapper {
         padding-right: 20px;
         overflow-x: hidden;
-        overflow-y: auto;
+        overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
       }
 
@@ -1181,7 +1182,7 @@ footer {
 * BACK TO TOP
 ******************************/
 .back-to-top {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   text-align: center;
 
   .container {

@@ -140,11 +140,6 @@ $(function () {
       handleBackToTopScroll = function () {
         body.animate({ scrollTop: 0 }, "slow");
       };
-      
-
-  //remove touch delay on touch devices
-  var attachFastClick = Origami.fastclick;
-      attachFastClick(document.body);
 
 
   // get nav for hide/show
@@ -436,7 +431,7 @@ $(function () {
 
     $dropdownOverlay.css({'height':(($dropdownHeight))+'px'});
     $basketdropdown.css({'height':(($dropdownHeight))+'px'});
-    $basketdropdownItemWrapper.css({'max-height':(($dropdownHeight -260))+'px'});
+    $basketdropdownItemWrapper.css({'max-height':(($dropdownHeight -160))+'px'});
   }
 
   function shareCalculations() {
@@ -567,6 +562,9 @@ $(function () {
     }
   };  
 });
+
+//remove touch delay on touch devices
+
 
 // Pop up on Add click
 
