@@ -648,6 +648,9 @@ $(function () {
 	var toolCount = jQuery('.ttool').length;
 	jQuery('.ttool').each(function() {
 		var ttool = jQuery(this).attr('id');
+		jQuery('#'+ttool+'product-kit-btn').click(function () {
+		 	jQuery('#'+ttool+' .tt-products-carousel').trigger('resize');
+		});
 		// Initialize Carousel
 		jQuery('#'+ttool+'tabs a').click(function (e) {
 			e.preventDefault()
@@ -656,8 +659,9 @@ $(function () {
 		// Resize trigger for fixing Carousel layout
 		jQuery('#'+ttool+'tabs a.product-kit').click(function (e) {
 			ttProductCarousel(); 
-		 	jQuery('.tt-products-carousel').trigger('resize');
+		 	// jQuery(this).closest('.tt-products-carousel').trigger('resize');
 		});
+		
 		// Hide and Show sections
 		jQuery('body').on('click','.sec-trigger', function() {
 			var thisParent  = jQuery(this).closest('.tt-section');
@@ -679,7 +683,6 @@ $(function () {
 		// Skin tone filter
 		jQuery('body').on('click', '.result-filter-nav li', function() { 
 			var ttID = jQuery(this).closest('.ttool').attr('id');
-		
 			var resultFilterBody = jQuery('#'+ttID+' .result-filter-body');
 			var resultFilterCopy = jQuery('#'+ttID+' .result-filter-copy');
 			var rfId = jQuery(this).attr('data-rf-id');
@@ -688,26 +691,17 @@ $(function () {
 			jQuery('#'+ttID+rfId).addClass('rf-active');
 			jQuery('#'+ttID+'copy-'+rfId).addClass('rf-active');
 		});
-		
 	});
-	
-		
 
-
-// $('#tt-section0').click(function() {
-// 		$(this).removeClass('tt-active');
-// 		$('#tt-section1').addClass('tt-active tt-opened');
-// 		showStatusBar();
-// 		setTimeout(function() {
-// 	        var secID = $('#tt-section1 .option');
-// 	        secID.addClass('appear');
-// 	    }, 100);
-// 	});
-
-
-	
-
-	
+	// $('#tt-section0').click(function() {
+	// 		$(this).removeClass('tt-active');
+	// 		$('#tt-section1').addClass('tt-active tt-opened');
+	// 		showStatusBar();
+	// 		setTimeout(function() {
+	// 	        var secID = $('#tt-section1 .option');
+	// 	        secID.addClass('appear');
+	// 	    }, 100);
+	// 	});
 
 	// $('.option-age').click(function() {
 	// 	var mainSection = $('.tt-section');
@@ -738,6 +732,7 @@ $(function () {
 
 	// Custom Scroll
 	function customScroll() {
+
 		var ttoolHeight = $('.ttool').height()-110;
 		jQuery('.options').mCustomScrollbar({
 			setHeight: ttoolHeight,
@@ -750,12 +745,8 @@ $(function () {
 			theme:'inset-2-dark',
 			autoDraggerLength: false
 		});
-		if (winWidth < 768) {
-			var ttoolHeightRFC = $('.ttool').height()-120;
-		} else {
-			var ttoolHeightRFC = $('.ttool').height()-120;
-		}
 		
+		var ttoolHeightRFC = $('.ttool').height()-120;
 		jQuery('.result-filter-copy').mCustomScrollbar({
 			setHeight: ttoolHeightRFC,
 			theme:"inset-2-dark",
