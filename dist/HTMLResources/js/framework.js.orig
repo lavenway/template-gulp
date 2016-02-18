@@ -745,21 +745,33 @@ $(function () {
 	// Custom Scroll
 	function customScroll() {
 
+<<<<<<< HEAD
+		var ttoolHeight = $('.ttool').height()-110;
+=======
 		var ttoolHeight = jQuery('.ttool').height()-110;
+>>>>>>> master
 		jQuery('.options').mCustomScrollbar({
 			setHeight: ttoolHeight,
 			theme:"inset-2-dark",
 			autoDraggerLength: false
 		});
+<<<<<<< HEAD
+		var ttoolHeightSC = $('.ttool').height()-150;
+=======
 		var ttoolHeightSC = jQuery('.ttool').height()-150;
+>>>>>>> master
 		jQuery('.scrollable-copy').mCustomScrollbar({
 			setHeight: ttoolHeightSC,
 			theme:'inset-2-dark',
 			autoDraggerLength: false
 		});
+<<<<<<< HEAD
+		
+		var ttoolHeightRFC = $('.ttool').height()-120;
+=======
 		var ttoolHeightRFC = jQuery('.ttool').height()-120;
+>>>>>>> master
 		jQuery('.result-filter-copy').mCustomScrollbar({
-			setHeight: ttoolHeightRFC,
 			setHeight: ttoolHeightRFC,
 			theme:"inset-2-dark",
 			autoDraggerLength: false
