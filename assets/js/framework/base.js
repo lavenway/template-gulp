@@ -31,6 +31,7 @@ $(function () {
       $productLinkPopUp = $('.product-pop-up'),
       $shareDropdown = $('.navbar-header .share-dropdown'),
       $dropdownOverlay = $('.navbar .dropdown-overlay'),
+      $lastScrollTop = 0,
 
       handleInfoBox = function (e) {
         var $this = $(this),
@@ -413,7 +414,7 @@ $(function () {
   $(window).scroll(function(){    
     /*hideNavDropdown();*/
     parallaxHeaderImageIfExists();
-    checkScrollPositionForMobileNav();
+    /*checkScrollPositionForMobileNav();*/
   }).scroll();
 
   $(window).resize(function(){    
@@ -462,48 +463,28 @@ $(function () {
     }
   };*/
 
-
-
-  var lastScroll = 0;
-
-  function checkScrollPositionForMobileNav() {
-    /*var $scrolledbottom = body.hasClass('scrolled-bottom');
+  /*function checkScrollPositionForMobileNav() {
+    var $scrolledbottom = body.hasClass('scrolled-bottom');
 
     if (!$scrolledbottom) {
-      if ($(window).height() + $(window).scrollTop() >= $(document).height() -100) {
+      if ($(window).height() + $(window).scrollTop() >= $(document).height()) {
         body.addClass('scrolled-bottom');
       } else {
           body.removeClass('scrolled-bottom');
       }
-    }*/
-
-    //Sets the current scroll position
-    var st = $(this).scrollTop();
-    //Determines up-or-down scrolling
-    if (st > lastScroll){
-       //alert("DOWN");
-       console.log('down');
-      $('#bg').text('DOWN');
-    } 
-    else {
-      //alert("UP");
-      console.log('up');
-      $('#bg').text('UP');
     }
-    //Updates scroll position
-    lastScroll = st;
+  };*/
 
-
-
-  };
-
-
-          
-
-
-
-
-
+  $(window).on('scroll', function() {
+      var $st = $(this).scrollTop();
+      if($st < $lastScrollTop) {
+        body.removeClass('scrolled-bottom');
+      }
+      if ($(window).height() + $st >= $(document).height()) {
+        body.addClass('scrolled-bottom');
+      }
+      $lastScrollTop = $st;
+  });
 
   /*function hideNavDropdown() {
     $navHiddenDropdown.slideUp();
