@@ -587,6 +587,22 @@ jQuery('body').on('click', '.menu-footer-menu-container a', function() {
   jQuery('#'+pagetoOpen).addClass('fppu-display');
   return(false);
 });
+
+jQuery('.footer-page-pop-up .fpp-close-btn').click(function() {
+   jQuery('.footer-page-pop-up').removeClass('fppu-display');
+});
+
+var winWidth = $(window).width();
+var winHeight = $(window).height();
+
+
+jQuery('.fppu-copy').mCustomScrollbar({
+  setHeight: 240,
+  theme:"inset-2-dark",
+  autoDraggerLength: false
+});
+
+
 'use strict';
 $ = $ || jQuery;
 

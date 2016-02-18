@@ -1,6 +1,6 @@
 .footer-page-pop-up {
 	position: fixed;
-	bottom: 30px;
+	bottom: 90px;
 	background: #eeeeee;
 	padding: 20px 50px 20px 20px;
 	max-width: 1000px;
@@ -14,11 +14,17 @@
     -moz-transition: all 500ms ease-out 0.2s;
     -o-transition: all 500ms ease-out 0.2s;
     transition: all 500ms ease-out 0.2s;
+    p {
+        font-size: 10px;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
     &.fppu-display {
     	height: auto;
     	opacity: 1;
+        z-index: 100;   
     }
-	div {
+	.fpp-close-btn {
 		position: absolute;
         top: 12px;
         right: 6px;
@@ -30,4 +36,25 @@
         	background-position: center right;
         }
 	}
+}
+ // Scroll styling
+    .mCS-inset-2-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+        width: 5px;
+        border-radius: 0;
+    }
+    .mCS-inset-2-dark.mCSB_scrollTools .mCSB_draggerRail {
+        border-radius: 0;
+        background: #ccc;
+        border: none;
+        border-width: 0;
+        width: 5px;
+    }
+    .mCSB_inside>.mCSB_container {
+        margin-right: 15px;
+    }
+
+@media (min-width: 768px) {
+    .footer-page-pop-up {
+        bottom: 30px;
+    }
 }
