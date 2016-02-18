@@ -140,7 +140,6 @@ $(function () {
       handleBackToTopScroll = function () {
         body.animate({ scrollTop: 0 }, "slow");
       };
-      
 
   //remove touch delay on touch devices
   var attachFastClick = Origami.fastclick;
