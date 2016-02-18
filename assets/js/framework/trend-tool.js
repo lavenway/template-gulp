@@ -32,26 +32,26 @@ $('.tabs-below').css('height',winHeight);
 // });
 // }
 // Result Product Carousel
-function ttProductCarousel() {
-$('.tt-products-carousel').slick({
-dots: true,
-       infinite: true,
-       speed: 300,
-       slidesToShow: 3,
-       slidesToScroll: 3,
-       arrows: false,
-       responsive: [{
+// function ttProductCarousel() {
+	// jQuery('.tt-products-carousel').slick({
+	// 	dots: true,
+ //       infinite: true,
+ //       speed: 300,
+ //       slidesToShow: 3,
+ //       slidesToScroll: 3,
+ //       arrows: false,
+ //       responsive: [{
       
-           breakpoint: 600,
-           settings: {
-               slidesToShow: 1,
-               slidesToScroll: 1,
-               infinite: true,
-               dots: true
-           }
-       }]
-});
-}
+ //           breakpoint: 600,
+ //           settings: {
+ //               slidesToShow: 1,
+ //               slidesToScroll: 1,
+ //               infinite: true,
+ //               dots: true
+ //           }
+ //       }]
+	// });
+// }
 // statusBar()
 
 // $('body').on('click','.tt-left-nav', function(){
@@ -68,49 +68,65 @@ var ttool;
 var sectionNext;
 var toolCount = jQuery('.ttool').length;
 jQuery('.ttool').each(function() {
-var ttool = jQuery(this).attr('id');
-jQuery('#'+ttool+'product-kit-btn').click(function () {
-jQuery('#'+ttool+' .tt-products-carousel').trigger('resize');
-});
-// Initialize Carousel
-jQuery('#'+ttool+'tabs a').click(function (e) {
-e.preventDefault()
-jQuery(this).tab('show')
-});
-// Resize trigger for fixing Carousel layout
-jQuery('#'+ttool+'tabs a.product-kit').click(function (e) {
-ttProductCarousel(); 
-// jQuery(this).closest('.tt-products-carousel').trigger('resize');
-});
-// Hide and Show sections
-jQuery('body').on('click','.sec-trigger', function() {
-var thisParent  = jQuery(this).closest('.tt-section');
-jQuery(thisParent).removeClass('tt-active');
-var sectionNext = jQuery(thisParent).next();
-sectionNext.addClass('tt-active tt-opened');
-var secNextAtt  = sectionNext.attr('data-stat-id');
-jQuery('#'+secNextAtt).addClass('tt-show');
-});
-// Status Bar
-var sectionCount = jQuery(this).find('.tt-section').length-2;
-var statusBar    = jQuery(this).find('.tt-status-bar');
-var statCount;
-for (statCount = 1; statCount <= sectionCount; statCount++) {
-statusBar.append('<div id="'+ttool+'tt-status'+statCount+'" class="tt-bar"></div>');
-statusBar.children().css('width',100/sectionCount+'%');
-var section = jQuery('.tt-section').attr('tt-data-status');
-}
-// Skin tone filter
-jQuery('body').on('click', '.result-filter-nav li', function() { 
-var ttID = jQuery(this).closest('.ttool').attr('id');
-var resultFilterBody = jQuery('#'+ttID+' .result-filter-body');
-var resultFilterCopy = jQuery('#'+ttID+' .result-filter-copy');
-var rfId = jQuery(this).attr('data-rf-id');
-resultFilterBody.removeClass('rf-active');
-resultFilterCopy.removeClass('rf-active');
-jQuery('#'+ttID+rfId).addClass('rf-active');
-jQuery('#'+ttID+'copy-'+rfId).addClass('rf-active');
-});
+	var ttool = jQuery(this).attr('id');
+	jQuery('#'+ttool+'product-kit-btn').click(function () {
+		jQuery('#'+ttool+' .tt-products-carousel').trigger('resize');
+	});
+	// Initialize Carousel
+	jQuery('#'+ttool+'tabs a').click(function (e) {
+		e.preventDefault()
+		jQuery(this).tab('show')
+	});
+	// Resize trigger for fixing Carousel layout
+	jQuery('#'+ttool+'tabs a.product-kit').click(function (event) {
+		event.preventDefault();
+		jQuery('#'+ttool+' .tt-products-carousel').slick({
+			dots: true,
+		   infinite: true,
+		   speed: 300,
+		   slidesToShow: 3,
+		   slidesToScroll: 3,
+		   arrows: false,
+		   responsive: [{
+		       breakpoint: 600,
+		       settings: {
+		           slidesToShow: 1,
+		           slidesToScroll: 1,
+		           infinite: true,
+		           dots: true
+		       }
+		   }]
+		});
+	});
+	// Hide and Show sections
+	jQuery('body').on('click','.sec-trigger', function() {
+		var thisParent  = jQuery(this).closest('.tt-section');
+		jQuery(thisParent).removeClass('tt-active');
+		var sectionNext = jQuery(thisParent).next();
+		sectionNext.addClass('tt-active tt-opened');
+		var secNextAtt  = sectionNext.attr('data-stat-id');
+		jQuery('#'+secNextAtt).addClass('tt-show');
+	});
+	// Status Bar
+	var sectionCount = jQuery(this).find('.tt-section').length-2;
+	var statusBar    = jQuery(this).find('.tt-status-bar');
+	var statCount;
+	for (statCount = 1; statCount <= sectionCount; statCount++) {
+		statusBar.append('<div id="'+ttool+'tt-status'+statCount+'" class="tt-bar"></div>');
+		statusBar.children().css('width',100/sectionCount+'%');
+		var section = jQuery('.tt-section').attr('tt-data-status');
+	}
+	// Skin tone filter
+	jQuery('body').on('click', '.result-filter-nav li', function() { 
+		var ttID = jQuery(this).closest('.ttool').attr('id');
+		var resultFilterBody = jQuery('#'+ttID+' .result-filter-body');
+		var resultFilterCopy = jQuery('#'+ttID+' .result-filter-copy');
+		var rfId = jQuery(this).attr('data-rf-id');
+		resultFilterBody.removeClass('rf-active');
+		resultFilterCopy.removeClass('rf-active');
+		jQuery('#'+ttID+rfId).addClass('rf-active');
+		jQuery('#'+ttID+'copy-'+rfId).addClass('rf-active');
+	});
 });
 
 // $('#tt-section0').click(function() {
