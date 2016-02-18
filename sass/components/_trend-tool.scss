@@ -307,7 +307,8 @@ $tab-port : 768px;
                 a {
                     background-color: $color-black;
                     &:hover,&:focus{
-                        border: none;
+                        border-top: none;
+                        border-right: none;
                         outline: none;
                         color: $color-white;
                     }
@@ -533,4 +534,7 @@ $tab-port : 768px;
 }
 .ttool .tabs-below .nav-tabs li:first-child a {
     border-left: none;
+}
+.result-filter-copy-wrapper .mCSB_scrollTools {
+    top: 15px;
 }
