@@ -307,7 +307,8 @@ $tab-port : 768px;
                 a {
                     background-color: $color-black;
                     &:hover,&:focus{
-                        border: none;
+                        border-top: none;
+                        border-right: none;
                         outline: none;
                         color: $color-white;
                     }
