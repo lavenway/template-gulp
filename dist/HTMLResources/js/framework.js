@@ -733,25 +733,30 @@ $(function () {
 	// Custom Scroll
 	function customScroll() {
 
-		var ttoolHeight = $('.ttool').height()-110;
+		var ttoolHeight = jQuery('.ttool').height()-110;
 		jQuery('.options').mCustomScrollbar({
 			setHeight: ttoolHeight,
 			theme:"inset-2-dark",
 			autoDraggerLength: false
 		});
-		var ttoolHeightSC = $('.ttool').height()-150;
+		var ttoolHeightSC = jQuery('.ttool').height()-150;
 		jQuery('.scrollable-copy').mCustomScrollbar({
 			setHeight: ttoolHeightSC,
 			theme:'inset-2-dark',
 			autoDraggerLength: false
 		});
-		
-		var ttoolHeightRFC = $('.ttool').height()-120;
+		var ttoolHeightRFC = jQuery('.ttool').height()-120;
 		jQuery('.result-filter-copy').mCustomScrollbar({
 			setHeight: ttoolHeightRFC,
 			theme:"inset-2-dark",
 			autoDraggerLength: false
 		});
+		// var ttoolHeightPC = jQuery('.prod-img').height();
+		// jQuery('.prod-copy').mCustomScrollbar({
+		// 	setHeight: ttoolHeightPC,
+		// 	theme:"inset-2-dark",
+		// 	autoDraggerLength: false
+		// });
 	}
 	customScroll();
 
