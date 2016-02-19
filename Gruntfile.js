@@ -60,6 +60,7 @@ module.exports = function (grunt) {
       },
       library: {
         src: ['assets/js/lib/single/jquery-2.1.1.js',
+              'assets/js/lib/single/modernizr-custom.js',
               'assets/js/lib/*.js'],
         dest: 'dist/HTMLResources/js/lib.js'
       }
@@ -70,7 +71,9 @@ module.exports = function (grunt) {
         files: {
           'dist/HTMLResources/js/components.min.js': 'dist/HTMLResources/js/components.js',
           'dist/HTMLResources/js/framework.min.js': 'dist/HTMLResources/js/framework.js',
-          'dist/HTMLResources/js/lib.min.js': 'dist/HTMLResources/js/lib.js'
+          'dist/HTMLResources/js/lib.min.js': 'dist/HTMLResources/js/lib.js',
+          'dist/HTMLResources/js/matchmedia.min.js': 'dist/HTMLResources/js/matchmedia.js',
+          'dist/HTMLResources/js/matchMedia.addListener.min.js': 'dist/HTMLResources/js/matchMedia.addListener.js'
         }
       }
     },

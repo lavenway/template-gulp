@@ -36,7 +36,6 @@
         transition: all 500ms;
         overflow:hidden;
         input{
-          -webkit-appearance: none;
           -webkit-border-radius:0; 
           border-radius:0;
           border:1px solid $black;
@@ -106,6 +105,7 @@
       .content-button-wrapper{
         position:relative;
         min-height:45px;
+        text-align: center;
         button.content-button{
           font-family: "Archer A", "Archer B";
           font-size:20pt;
@@ -114,9 +114,6 @@
           padding:0px 25px 5px;
           background:$pink;
           margin:0 auto;
-          position:absolute;
-          left:0;
-          right:0;
           color:$white;
           width:auto;
         }
