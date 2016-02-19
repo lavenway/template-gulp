@@ -22,6 +22,87 @@
     //     max-width:645px;
     //   }
     // }
+
+    .title {
+
+      &.competition-style2{
+        font-size:15pt;
+        line-height:15pt;
+        text-transform: uppercase;
+        font-weight: 600;
+        display:inline-block;
+        background: $purple;
+        padding:4px 4px 6px;
+        @media all and (min-width: 480px) {
+          font-size: 25pt;
+          padding:6px 6px 8px;
+        }
+      }
+
+      &.competition-style3{
+        font-size:20pt;
+        line-height:24pt;
+        @media all and (min-width: 480px) {
+          font-size: 25pt;
+          line-height: 30pt;
+        }
+      }
+
+      &.competition-style4{
+        font-size:20pt;
+        line-height:25pt;
+        font-weight: 600;
+      } 
+
+      &.competition-style5{
+        font-size:20pt;
+        line-height:25pt;
+        text-transform: uppercase;
+        padding-bottom:12px;
+        margin-bottom:12px;
+        border-bottom:1px solid $black;
+        @media all and (min-width: 480px) {
+          font-size: 25pt;
+        }
+      }
+
+      &.competition-style6{
+        font-size:35pt;
+        line-height:25pt;
+        font-weight: 500;
+        @media all and (min-width: 480px) {
+          font-size: 40pt;
+        }
+      }
+
+      &.competition-style7{
+        font-family: 'MajesticBanner';
+        font-size:28pt;
+        line-height:33.6pt;
+        font-style:italic;
+        letter-spacing: -2px;
+        @media all and (min-width: 480px) {
+          font-size: 38pt;
+          line-height: 30.6pt;
+        }
+      }
+
+      &.competition-style8{
+        font-family: 'MajesticBanner';
+        font-size:25pt;
+        line-height:16pt;
+      }
+
+      &.competition-style9{
+        font-family: 'SinkinSans';
+        font-size:39pt;
+        line-height:46.8pt;
+        font-weight:400; 
+        text-transform: uppercase;
+      }
+
+    }
+
     .content-intro{
       padding:0px 0px;
       text-align:center;
