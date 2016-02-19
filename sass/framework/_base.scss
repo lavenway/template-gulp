@@ -673,8 +673,14 @@ h6 {
       .item-wrapper {
         padding-right: 20px;
         overflow-x: hidden;
-        overflow-y: auto;
+        overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
+      }
+
+      .ie {
+        .item-wrapper {
+          overflow-y: auto;
+        }
       }
 
       .footer {

@@ -160,7 +160,7 @@ $(function () {
   });
 
   // initialise
-  headroom.init();
+    headroom.init();
   
   // get nav for hide/show
   var getNavMobileFooter = document.querySelector('.mobile-nav');
@@ -564,8 +564,8 @@ $(function () {
 });
 
 //remove touch delay on touch devices
-  var attachFastClick = Origami.fastclick;
-      attachFastClick(document.body);
+  /*var attachFastClick = Origami.fastclick;
+      attachFastClick(document.body);*/
 
 // Pop up on Add click
 
