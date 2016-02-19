@@ -409,6 +409,10 @@ $tab-port : 768px;
         }
         // Product carousel
         .tt-products-carousel {
+            display: none;
+            &.show-ttpc {
+                display: block;
+            }
             .tt-product {
                 width: 100%;
                 outline: none;

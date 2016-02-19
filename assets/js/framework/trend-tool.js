@@ -60,6 +60,8 @@ var toolCount = jQuery('.ttool').length;
 jQuery('.ttool').each(function() {
 	var ttool = jQuery(this).attr('id');
 	jQuery('#'+ttool+'product-kit-btn').click(function () {
+		// var chosenCar = jQuery('#'+ttool+' .tt-products-carousel');
+
 		jQuery('#'+ttool+' .tt-products-carousel').trigger('resize');
 	});
 	// Initialize Carousel
@@ -110,15 +112,24 @@ jQuery('.ttool').each(function() {
 		var section = jQuery('.tt-section').attr('tt-data-status');
 	}
 	// Skin tone filter
+	jQuery('body').on('click', '.option-tone', function() { 
+		var ttID = jQuery(this).closest('.ttool').attr('id');
+		var otId = jQuery(this).attr('data-option-id');
+		jQuery('#'+ttID+'ttpc-'+otId).addClass('show-ttpc');
+	});
 	jQuery('body').on('click', '.result-filter-nav li', function() { 
 		var ttID = jQuery(this).closest('.ttool').attr('id');
 		var resultFilterBody = jQuery('#'+ttID+' .result-filter-body');
 		var resultFilterCopy = jQuery('#'+ttID+' .result-filter-copy');
+		var resultCar = jQuery('#'+ttID+' .tt-products-carousel');
 		var rfId = jQuery(this).attr('data-rf-id');
 		resultFilterBody.removeClass('rf-active');
 		resultFilterCopy.removeClass('rf-active');
 		jQuery('#'+ttID+rfId).addClass('rf-active');
 		jQuery('#'+ttID+'copy-'+rfId).addClass('rf-active');
+		jQuery('#'+ttID+' .tt-products-carousel').removeClass('show-ttpc');
+		jQuery('#'+ttID+'ttpc-'+rfId).addClass('show-ttpc');
+		jQuery('#'+ttID+' .tt-products-carousel').slick('unslick');
 	});
 	// Back button
 	jQuery('body').on('click', '#'+ttool+' .tt-left-nav', function(){
