@@ -592,6 +592,13 @@ jQuery('.footer-page-pop-up .fpp-close-btn').click(function() {
    jQuery('.footer-page-pop-up').removeClass('fppu-display');
 });
 
+// close modal by clicking screen outside of modal
+jQuery('.competition-modal-wrapper').click(function() {
+   jQuery(this).removeClass('open');
+});
+
+
+
 var winWidth = $(window).width();
 var winHeight = $(window).height();
 
