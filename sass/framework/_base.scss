@@ -178,6 +178,31 @@ h1, .title {
   }
 }
 
+h1, .advertorial-title {
+
+  margin: 0 0 15px !important;  
+  color: inherit;
+  text-align: center;
+
+  &.style1 {
+    font-family: 'VAGRounded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    font-size: 4rem;
+    line-height: 34px;
+    line-height: 3.4rem;
+
+    @media all and (min-width: 480px) {
+      font-size: 77px;
+      font-size: 7.7rem;
+      line-height: 75px;
+      line-height: 7.5rem;
+    }
+  }
+
+}
+
 h2 {
   font-family: "Archer";
   font-size: 20px;
