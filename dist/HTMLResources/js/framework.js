@@ -398,7 +398,7 @@ $(function () {
   $navCloseDropdown.on('click', handleCloseHeaderDropdown);
 
   //DROPDOWN OVERLAY CLOSE DROPDOWNS
-  $dropdownOverlay.on('click', handleCloseHeaderDropdown);
+  $dropdownOverlay.on('touchstart click', handleCloseHeaderDropdown);
 
   //PRODUCT LINK TOGGLE
   /*$productLinkToggle.on('click', handleProductPopUp);*/
@@ -564,7 +564,8 @@ $(function () {
 });
 
 //remove touch delay on touch devices
-
+  var attachFastClick = Origami.fastclick;
+      attachFastClick(document.body);
 
 // Pop up on Add click
 
