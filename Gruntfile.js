@@ -59,7 +59,7 @@ module.exports = function (grunt) {
         dest: 'dist/HTMLResources/js/framework.js'
       },
       library: {
-        src: ['assets/js/lib/single/jquery-2.1.1.js',
+        src: ['assets/js/lib/single/*.js',
               'assets/js/lib/*.js'],
         dest: 'dist/HTMLResources/js/lib.js'
       }

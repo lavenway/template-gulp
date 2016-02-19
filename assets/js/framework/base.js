@@ -141,6 +141,10 @@ $(function () {
         body.animate({ scrollTop: 0 }, "slow");
       };
 
+  //Prevent click on image within single image gallery
+  $('.gallery-thumb').on('click', function (e) {
+    e.preventDefault();
+  });
 
   // get nav for hide/show
   var getNav = document.querySelector('.js-main-nav');
@@ -154,9 +158,10 @@ $(function () {
       "unpinned": "slideOutUp"
     }
   });
+
   // initialise
   headroom.init();
-
+  
   // get nav for hide/show
   var getNavMobileFooter = document.querySelector('.mobile-nav');
   // construct an instance of Headroom, passing the element and options
@@ -171,11 +176,6 @@ $(function () {
   });
   // initialise
   headroomMobile.init();
-
-  //Prevent click on image within single image gallery
-  $('.gallery-thumb').on('click', function (e) {
-    e.preventDefault();
-  });
 
   //Header image carousel
   $('#js-header-hero-carousel').owlCarousel({
@@ -431,7 +431,7 @@ $(function () {
 
     $dropdownOverlay.css({'height':(($dropdownHeight))+'px'});
     $basketdropdown.css({'height':(($dropdownHeight))+'px'});
-    $basketdropdownItemWrapper.css({'max-height':(($dropdownHeight -160))+'px'});
+    $basketdropdownItemWrapper.css({'max-height':(($dropdownHeight -120))+'px'});
   }
 
   function shareCalculations() {
