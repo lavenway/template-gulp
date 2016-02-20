@@ -1145,6 +1145,7 @@ footer {
   padding: 30px 15px;
   box-shadow: -4px 8px 18px #333;
   background: $white;
+  z-index:100;
 
   @media (min-width: 480px) {
     top: 50%;
@@ -1231,6 +1232,11 @@ footer {
       font-style: normal;
       color: #fff;
       background: black;
+      transition:all 500ms;
+      &:hover{
+        background:#ff009a;
+        transition:all 500ms;
+      }
     }
   }
 }

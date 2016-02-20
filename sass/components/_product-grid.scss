@@ -146,8 +146,9 @@
     right: auto;
     text-align: center;
     height: 0;
+    top:0;
     background-color: $pink;
-    top: 58px;
+    // top: 58px;
     z-index: -1;
     max-width: 1000px;
      -webkit-transition: all 200ms ease-out 0.2s;
@@ -180,6 +181,7 @@
     	height: 60px;
     	opacity: 1;
     	z-index: 100;
+    	top:58px;
     }
     @media (min-width: 768px) {
     	width: 100%;

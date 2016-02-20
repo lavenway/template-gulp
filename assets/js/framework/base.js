@@ -222,7 +222,8 @@ $(function () {
     },
     loadedClass: 'owl-loaded owl-theme',
     responsiveRefreshRate : 200,
-    responsiveBaseWidth: window
+    responsiveBaseWidth: window,
+    autoPlay: true
   });
   
   //IMAGE SCALE
@@ -263,10 +264,18 @@ $(function () {
     e.preventDefault();
   });
 
-  $doc.on('click', '.product-pop-up .close', function (e) {
+  // $doc.on('click', '.product-pop-up .close', function (e) {
+  //   body.removeClass('product-pop-up-active');
+  //   alert()
+
+  //   $(this).parents('.component').toggle().removeClass('show');
+  // });
+
+  jQuery('.product-pop-up .close').click(function(event) {
+
     body.removeClass('product-pop-up-active');
 
-    $(this).parents('.component').toggle().removeClass('show');
+    jQuery(this).parents('.component').toggle().removeClass('show');
   });
 
   enquire.register("screen and (max-width:480px)", {

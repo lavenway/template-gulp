@@ -9,4 +9,9 @@ p.component.standfirst.style1 {
   letter-spacing: 0.025em;
   text-align: center;
   margin-bottom: 60px !important;
+  &.underline{
+    border-bottom:5pt solid #999999;
+    padding-bottom:20px;
+    margin-bottom:20px;
+  }
 }
