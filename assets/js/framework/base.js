@@ -559,6 +559,13 @@ $(function () {
       } else {        
         ratingCookie();
       }
+
+      // Star rating
+      $('.star-rating').rating({'showCaption':false, 'stars':'5', 'min':'0', 'max':'5', 'step':'1', 'size':'sm'});      
+      $('.component.ratings-banner .btn').on('click', function() {
+          alert('star rating ' + $('.star-rating').val());
+      });
+
     }
   };  
 });
