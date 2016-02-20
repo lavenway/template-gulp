@@ -1232,6 +1232,11 @@ footer {
       font-style: normal;
       color: #fff;
       background: black;
+      transition:all 500ms;
+      &:hover{
+        background:#ff009a;
+        transition:all 500ms;
+      }
     }
   }
 }

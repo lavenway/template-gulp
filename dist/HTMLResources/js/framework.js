@@ -222,7 +222,8 @@ $(function () {
     },
     loadedClass: 'owl-loaded owl-theme',
     responsiveRefreshRate : 200,
-    responsiveBaseWidth: window
+    responsiveBaseWidth: window,
+    autoPlay: true
   });
   
   //IMAGE SCALE
