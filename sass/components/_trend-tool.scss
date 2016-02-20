@@ -40,6 +40,12 @@ $tab-port : 768px;
                 display: inline-block;
                 vertical-align: top;
             }
+            .back-text {
+                // display: none;
+                // &.bt-show {
+                //     display: inline-block;
+                // }
+            }
         }
         .tt-right-nav {
             float: right;
@@ -403,6 +409,10 @@ $tab-port : 768px;
         }
         // Product carousel
         .tt-products-carousel {
+            display: none;
+            &.show-ttpc {
+                display: block;
+            }
             .tt-product {
                 width: 100%;
                 outline: none;

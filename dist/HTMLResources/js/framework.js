@@ -141,6 +141,10 @@ $(function () {
         body.animate({ scrollTop: 0 }, "slow");
       };
 
+  //Prevent click on image within single image gallery
+  $('.gallery-thumb').on('click', function (e) {
+    e.preventDefault();
+  });
 
   // get nav for hide/show
   var getNav = document.querySelector('.js-main-nav');
@@ -154,9 +158,10 @@ $(function () {
       "unpinned": "slideOutUp"
     }
   });
-  // initialise
-  headroom.init();
 
+  // initialise
+    headroom.init();
+  
   // get nav for hide/show
   var getNavMobileFooter = document.querySelector('.mobile-nav');
   // construct an instance of Headroom, passing the element and options
@@ -171,11 +176,6 @@ $(function () {
   });
   // initialise
   headroomMobile.init();
-
-  //Prevent click on image within single image gallery
-  $('.gallery-thumb').on('click', function (e) {
-    e.preventDefault();
-  });
 
   //Header image carousel
   $('#js-header-hero-carousel').owlCarousel({
@@ -431,7 +431,7 @@ $(function () {
 
     $dropdownOverlay.css({'height':(($dropdownHeight))+'px'});
     $basketdropdown.css({'height':(($dropdownHeight))+'px'});
-    $basketdropdownItemWrapper.css({'max-height':(($dropdownHeight -160))+'px'});
+    $basketdropdownItemWrapper.css({'max-height':(($dropdownHeight -120))+'px'});
   }
 
   function shareCalculations() {
@@ -564,8 +564,8 @@ $(function () {
 });
 
 //remove touch delay on touch devices
-  var attachFastClick = Origami.fastclick;
-      attachFastClick(document.body);
+  /*var attachFastClick = Origami.fastclick;
+      attachFastClick(document.body);*/
 
 // Pop up on Add click
 
@@ -591,6 +591,13 @@ jQuery('body').on('click', '.menu-footer-menu-container a', function() {
 jQuery('.footer-page-pop-up .fpp-close-btn').click(function() {
    jQuery('.footer-page-pop-up').removeClass('fppu-display');
 });
+
+// close modal by clicking screen outside of modal
+jQuery('.competition-modal-wrapper').click(function() {
+   jQuery(this).removeClass('open');
+});
+
+
 
 var winWidth = $(window).width();
 var winHeight = $(window).height();
@@ -659,22 +666,14 @@ $('.tabs-below').css('height',winHeight);
 // }
 // statusBar()
 
-// $('body').on('click','.tt-left-nav', function(){
-// var current_id = jQuery('.tt-active').attr('data-id');
-// var prev_id = current_id - 1;
-// if(current_id != 0){
-// // alert(current_id + ' - ' +prev_id)
-// jQuery('#tt-section'+current_id).removeClass('tt-active tt-opened');
-// jQuery('#tt-section'+prev_id).addClass('tt-active tt-opened');
-// }
-// })
-
 var ttool;
 var sectionNext;
 var toolCount = jQuery('.ttool').length;
 jQuery('.ttool').each(function() {
 	var ttool = jQuery(this).attr('id');
 	jQuery('#'+ttool+'product-kit-btn').click(function () {
+		// var chosenCar = jQuery('#'+ttool+' .tt-products-carousel');
+
 		jQuery('#'+ttool+' .tt-products-carousel').trigger('resize');
 	});
 	// Initialize Carousel
@@ -703,6 +702,8 @@ jQuery('.ttool').each(function() {
 		   }]
 		});
 	});
+	// Hide back button on the first page
+	jQuery('#'+ttool+' .tt-left-nav').css('display','none');
 	// Hide and Show sections
 	jQuery('body').on('click','.sec-trigger', function() {
 		var thisParent  = jQuery(this).closest('.tt-section');
@@ -711,6 +712,7 @@ jQuery('.ttool').each(function() {
 		sectionNext.addClass('tt-active tt-opened');
 		var secNextAtt  = sectionNext.attr('data-stat-id');
 		jQuery('#'+secNextAtt).addClass('tt-show');
+		jQuery('#'+ttool+' .tt-left-nav').css('display','block');
 	});
 	// Status Bar
 	var sectionCount = jQuery(this).find('.tt-section').length-2;
@@ -722,16 +724,37 @@ jQuery('.ttool').each(function() {
 		var section = jQuery('.tt-section').attr('tt-data-status');
 	}
 	// Skin tone filter
+	jQuery('body').on('click', '.option-tone', function() { 
+		var ttID = jQuery(this).closest('.ttool').attr('id');
+		var otId = jQuery(this).attr('data-option-id');
+		jQuery('#'+ttID+'ttpc-'+otId).addClass('show-ttpc');
+	});
 	jQuery('body').on('click', '.result-filter-nav li', function() { 
 		var ttID = jQuery(this).closest('.ttool').attr('id');
 		var resultFilterBody = jQuery('#'+ttID+' .result-filter-body');
 		var resultFilterCopy = jQuery('#'+ttID+' .result-filter-copy');
+		var resultCar = jQuery('#'+ttID+' .tt-products-carousel');
 		var rfId = jQuery(this).attr('data-rf-id');
 		resultFilterBody.removeClass('rf-active');
 		resultFilterCopy.removeClass('rf-active');
 		jQuery('#'+ttID+rfId).addClass('rf-active');
 		jQuery('#'+ttID+'copy-'+rfId).addClass('rf-active');
+		jQuery('#'+ttID+' .tt-products-carousel').removeClass('show-ttpc');
+		jQuery('#'+ttID+'ttpc-'+rfId).addClass('show-ttpc');
+		jQuery('#'+ttID+' .tt-products-carousel').slick('unslick');
 	});
+	// Back button
+	jQuery('body').on('click', '#'+ttool+' .tt-left-nav', function(){
+		var current_id = jQuery('#'+ttool+' .tt-active').attr('data-id');
+		var prev_id = current_id - 1;
+
+		if(current_id != 0) {
+			jQuery('#'+ttool+' .tt-section'+current_id).removeClass('tt-active tt-opened');
+			jQuery('#'+ttool+' .tt-section'+prev_id).addClass('tt-active tt-opened');
+			jQuery('#'+ttool+' #'+ttool+'tt-status'+current_id).removeClass('tt-show');
+		} 
+	})
+
 });
 
 // $('#tt-section0').click(function() {
