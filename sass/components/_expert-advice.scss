@@ -6,10 +6,12 @@
 	margin-left: -20px;
 	margin-right: -20px;
 	padding-bottom: 40px;
+  min-width:100%;
 
 	@media all and (min-width: 480px) {
     margin-left: 0;
     margin-right: 0;
+
   }
 
 	.heading {
@@ -34,7 +36,7 @@
 	}
 
 	.content {
-		margin: 15px 0 0 0;
+		margin: 15px 0 50px 0;
 		vertical-align: top;
 	}
 
@@ -42,7 +44,12 @@
 		padding:15px 105px 15px 120px;
 		display:none;
 	}
-
+  @media all and (max-width: 479px) {
+    .js-to-show{
+      padding:15px;
+      display:none;
+    }
+  }
 	.name, .title, .text {		
 		font-family: "Archer A", "Archer B";
 		font-size: 20px;
