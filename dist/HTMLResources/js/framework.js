@@ -595,9 +595,15 @@ jQuery('.footer-page-pop-up .fpp-close-btn').click(function() {
 // close modal by clicking screen outside of modal
 jQuery('.competition-modal-wrapper').click(function() {
    jQuery(this).removeClass('open');
+   jQuery('.modal-inner button').trigger('click');
 });
 
-
+jQuery('.competition-modal-wrapper').bind('DOMSubtreeModified', function(e) {
+      if(jQuery(this).hasClass('open')){
+        //start timer
+        setTimeout(jQuery('.competition-modal-wrapper').trigger('click'), 5000);
+      }
+});
 
 var winWidth = $(window).width();
 var winHeight = $(window).height();
