@@ -263,10 +263,18 @@ $(function () {
     e.preventDefault();
   });
 
-  $doc.on('click', '.product-pop-up .close', function (e) {
+  // $doc.on('click', '.product-pop-up .close', function (e) {
+  //   body.removeClass('product-pop-up-active');
+  //   alert()
+
+  //   $(this).parents('.component').toggle().removeClass('show');
+  // });
+
+  jQuery('.product-pop-up .close').click(function(event) {
+
     body.removeClass('product-pop-up-active');
 
-    $(this).parents('.component').toggle().removeClass('show');
+    jQuery(this).parents('.component').toggle().removeClass('show');
   });
 
   enquire.register("screen and (max-width:480px)", {
@@ -595,9 +603,15 @@ jQuery('.footer-page-pop-up .fpp-close-btn').click(function() {
 // close modal by clicking screen outside of modal
 jQuery('.competition-modal-wrapper').click(function() {
    jQuery(this).removeClass('open');
+   jQuery('.modal-inner button').trigger('click');
 });
 
-
+jQuery('.competition-modal-wrapper').bind('DOMSubtreeModified', function(e) {
+      if(jQuery(this).hasClass('open')){
+        //start timer
+        setTimeout(jQuery('.competition-modal-wrapper').trigger('click'), 5000);
+      }
+});
 
 var winWidth = $(window).width();
 var winHeight = $(window).height();
