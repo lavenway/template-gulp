@@ -225,6 +225,25 @@ $(function () {
     responsiveBaseWidth: window,
     autoPlay: true
   });
+
+  //Product component carousel
+  $('#js-product-carousel-scalable').owlCarousel({
+    responsive : {
+      0 : {
+        items : jQuery('#js-product-carousel-scalable').attr('data-xs')
+      },
+      480 : {
+        items : jQuery('#js-product-carousel-scalable').attr('data-sm')
+      },
+      980 : {
+        items : jQuery('#js-product-carousel-scalable').attr('data-md')
+      }
+    },
+    loadedClass: 'owl-loaded owl-theme',
+    responsiveRefreshRate : 200,
+    responsiveBaseWidth: window,
+    autoPlay: true
+  });
   
   //IMAGE SCALE
   $(".negative-container img.scale").imageScale({

@@ -22,9 +22,11 @@
     "grunt-npm-install": "^0.2.0",
     "grunt-text-replace": "^0.3.12",
     "jshint-stylish": "~0.1.5",
-    "load-grunt-tasks": "~0.4.0"
+    "load-grunt-tasks": "~0.4.0",
+    "grunt-autoprefixer": "~3.0.4"
   },
   "dependencies": {
-    "ruby": "^0.6.0"
+    "ruby": "^0.6.0",
+    "grunt-autoprefixer": "~3.0.4"
   }
 }

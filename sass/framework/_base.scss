@@ -1309,6 +1309,7 @@ footer {
 
     span {
       position: relative;
+      font-family: 'SinkinSans' , Arial, sans-serif;
 
       @media all and (min-width: 768px) {
         &:before {
@@ -1423,5 +1424,15 @@ footer {
     display: block;
     height: 2000px;
     background: red;
+  }
+}
+
+/******************************
+* TEMPLATE PADDING
+******************************/
+.padding-50{
+    padding:0 15px;
+  @media all and (min-width: 768px) {
+    padding:0 50px;
   }
 }
