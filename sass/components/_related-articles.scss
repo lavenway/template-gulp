@@ -71,6 +71,9 @@
         line-height: 20px;
         line-height: 2rem;
         text-align: left;
+        a{
+          color:$black;
+        }
         @media all and (min-width: 480px) {
           font-size: 27px;
           font-size: 2.7rem;
