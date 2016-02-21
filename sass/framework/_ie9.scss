@@ -63,6 +63,9 @@
 		  -o-appearance:none;
 		   appearance:none; 
 	}
+	select::-ms-expand {
+    	display: none;
+	}
 
 	i {
 	      display: none !important;
