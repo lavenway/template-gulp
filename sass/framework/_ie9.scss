@@ -40,13 +40,13 @@ border: 5px solid red;
 
 */
 
-.quantity {
+.ie9 .quantity {
 
     overflow:hidden;
     border:1px solid black;
     position: relative;
     width: 70px;
-	}
+	
 
 	select {
 		   width:100px;
@@ -56,3 +56,20 @@ border: 5px solid red;
 		  -o-appearance:none;
 		   appearance:none; 
 	}
+}
+
+
+.ie9 .dropcap {
+   display: block !important;
+  font-family: 'MajesticBanner';
+  font-weight: 400;
+  background-color: $peach;
+  color: $white;
+  height: 65px!important;
+  width: 65px!important;
+  font-size: 57px!important;
+  padding-top: 12px!important;
+  padding-left: 0px!important;
+  margin-right: 10px;
+  text-align:center;
+}
