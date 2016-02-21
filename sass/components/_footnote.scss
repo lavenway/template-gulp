@@ -1,4 +1,8 @@
 .component.footnote {
+	&.show-no-border .footnote{
+		padding-top: 0;
+		border-top: none;
+	}
 	.footnote {
 		font-family: 'SinkinSans';
 		font-weight: 300;

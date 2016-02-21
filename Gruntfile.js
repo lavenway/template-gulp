@@ -93,6 +93,7 @@ module.exports = function (grunt) {
             'dist/header-image.html': 'templates/components/header-image.html',
             'dist/standfirst.html': 'templates/components/standfirst.html',
             'dist/title.html': 'templates/components/title.html',
+            'dist/advert-title.html': 'templates/components/advert-title.html',
             'dist/subtitle.html': 'templates/components/subtitle.html',
             'dist/bodycopy.html': 'templates/components/bodycopy.html',
             'dist/quote.html': 'templates/components/quote.html',

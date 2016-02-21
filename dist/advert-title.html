@@ -11,7 +11,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6942954/6464952/css/fonts.css">
 
-	    <!-- CSS -->
+	  <!-- CSS -->
 		<link type="text/css" rel="stylesheet" href="HTMLResources/css/main.css">
 		<!-- Must live here to provide html5 shiv in IE8 -->
 		<!--  <script src="HTMLResources/js/modernizr-2.8.3.js"></script> -->
@@ -20,6 +20,8 @@
 	  <!--[if lt IE 9]>    	
 			<script src="HTMLResources/js/respond.min.js"></script>
 		<![endif]-->
+
+		<!--[if IE ]><body class="ie"><![endif]-->
 </head>
 
 <body>
@@ -227,7 +229,7 @@
         <!-- START: COMPONENT DETAILS -->
           <h2>Component: Title</h2>
           <p class="push h20"></p>
-          <p><strong>Description:</strong> Advertorial Title component uses H1</p>        
+          <p><strong>Description:</strong>Title component uses H1</p>        
         <!-- END: COMPONENT DETAILS -->
 
         <p class="push h100"></p>
@@ -269,11 +271,11 @@
     	<p class="center-block two"><strong>Please click on a star</strong> </p>
     	<div class="rate center-block">
     		<span class="poor">Poor</span>
-    		<div class="stars">STARS HERE</div>
+    		<div class="stars"><input class="star-rating" ></div>
     		<span class="great">Great</span>
     	</div>
 
-    	<a href="#" class="btn center-block">Submit your rating</a>
+    	<button href="#" class="btn center-block">Submit your rating</button>
     </div>
     <div class="footer-page-pop-up" id="terms-and-condition">
     	<strong>T&C's</strong>
@@ -372,6 +374,8 @@
       </div>
     </div>
 
+    <script type="text/javascript" src="HTMLResources/js/matchMedia.js"></script>
+    <script type="text/javascript" src="HTMLResources/js/matchMedia.addListener.js"></script>
     <script type="text/javascript" src="HTMLResources/js/lib.min.js"></script>
     <script type="text/javascript" src="HTMLResources/js/framework.min.js"></script>
     <script type="text/javascript" src="HTMLResources/js/components.min.js"></script>
