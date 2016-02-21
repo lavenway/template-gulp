@@ -1,17 +1,61 @@
 /******************* IE9 Styles *********************/
 
 
+/**************** Fonts **********************/
+
+.ie9 #wrapper .component {
+    margin-bottom: 30px\9\0;
+    font-family: "SinkinSans",Arial,sans-serif !important;
+}
+
+.ie9 .content-template h1 {
+    margin: 0 !important;
+    font-family: "Archer A", "Archer B" !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px\9\0;
+    font-size: 2.3rem;
+    line-height: 14px;
+    line-height: 1.4rem;
+
+}
+
+.ie9 .content-template h3 a {
+    color: #000000\9\0 !important;
+}
+
+.ie9 .content-template h2 {
+    margin-bottom: 5px !important;
+   	font-size: 12px\9\0;
+   	text-transform: capitalize;
+}
+
+.ie9 p {
+	font-family: 'SinkinSans', Arial;
+    font-size: 13px !important;
+ 	line-height: 25px;
+}
+
+.ie9 p.component.standfirst.style1 {
+    font-family: "Archer A", "Archer B";
+    font-size: 24px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 25px;
+    letter-spacing: 0.025em;
+    text-align: center;
+    margin-bottom: 60px !important;
+}
 
 
 /************** Main box styles ***************/
 
 .ie9 .row {
-
-	display: block;
+    display: block !important;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -50px !important;
-
+	margin-top: -50px\9\0 !important;
+	padding-top: 50px\9\0 !important;
 }
 
 /*** Quantity styled for IE9 *****/
