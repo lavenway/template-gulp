@@ -1,5 +1,6 @@
 /******************* IE9 Styles *********************/
 
+<<<<<<< HEAD
 
 /**************** Fonts **********************/
 
@@ -56,6 +57,13 @@
 	margin-right: auto;
 	margin-top: -50px\9\0 !important;
 	padding-top: 50px\9\0 !important;
+=======
+.ie9 .row {
+
+margin-top: -50px;
+border: 5px solid red;
+
+>>>>>>> 613625f86a2826927df4be54184b996ab05e73e3
 }
 
 /*** Quantity styled for IE9 *****/
@@ -96,7 +104,7 @@
     overflow:hidden;
     border:1px solid black;
     position: relative;
-    width: 70px\9\0;
+    width: 70px;
 	
 
 	select {
@@ -107,13 +115,6 @@
 		  -o-appearance:none;
 		   appearance:none; 
 	}
-	select::-ms-expand {
-    	display: none;
-	}
-
-	i {
-	      display: none !important;
-	}
 }
 
 
@@ -122,7 +123,7 @@
   font-family: 'MajesticBanner';
   font-weight: 400;
   background-color: $peach;
-  color: $black;
+  color: $white;
   height: 65px!important;
   width: 65px!important;
   font-size: 57px!important;
@@ -131,13 +132,3 @@
   margin-right: 10px;
   text-align:center;
 }
-
-
-@media screen and (min-width:0) and (min-resolution: .001dpcm) { 
-	 .ie9 {
-
-	 }
-}
-
-
-
