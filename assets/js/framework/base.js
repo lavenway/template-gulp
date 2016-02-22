@@ -138,7 +138,7 @@ $(function () {
       },*/
 
       handleBackToTopScroll = function () {
-        body.animate({ scrollTop: 0 }, "slow");
+        body.animate({ scrollTop: 0 }, 1000);
       };
 
   //Prevent click on image within single image gallery
@@ -620,7 +620,7 @@ jQuery('body').on('click', '.menu-footer-menu-container a', function(e) {
   var pagetoOpen = jQuery(this).attr('href');
 
   e.preventDefault();
-  
+
   jQuery('.footer-page-pop-up').removeClass('fppu-display');
   jQuery('#'+pagetoOpen).addClass('fppu-display');
   jQuery('body').addClass('pop-up-active');

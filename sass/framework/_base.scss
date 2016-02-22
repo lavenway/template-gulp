@@ -1314,7 +1314,7 @@ footer {
 
     span {
       position: relative;
-      font-family: 'SinkinSans' , Arial, sans-serif;
+      /*font-family: 'SinkinSans' , Arial, sans-serif;*/
 
       @media all and (min-width: 768px) {
         &:before {
@@ -1330,7 +1330,8 @@ footer {
       }
 
       em {
-        font-style: italic;
+        /*font-style: italic;*/
+        font-style: normal;
       }
     }
   }
