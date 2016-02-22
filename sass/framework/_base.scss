@@ -508,7 +508,6 @@ h6 {
   }
 
   .pull-right {
-    position: relative;
     margin-top: -51px;
 
     .share { 
@@ -527,8 +526,8 @@ h6 {
       display: none;
       z-index: 3;
       position: absolute;
-      top: -6px;
-      right: -10px;
+      top: 0;
+      right: 0;
       box-shadow: -4px 8px 18px #333;
       background: $white;
 
@@ -548,6 +547,16 @@ h6 {
       width: 100%;
       padding: 18px 34px;
       background-color: rgba($pink,0.9);
+
+      @media (min-width: 480px) {    
+        position: absolute;
+        top: -6px;
+        right: 86px;
+        width: 320px;
+        height: auto;
+        background: $white;
+      }
+
       ul{
           left: 0;
           margin: 0 25px;
@@ -560,15 +569,6 @@ h6 {
             transform:none;
             margin:0;
           }
-      }
-
-      @media (min-width: 480px) {    
-        position: absolute;
-        top: -6px;
-        right: 86px;
-        width: 320px;
-        height: auto;
-        background: $white;
       }
 
       .close {
@@ -776,6 +776,7 @@ h6 {
           display: block;
           width: 26px;
           height: 26px;
+          cursor: pointer;
           @include icons-sprite(basket-remove-icon);
         }
 
@@ -1159,6 +1160,7 @@ footer {
     width: 40px;
     height: 40px;
     z-index:100;
+    cursor: pointer;
     background: url(../img/structure/share-close-icon.png);
   }
 
@@ -1217,6 +1219,8 @@ footer {
 * BACK TO TOP
 ******************************/
 .back-to-top {
+  z-index: 1;
+  position: relative;
   margin-bottom: 0 !important;
   text-align: center;
 

@@ -616,15 +616,20 @@ jQuery('.abn-close-btn').click(function() {
 });
 
 // FOOTER LINKS TO OPEN A POP UP
-jQuery('body').on('click', '.menu-footer-menu-container a', function() {
+jQuery('body').on('click', '.menu-footer-menu-container a', function(e) {
   var pagetoOpen = jQuery(this).attr('href');
+
+  e.preventDefault();
+  
   jQuery('.footer-page-pop-up').removeClass('fppu-display');
   jQuery('#'+pagetoOpen).addClass('fppu-display');
+  jQuery('body').addClass('pop-up-active');
   return(false);
 });
 
 jQuery('.footer-page-pop-up .fpp-close-btn').click(function() {
    jQuery('.footer-page-pop-up').removeClass('fppu-display');
+   jQuery('body').removeClass('pop-up-active');
 });
 
 // close modal by clicking screen outside of modal
