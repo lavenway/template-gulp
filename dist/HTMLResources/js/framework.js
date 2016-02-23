@@ -597,9 +597,9 @@ $(function () {
         'step':'1',
         'size':'sm'
       });      
-      /*$('.component.ratings-banner .btn').on('click', function() {
-          alert('star rating ' + $('.star-rating').val());
-      });*/
+      $('.component.ratings-banner .btn').on('click', function() {
+          /*alert('star rating ' + $('.star-rating').val());*/
+      });
 
     }
   };  
@@ -650,8 +650,8 @@ jQuery('body').on('click','button.content-button',function(){
     modal_parent.find('.success_modal,.competition-modal-wrapper').addClass('open');
     jQuery('body').addClass('wrapper-block');
   }
-});
-*/
+});*/
+
 
 // close modal by clicking screen outside of modal
 jQuery('.competition-modal-wrapper').click(function() {
@@ -660,12 +660,14 @@ jQuery('.competition-modal-wrapper').click(function() {
    /*jQuery('.modal-inner button').trigger('click');*/
 });
 
+/*
 jQuery('.competition-modal-wrapper').bind('DOMSubtreeModified', function(e) {
-      if(jQuery(this).hasClass('open')){
-        //start timer
-        setTimeout(jQuery('.competition-modal-wrapper').trigger('click'), 5000);
-      }
+    if(jQuery(this).hasClass('open')){
+      //start timer
+      setTimeout(jQuery('.competition-modal-wrapper').trigger('click'), 5000);
+    }
 });
+*/
 
 var winWidth = $(window).width();
 var winHeight = $(window).height();
