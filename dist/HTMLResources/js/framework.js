@@ -678,6 +678,15 @@ jQuery('.fppu-copy').mCustomScrollbar({
   theme:"inset-2-dark",
   autoDraggerLength: false
 });
+
+function isIE () {
+  var myNav = navigator.userAgent.toLowerCase();
+  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+}
+
+if (isIE () == 9) {
+  $('body').addClass('ie9');
+}
 'use strict';
 $ = $ || jQuery;
 
@@ -686,6 +695,7 @@ var winWidth = $(window).width();
 var winHeight = $(window).height();
 var mobLand = 480;
 var tabPort = 768;
+var activeSwatch = jQuery('.result-filter-nav li');
 
 $('.tabs-below').css('height',winHeight);
 
@@ -805,6 +815,8 @@ jQuery('.ttool').each(function() {
 		var rfId = jQuery(this).attr('data-rf-id');
 		resultFilterBody.removeClass('rf-active');
 		resultFilterCopy.removeClass('rf-active');
+		activeSwatch.removeClass('active');
+		jQuery(this).addClass('active');
 		jQuery('#'+ttID+rfId).addClass('rf-active');
 		jQuery('#'+ttID+'copy-'+rfId).addClass('rf-active');
 		jQuery('#'+ttID+' .tt-products-carousel').removeClass('show-ttpc');
