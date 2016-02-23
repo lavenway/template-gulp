@@ -589,10 +589,17 @@ $(function () {
       }
 
       // Star rating
-      $('.star-rating').rating({'showCaption':false, 'stars':'5', 'min':'0', 'max':'5', 'step':'1', 'size':'sm'});      
-      $('.component.ratings-banner .btn').on('click', function() {
+      $('.star-rating').rating({
+        'showCaption':false,
+        'stars':'5',
+        'min':'0',
+        'max':'5',
+        'step':'1',
+        'size':'sm'
+      });      
+      /*$('.component.ratings-banner .btn').on('click', function() {
           alert('star rating ' + $('.star-rating').val());
-      });
+      });*/
 
     }
   };  
@@ -632,10 +639,25 @@ jQuery('.footer-page-pop-up .fpp-close-btn').click(function() {
    jQuery('body').removeClass('pop-up-active');
 });
 
+// UN-COMMENT FOR TESTING - CODE HELD ON DEV SIDE TO INCORPORATE FORM VALIDATION ETC //
+/*
+jQuery('body').on('click','button.content-button',function(){
+  var modal_parent    = jQuery(this).parents('.component.competition');
+  var content_holder  = jQuery(this).parent().parent().find('.content-form');
+  if(!content_holder.hasClass('js-open')){
+    content_holder.addClass('js-open');
+  }else{
+    modal_parent.find('.success_modal,.competition-modal-wrapper').addClass('open');
+    jQuery('body').addClass('wrapper-block');
+  }
+});
+*/
+
 // close modal by clicking screen outside of modal
 jQuery('.competition-modal-wrapper').click(function() {
    jQuery(this).removeClass('open');
-   jQuery('.modal-inner button').trigger('click');
+   jQuery('body').removeClass('wrapper-block');
+   /*jQuery('.modal-inner button').trigger('click');*/
 });
 
 jQuery('.competition-modal-wrapper').bind('DOMSubtreeModified', function(e) {
@@ -654,8 +676,6 @@ jQuery('.fppu-copy').mCustomScrollbar({
   theme:"inset-2-dark",
   autoDraggerLength: false
 });
-
-
 'use strict';
 $ = $ || jQuery;
 

@@ -350,7 +350,7 @@
         getStars: function (type) {
             var self = this, stars = '<span class="' + type + '-stars">', i;
             for (i = 1; i <= self.stars; i++) {
-                stars += '<span class="star">' + self[type + 'Star'] + '</span>';
+                stars += '<span class="star id-'+ i +'">' + self[type + 'Star'] + '</span>';
             }
             return stars + '</span>';
         },
