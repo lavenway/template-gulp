@@ -791,9 +791,11 @@ h6 {
             height: 36px;
             padding: 10px 32px 10px 12px;
             -webkit-appearance: none;
+			-moz-appearance:none;
             border: 1px solid #808080;
             border-radius: 0;
             background: transparent;
+			outline: 0;
           }
 
           i {
