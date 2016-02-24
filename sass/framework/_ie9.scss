@@ -136,3 +136,22 @@
   text-align:center;
 }
 */
+
+.ie9 .navbar-default .pull-right .basket-dropdown .item .quantity {
+  overflow: hidden;
+  
+  select {
+    z-index: 1;
+    position: relative;
+    width: 120px;
+    padding: 0;
+    text-indent: 20px;
+    appearance: none;
+    border-radius: 0;
+  }
+}
+
+.ie9 .dropcap {
+  float: left;
+  line-height: 62px !important;
+}
