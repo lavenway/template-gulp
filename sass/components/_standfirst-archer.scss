@@ -1,7 +1,7 @@
 p.component.standfirst.style1 {
   font-family: "Archer A", "Archer B";
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   font-weight: 700;
   font-style: italic;
   line-height: 25px;
@@ -14,4 +14,11 @@ p.component.standfirst.style1 {
     padding-bottom:20px;
     margin-bottom:20px;
   }
+
+  @media all and (max-width: 320px) { //for iphone5 sized screens
+    font-size: 25px;
+    font-size: 2.5rem;
+  }
+
+
 }
