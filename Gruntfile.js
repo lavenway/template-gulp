@@ -120,7 +120,8 @@ module.exports = function (grunt) {
             'dist/competition.html': 'templates/components/competition.html',
             'dist/trend-tool.html': 'templates/components/trend-tool.html',
             'dist/advertorial.html': 'templates/components/advertorial.html',
-            'dist/desktop-nav.html': 'templates/layout/desktop-nav.html'
+            'dist/desktop-nav.html': 'templates/layout/desktop-nav.html',
+            'dist/back-to-top-button.html': 'templates/components/back-to-top-button.html'
         }
       }
     },
