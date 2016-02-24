@@ -140,19 +140,18 @@
 // Add to Cart notice
 .add-basket-notice {
 	display: block;
-	position: fixed;
+	position:fixed;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
 	width: 100%;
-    left: auto;
-    right: auto;
-    margin: 0 auto 0;
-    top: 0;
+    max-width: 1000px;
     text-align: center;
     height: 0;
-    top:0;
+    top: 0;
     background-color: $pink;
-    // top: 58px;
     z-index: -1;
-    max-width: 1000px;
      -webkit-transition: all 200ms ease-out 0.2s;
     -moz-transition: all 200ms ease-out 0.2s;
     -o-transition: all 200ms ease-out 0.2s;
@@ -172,7 +171,7 @@
         }
     }
     p {
-    	margin: 13px auto;
+    	margin: 20px auto 0;
     	color: #fff;
     	font-size: 10px;
     	line-height: normal;
