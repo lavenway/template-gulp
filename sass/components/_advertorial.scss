@@ -10,6 +10,9 @@
       padding:5px 0px 15px;
     }
   }
+  @media all and (max-width: 320px) { //for iphone5 sized screens
+    width:280px;
+  }
   @media all and (min-width: 672px) {
     width:642px;
   }
@@ -51,6 +54,8 @@
       padding:0 0 15px;
       img{
         padding:32px 0 10px; 
+        max-width: 200px;
+        margin: 0 auto;
       }
       .btn{
         margin: 20px 0 0;
