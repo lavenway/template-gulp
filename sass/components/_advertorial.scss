@@ -10,7 +10,7 @@
       padding:5px 0px 15px;
     }
   }
-  @media all and (max-width: 320px) { //for iphone5 sized screens
+  @media all and (max-width: 480px) { //for iphone5 sized screens
     width:280px;
   }
   @media all and (min-width: 672px) {
@@ -46,6 +46,9 @@
             float:left;
         }
       }
+      .dropcap {
+        float: left;
+      }
       .dropcap.font2{
         font-family: "Archer A", "Archer B";
       }
@@ -61,6 +64,7 @@
       img{
         padding:32px 0 10px; 
         max-width: 200px;
+        height: auto;
         margin: 0 auto;
       }
       .btn{
