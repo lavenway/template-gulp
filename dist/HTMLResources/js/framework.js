@@ -639,6 +639,30 @@ jQuery('.footer-page-pop-up .fpp-close-btn').click(function() {
    jQuery('body').removeClass('pop-up-active');
 });
 
+
+
+// Terms Modal LINKS TO OPEN A POP UP
+jQuery('body').on('click', 'a.terms_modal_link', function(e) {
+  var pagetoOpen = jQuery(this).attr('href');
+
+  e.preventDefault();
+
+  jQuery('.competition-modal-wrapper').removeClass('open');
+  jQuery('#'+pagetoOpen).addClass('open');
+  jQuery('body').addClass('pop-up-active');
+  return(false);
+});
+
+jQuery('.competition-modal-wrapper .close').click(function() {
+   jQuery('.competition-modal-wrapper').removeClass('open');
+   jQuery('body').removeClass('pop-up-active');
+});
+
+
+
+
+
+
 // UN-COMMENT FOR TESTING - CODE HELD ON DEV SIDE TO INCORPORATE FORM VALIDATION ETC //
 /*
 jQuery('body').on('click','button.content-button',function(){
