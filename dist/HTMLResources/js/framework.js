@@ -643,12 +643,12 @@ jQuery('.footer-page-pop-up .fpp-close-btn').click(function() {
 
 // Terms Modal LINKS TO OPEN A POP UP
 jQuery('body').on('click', 'a.terms_modal_link', function(e) {
-  var pagetoOpen = jQuery(this).attr('href');
+  var pagetermsOpen = jQuery(this).attr('href');
 
   e.preventDefault();
 
   jQuery('.competition-modal-wrapper').removeClass('open');
-  jQuery('#'+pagetoOpen).addClass('open');
+  jQuery('#'+pagetermsOpen).addClass('open');
   jQuery('body').addClass('pop-up-active');
   return(false);
 });
