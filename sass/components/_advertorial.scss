@@ -10,7 +10,7 @@
       padding:5px 0px 15px;
     }
   }
-  @media all and (max-width: 320px) { //for iphone5 sized screens
+  @media all and (max-width: 480px) { //for iphone5 sized screens
     width:280px;
   }
   @media all and (min-width: 672px) {
@@ -36,15 +36,18 @@
     .body-copy{
       padding:0;
       margin-bottom:30px;
-      @media all and (min-width: 480px) {
+      @media all and (min-width: 768px) {
         padding: 0 15px 0 0;
         margin-bottom:0;
       }
-      @media only screen and (min-width: 480px) and (orientation:portrait) {
+      @media only screen and (min-width: 768px) and (orientation:portrait) {
         &.col-md-6 {
             width: 50%;
             float:left;
         }
+      }
+      .dropcap {
+        float: left;
       }
       .dropcap.font2{
         font-family: "Archer A", "Archer B";
@@ -68,7 +71,7 @@
         margin: 20px 0 0;
         left:0;
       }
-      @media only screen and (min-width: 480px) and (orientation:portrait) {
+      @media only screen and (min-width: 768px) and (orientation:portrait) {
         &.col-md-6 {
             width: 50%;
             float:left;
