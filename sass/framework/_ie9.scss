@@ -154,3 +154,7 @@
 .ie9 .dropcap {
   line-height: 82px !important;
 }
+
+.ie9 .component.pull-out-one ol li:before {
+  line-height: 44px;
+}
