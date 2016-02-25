@@ -703,11 +703,11 @@ h6 {
         -webkit-overflow-scrolling: touch;
       }
 
-      .ie {
+      /*.ie {
         .item-wrapper {
           overflow-y: auto;
         }
-      }
+      }*/
 
       .footer {
         margin-right: -10px;
@@ -750,8 +750,16 @@ h6 {
         border-top: 1px solid $grey;
 
         .image {
+          width: 70px;
+          height: 70px;
+          overflow: hidden;
           border: 1px solid $grey;
           border-radius: 6px;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
         }
 
         .desc {
