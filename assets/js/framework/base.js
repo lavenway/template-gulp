@@ -643,18 +643,14 @@ jQuery('.footer-page-pop-up .fpp-close-btn').click(function() {
 
 // Terms Modal LINKS TO OPEN A POP UP
 jQuery('body').on('click', 'a.terms_modal_link', function(e) {
-  var pagetermsOpen = jQuery(this).attr('href');
 
   e.preventDefault();
 
-  jQuery('.competition-modal-wrapper').removeClass('open');
-  jQuery('#'+pagetermsOpen).addClass('open');
   jQuery('body').addClass('pop-up-active');
   return(false);
 });
 
 jQuery('.competition-modal-wrapper .close').click(function() {
-   jQuery('.competition-modal-wrapper').removeClass('open');
    jQuery('body').removeClass('pop-up-active');
 });
 
