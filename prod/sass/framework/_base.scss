@@ -1,0 +1,133 @@
+@charset "CP850";
+@import "framework/variables";
+
+/******************************
+* GENERAL STYLES
+******************************/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;   
+  height: 100%;
+}
+
+body {
+  font-size: 100%;
+  color: $black;
+  -webkit-tap-highlight-color: transparent;
+  @include font-smoothing();
+  text-rendering: optimizeLegibility;
+  background: yellow;
+}
+
+a {
+  color: $blue;
+  &:hover, &:focus, &:active {
+    color: $black;
+  }
+}
+
+a img {
+    border: none;
+}
+
+img {
+    border: none;
+    max-width: 100%;
+    display: block;
+}
+
+strong {
+  font-weight: 700; 
+}
+
+
+/******************************
+* HEADER STYLES
+******************************/
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 42px;
+  font-size: 4.2rem;
+  line-height: 36px;
+  line-height: 3.6rem;
+}
+
+h2 {
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: normal;
+}
+
+h3 {
+  font-size: 35px;
+  font-size: 3.5rem;
+  line-height: 25px;
+  line-height: 2.5rem;
+}
+
+h4 {
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 25px;
+  line-height: 2.5rem;
+}
+
+h5 {
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 34px;
+  line-height: 3.4rem;
+  @include font-smoothing();
+}
+
+h6 {
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 24px;
+  line-height: 2.4rem;
+  @include font-smoothing();
+}
+
+
+/******************************
+* TEMPLATE SPACING
+******************************/
+.push {
+  &.h20 { height: 20px; }
+  &.h25 { height: 25px; }
+  &.h40 { height: 40px; }
+  &.h60 { height: 60px; }
+  &.h70 { height: 70px; }
+  &.h80 { height: 80px; }
+  &.h100 { height: 100px; }
+  &.h120 { height: 120px; }
+  &.h140 { height: 140px; }
+  &.h160 { height: 160px; }
+}
+
+
+/******************************
+* GRID OVERLAY
+******************************/
+#grid-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  overflow: hidden;
+
+  div span {
+    display: block;
+    height: 2000px;
+    background: red;
+  }
+}
