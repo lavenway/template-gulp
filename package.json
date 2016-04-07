@@ -1,5 +1,5 @@
 {
-  "name": "RhapsodyMedia",
+  "name": "GulpFramework",
   "version": "1.0.0",
   "description": "Template framework using Gulp",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rhapsodymedia/template-framework.git"
+    "url": "https://github.com/lavenway/template-gulp.git"
   },
   "author": "Wayne lavender",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rhapsodymedia/template-framework/issues"
+    "url": "https://github.com/lavenway/template-gulp/issues"
   },
-  "homepage": "https://github.com/rhapsodymedia/template-framework",
+  "homepage": "https://github.com/lavenway/template-gulp",
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "del": "^2.2.0",
