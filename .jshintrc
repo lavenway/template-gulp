@@ -25,7 +25,7 @@
     "Rhapsody": false,
     "google": false,
     "moment": false,
-    "$f": false,
+    "$": true,
     "expect": false,
     "describe": false,
     "xdescribe": false,
