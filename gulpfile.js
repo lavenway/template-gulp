@@ -1,221 +1,213 @@
 'use strict';
 
-// INCLUDE GULP
-var gulp = require('gulp'),
-
-// DEFINE BASE FOLDERS
-    src = 'prod/',
-    dest = 'dist/',
-
 // INCLUDE PLUGINS
+var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
-    browserSync = require('browser-sync'),
     cache = require('gulp-cache'),
     concat = require('gulp-concat'),
-    cssnano = require('gulp-cssnano'),
     del = require('del'),
-    environments = require('gulp-environments'),
-    ftp = require( 'vinyl-ftp' ),
-    flatten = require('gulp-flatten'),
-    ignore = require('gulp-ignore'),
-    include = require('gulp-html-tag-include'),
+    env = require('gulp-environment'),
+    htmlBeautify = require('gulp-html-beautify'),
     imagemin = require('gulp-imagemin'),
-    jshint = require('gulp-jshint'),
+    notify = require('gulp-notify'),
+    nunjucksRender = require('gulp-nunjucks-render'),
     rename = require('gulp-rename'),
+    pump = require('pump'),
     runSequence = require('run-sequence'),
     sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    uglify = require('gulp-uglify'),
-    zip = require('gulp-zip');
+    server = require('gulp-server-livereload'),
+    uglify = require('gulp-uglify');
 
+// CONSTANTS
+    // MAIN FOLDER PATHS
+    var DEVELOPMENT_DIR = './development/';
+	var PUBLIC_DIR = './public/';
+	var ASSETS_DIR = PUBLIC_DIR+'assets/';
+    var NUNJUCKS_DIR = DEVELOPMENT_DIR+'./nunjucks/';
 
-// CONFIGURTIONS
-// -------------
-  // ENVIRONMENT TYPES
-  var development = environments.development, //RUN - gulp --env development
-      production = environments.production; //RUN gulp --env production
+	// ASSET PATHS
+	var PATHS = {
+        src: DEVELOPMENT_DIR+'src/',
+        srcSass: DEVELOPMENT_DIR+'src/sass/',
+        srcJs: DEVELOPMENT_DIR+'src/js/',
+        img: DEVELOPMENT_DIR+'img/',
+        fonts: DEVELOPMENT_DIR+'fonts/',
+        data: DEVELOPMENT_DIR+'data/',
+        dist: ASSETS_DIR+'dist/',
+        distCss: ASSETS_DIR+'dist/css/',
+        distJs: ASSETS_DIR+'dist/js/',
+        distImg: ASSETS_DIR+'dist/img/',
+        distData: ASSETS_DIR+'data/',
+        vendorJs: DEVELOPMENT_DIR+'vendor/js/',
+        vendorCss: DEVELOPMENT_DIR+'vendor/css/'
+	};
 
-  // PORT TO USE FOR THE DEVELOPMENT SERVER
-  var PORT = 8000;
+    // BROWSERS TO TARGET WHEN PREFIXING CSS.
+    var AUTOPREFIXER_OPTIONS = {
+        browsers: ['last 2 versions', 'ie >= 9', 'safari >= 8']
+    };
 
-  // PATH ON THE DEVELOPMENT SERVER TO FTP FILES TO
-  var PROJECTSERVERPATH = 'test';
+    // HTML PATHS
+    var HTML_BEAUTIFY_OPTIONS = {
+        'indentSize': 4,
+        'indent_with_tabs': false,
+        'end_with_newline': true,
+        'max_preserve_newlines': 1
+    };
 
-  // BROWSERS TO TARGET WHEN PREFIXING CSS.
-  var COMPATIBILITY = ['last 2 versions', 'ie >= 9'];
+    var UGLIFY_OPTIONS = {
+        compress: {
+            drop_console: true
+        },
+        mangle: false,
+        preserveComments: false,
+        report: "min"
+    };
 
-  // ASSET PATHS
-  var PATHS = {
-    imagefiles: [
-      'img/**/*'
-    ],
-    fontfiles: [
-      'fonts/**/*'
-    ],
-    sassfiles: [
-      'sass/**/*.scss'
-    ],
-    jslibfiles: [
-      'js/lib/*.js'
-    ],
-    jsutilfiles: [
-      'js/util/*.js'
-    ],
-    jsframeworkfiles: [
-      'js/framework/*.js'
-    ],
-    jsallfiles: [
-      'js/**/*.js'
-    ],
-    htmlfiles: [
-      'templates/**/*.html'
-    ],
-  };
+    // PUMP CALLBACK
+    var pumpCb = function (err) {
+        if (err) {
+            console.log('Error: ', err.toString());
+        }
+    };
 
-  var ftpoptions = {
-      host:     'digitaldev.rhapsodymedia.co.uk',
-      user:     'wayneftp',
-      password: 'ftp101',
-      parallel: 10
-  };
+    // IF DEVELOPMENT ENVIRONMENT
+    if (env.is.development()) {
+        console.log('development');
+        var NUNJUCKS_ENV = 'development';
+    }
 
-// OPTIMISATION TASKS 
-// ------------------
-  // BUILD HTML FILES
-  gulp.task('html-include', function() {
-    var condition = '*/_*.html'; //exclude condition
-    return gulp.src(src + PATHS.htmlfiles)
-      .pipe(include())
-      .pipe(ignore.exclude(condition))
-      .pipe(flatten()) 
-      .pipe(gulp.dest(dest));
-  });
+    // IF PRODUCTION ENVIRONMENT
+    if (env.is.production()) {
+        console.log('production');
+        var NUNJUCKS_ENV = 'production';
+    }
 
-  // COPY JS UTIL FILES
-  gulp.task('util-scripts', function() {
-    return gulp.src(src + PATHS.jsutilfiles)
-      .pipe(concat('util.js'))
-      .pipe(rename({suffix: '.min'}))
-      .pipe(gulp.dest(dest + 'HTMLResources/js'));
-  });
+// OPTIMISATION TASKS
+    // NUNJUCKS
+    var manageNunjucksEnv = function(environment) {
+        environment.addGlobal('NUNJUCKS_ENV', NUNJUCKS_ENV);
+    }
 
-  // CONCATENATE & MINIFY LIBRARY JS
-  gulp.task('lib-scripts', function() {
-    return gulp.src(src + PATHS.jslibfiles)
-      .pipe(development(sourcemaps.init()))
-      .pipe(concat('lib.js'))
-      .pipe(production(uglify()))
-      .pipe(rename({suffix: '.min'}))
-      .pipe(development(sourcemaps.write('.')))
-      .pipe(gulp.dest(dest + 'HTMLResources/js'));
-  });
-
-  // CONCATENATE & MINIFY FRAMEWORK JS
-  gulp.task('framework-scripts', function() {
-    return gulp.src(src + PATHS.jsframeworkfiles)
-      .pipe(development(sourcemaps.init()))
-      .pipe(concat('framework.js'))
-      .pipe(production(uglify()))
-      .pipe(rename({suffix: '.min'}))
-      .pipe(development(sourcemaps.write('.')))
-      .pipe(gulp.dest(dest + 'HTMLResources/js'));
-  });
-
-  // LINT JS FILES
-  gulp.task('lint', function() {
-  return gulp.src([src + PATHS.jsframeworkfiles, 'gulpfile.js'])
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'));
-  });
-
-  // Compile CSS from Sass files
-  gulp.task('sass', function() {
-    return gulp.src(src + PATHS.sassfiles, {style: 'compressed'})
-      .pipe(development(sourcemaps.init()))
-      .pipe(sass())    
-      .pipe(autoprefixer({browsers: COMPATIBILITY}))
-      .pipe(concat('main.css'))
-      .pipe(production(cssnano()))
-      .pipe(rename({suffix: '.min'}))
-      .pipe(development(sourcemaps.write('.')))
-      .pipe(gulp.dest(dest + 'HTMLResources/css'));
-  });
-
-  // COMPRESS IMAGES
-  gulp.task('images', function() {
-    return gulp.src(src + PATHS.imagefiles)
-      .pipe(production(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))))
-      .pipe(gulp.dest(dest + 'HTMLResources/img'));
-  });
-
-  // COPYING FONTS 
-  gulp.task('fonts', function() {
-    return gulp.src(src + PATHS.fontfiles)
-      .pipe(gulp.dest(dest + 'HTMLResources/fonts'));
-  });
-
-  // CLEANING 
-  gulp.task('clean', function() {
-    return del.sync(dest).then(function(cb) {
-      return cache.clearAll(cb);
+    // BUILD HTML FILES
+    gulp.task('nunjucks', function () {
+        pump([
+            gulp.src(NUNJUCKS_DIR+'pages/**/*.+(html|nunjucks)'),
+            nunjucksRender({
+                path: NUNJUCKS_DIR+'templates',
+                manageEnv: manageNunjucksEnv
+            }),
+            htmlBeautify(HTML_BEAUTIFY_OPTIONS),
+            gulp.dest(PUBLIC_DIR),
+            env.if.development(notify({ message: 'Finished: Nunjucks', onLast: true }))
+        ],
+            pumpCb
+        );
     });
-  });
 
-  gulp.task('clean:dist', function() {
-    return del.sync([dest + '**/*', '!dist/HTMLResources/img', '!dist/HTMLResources/img/**/*']);
-  });
-
-  // REMOVE REMOTE DIST DIRECTORY
-  gulp.task('rmdirdist', function (cb) {
-    var conn = ftp.create(ftpoptions);
-    return gulp.src(dest, {buffer: true})
-    .pipe(production(conn.newer(PROJECTSERVERPATH, cb))) // only upload newer files
-    .pipe(production(conn.newer('./' + PROJECTSERVERPATH + '.zip', cb))); // only upload newer files
-
-  });
-
-  // FTP FILES TO REMOTE SERVER
-  gulp.task('ftp', function() {
-    var conn = ftp.create(ftpoptions);
-    return gulp.src(dest + '**', {buffer: true})
-    .pipe(production(conn.dest(PROJECTSERVERPATH)))
-    .pipe(production(zip(PROJECTSERVERPATH + '.zip')))
-    .pipe(production(conn.dest('./')));
-  });
-
-
-// BUILD SEQUENCES
-// ---------------
-  // BUILD THE 'DIST' FOLDER BY RUNNING ALL OF THE SPECIFIED TASKS
-  gulp.task('build', function(callback) {
-    runSequence('clean:dist',
-      ['html-include', 'sass', 'util-scripts', 'lib-scripts', 'framework-scripts', 'lint', 'images', 'fonts'],
-      callback
-    );
-  });
-
-  // START BROWSERSYNC SERVER
-  gulp.task('browserSync', ['build'], function() {
-    browserSync.init({
-      server: {
-        baseDir: dest, port: PORT
-      },
+    // TASKS FOR JS FILES
+    gulp.task('custom-js', function () {
+        pump([
+            gulp.src(PATHS.srcJs+'**/*.js'),
+            env.if.production(uglify(UGLIFY_OPTIONS)),
+            env.if.production(rename({ suffix: '.min' })),
+            gulp.dest(PATHS.distJs),
+            env.if.development(notify({ message: 'Finished: Local JS', onLast: true }))
+        ],
+            pumpCb
+        );
     });
-  });
 
-  // FTP FILES TO REMOTE SERVER
-  gulp.task('upload', ['build'], function(callback) {
-    runSequence('rmdirdist', ['ftp'], callback); 
-  });
+    //COPY AND CONCAT VENDOR JS FILES
+    gulp.task('vendor-js', function () {
+        pump([
+            gulp.src(PATHS.vendorJs+'**/*.js'),
+            env.if.production(concat('vendor.js')),
+            env.if.production(uglify(UGLIFY_OPTIONS)),
+            env.if.production(rename({ suffix: '.min' })),
+            gulp.dest(PATHS.distJs)
+        ],
+            pumpCb
+        )
+    });
 
-  // BUILD THE SITE, RUN THE SERVER, FTP FILES IN PRODUCTION MODE
-  gulp.task('default', ['build', 'browserSync', 'upload'], function() {
-    // WATCH HTML FILES
-    gulp.watch(src + PATHS.htmlfiles, ['html-include', browserSync.reload]);
-    // WATCH JS FILES
-    gulp.watch(src + PATHS.jsallfiles, ['util-scripts', 'lib-scripts', 'framework-scripts', 'lint', browserSync.reload]);
-     // WATCH SASS FILES
-    gulp.watch(src + PATHS.sassfiles, ['sass', browserSync.reload]);
-     // WATCH IMAGE FILES
-    gulp.watch(src + PATHS.imagefiles, ['images', browserSync.reload]);
-  });
+    // COPY & COMPILE CSS FROM LOCAL SASS FILES
+    gulp.task('sass', function () {
+        pump([
+            gulp.src(PATHS.srcSass+'**/*.scss'),
+            env.if.development(sass()),
+            env.if.production(sass({ outputStyle:'compact' })),
+            autoprefixer(AUTOPREFIXER_OPTIONS),
+            env.if.production(rename({ suffix: '.min' })),
+            gulp.dest(PATHS.distCss),
+            env.if.development(notify({ message: 'Finished: Local SASS', onLast: true }))
+        ],
+            pumpCb
+        )
+    });
+
+    //COPY AND CONCAT VENDOR CSS FILES
+    gulp.task('vendor-css', function () {
+        pump([
+            gulp.src(PATHS.vendorCss+'**/*.css'),
+            env.if.production(concat('vendor.min.css')),
+            gulp.dest(PATHS.distCss)
+        ],
+            pumpCb
+        )
+    });
+
+    // COOY DATA FILES
+    gulp.task('data', function () {
+        pump([
+            gulp.src(PATHS.data+'**/*'),
+            gulp.dest(PATHS.distData)
+        ],
+            pumpCb
+        );
+    });
+
+    // COMPRESS IMAGES
+    gulp.task('images', function () {
+        pump([
+            gulp.src(PATHS.img+'**/*'),
+            cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })),
+            gulp.dest(PATHS.distImg)
+        ],
+            pumpCb
+        );
+    });
+
+    // CLEAN DIST FOLDER
+    gulp.task('clean:dist', function() {
+        return del.sync([PATHS.distCss, PATHS.distJs]);
+    });
+
+    // BUILD SEQUENCES
+    gulp.task('build', function(callback) {
+        runSequence('clean:dist',
+            ['nunjucks', 'custom-js', 'vendor-js', 'sass', 'vendor-css', 'images', 'data'],
+            callback
+        );
+    });
+
+    // START SERVER
+    gulp.task('server', function () {
+        pump([
+            gulp.src(PUBLIC_DIR),
+            server({
+                livereload: true,
+                open: true
+            })
+        ],
+            pumpCb
+        );
+    });
+
+    // CALLS
+    gulp.task('default', ['build', 'server'], function () {
+        gulp.watch(PATHS.srcSass+'**/*.scss',['sass']);
+        gulp.watch(PATHS.srcJs+'**/*.js',['custom-js']);
+        gulp.watch(PATHS.data+'**/*.json',['data']);
+        gulp.watch([NUNJUCKS_DIR+'pages/**/*.+(html|nunjucks)',NUNJUCKS_DIR+'templates/**/*.+(html|nunjucks)'],['nunjucks']);
+    });

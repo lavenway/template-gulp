@@ -1,0 +1,139 @@
+/*************************************************
+ * MAIN
+ *************************************************/
+
+
+/* ----- SETTINGS ----- */
+@import "settings/reset";
+@import "settings/vars";
+@import "settings/fonts";
+
+
+/* ----- TOOLS ----- */
+@import "tools/mixins";
+@import "tools/helpers";
+
+
+/* ----- COMPONENTS ----- */
+@import "components/buttons";
+
+
+/* ----- MODULES ----- */
+@import "modules/module";
+
+
+/* ----- GENERAL ----- */
+@import "general/general";
+
+
+/* ----- HEADER ----- */
+@import "header/header";
+
+
+/* ----- FOOTER ----- */
+@import "footer/footer";
+
+
+/* ----- ONLY XTRA SMALL DEVICES / PHONES ----- */
+@media screen and ( max-width: $screen-width-sm - 1px ) {
+
+    /* ----- TOOLS ----- */
+
+
+    /* ----- GENERAL ----- */
+
+
+    /* ----- MODULES ----- */
+
+
+    /* ----- COMPONENTS ----- */
+
+
+}
+
+
+/* ----- SMALL DEVICES / TABLETS + UP ----- */
+@media screen and ( min-width: $screen-width-sm ) {
+
+    /* ----- TOOLS ----- */
+
+
+    /* ----- GENERAL ----- */
+    @import "general/general.sm";
+
+    /* ----- MODULES ----- */
+    @import "modules/module.sm";
+
+    /* ----- COMPONENTS ----- */
+    @import "components/buttons.sm";
+
+}
+
+
+/* ----- ONLY SMALL DEVICES / TABLETS ----- */
+@media screen and ( min-width: $screen-width-sm ) and ( max-width: $screen-width-md - 1px ) {
+
+    /* ----- TOOLS ----- */
+
+
+    /* ----- GENERAL ----- */
+
+
+    /* ----- MODULES ----- */
+
+
+    /* ----- COMPONENTS ----- */
+
+
+}
+
+
+/* ----- MEDIUM DEVICES / LAPTOPS + UP ----- */
+@media screen and ( min-width: $screen-width-md ) {
+
+    /* ----- TOOLS ----- */
+
+
+    /* ----- GENERAL ----- */
+
+
+    /* ----- MODULES ----- */
+
+
+    /* ----- COMPONENTS ----- */
+
+}
+
+
+/* ----- ONLY MEDIUM DEVICES / LAPTOPS ----- */
+@media screen and ( min-width: $screen-width-md ) and ( max-width: $screen-width-lg - 1px ) {
+
+    /* ----- TOOLS ----- */
+
+
+    /* ----- GENERAL ----- */
+
+
+    /* ----- MODULES ----- */
+
+
+    /* ----- COMPONENTS ----- */
+
+}
+
+
+/* ----- LARGE DEVICES / LAPTOPS + UP ----- */
+@media screen and ( min-width: $screen-width-lg ) {
+
+    /* ----- TOOLS ----- */
+
+
+    /* ----- GENERAL ----- */
+
+
+    /* ----- MODULES ----- */
+
+
+    /* ----- COMPONENTS ----- */
+
+}

@@ -1,0 +1,51 @@
+/*************************************************
+ * TOOLS - MIXINS
+ *************************************************/
+// Mixins
+
+@mixin font-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+@mixin font-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin font-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin btn( $primaryColor, $primaryTextColor, $hoverColor, $hoverTextColor ) {
+    max-height: 70px;
+    padding: $gutter;
+    border: none;
+    border-radius: 0;
+    font-size: $font-size-4;
+    color: $primaryTextColor;
+    @include font-bold;
+    text-decoration: none;
+    transition: $transition;
+    background-color: $primaryColor;
+    outline: none !important;
+
+    &:link, &:visited {
+        color: $primaryTextColor;
+    }
+
+    &:hover, &:active, &:focus {
+        background-color: $hoverColor;
+        color: $hoverTextColor;
+    }
+}
+
+@mixin keyframes( $animationName ) {
+    @keyframes #{ $animationName } {
+        @content;
+    }
+}

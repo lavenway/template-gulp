@@ -1,0 +1,3 @@
+{% macro functionName() %}
+    <h4>This is a macro</h4>
+{% endmacro %}

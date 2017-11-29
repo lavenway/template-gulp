@@ -1,0 +1,10 @@
+/*************************************************
+ * BUTTONS
+ *************************************************/
+
+.btn {
+    &.btn-black {
+        display: block;
+        @include btn( $color-black, $color-white, $color-white, $color-black );
+    }
+}

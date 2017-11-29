@@ -1,0 +1,11 @@
+{
+    "success": true,
+    "payload": {
+        "example": [
+            {
+                "id": 1,
+                "name": "Example 1"
+            },
+        ],
+    }
+}

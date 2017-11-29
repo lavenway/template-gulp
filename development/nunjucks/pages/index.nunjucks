@@ -1,0 +1,27 @@
+{% extends '../templates/_layout.nunjucks' %}
+
+{% block bodyCssClasses %}page-home{% endblock %}
+
+{% block content %}
+
+    <section class="module">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-xs-12">
+
+                    <h1>H1 Header title</h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    {% include '../templates/partials/_example.nunjucks' %}
+
+{% endblock %}

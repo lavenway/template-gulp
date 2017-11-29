@@ -1,0 +1,42 @@
+/*************************************************
+ * SETTINGS - VARS
+ *************************************************/
+
+/* ----- SITE ----- */
+$gutter: 20px;
+
+/* ----- BREAKPOINTS ----- */
+$screen-width-xs: 480px;
+$screen-width-sm: 768px;
+$screen-width-md: 992px;
+$screen-width-lg: 1200px;
+
+/* ----- FONT SIZES ----- */
+$font-size-0: 10px;
+$font-size-1: 12px;
+$font-size-2: 14px;
+$font-size-3: 16px;
+$font-size-4: 18px;
+$font-size-5: 22px;
+$font-size-6: 25px;
+$font-size-7: 34px;
+$font-size-8: 40px;
+$font-size-9: 48px;
+$font-size-10: 57px;
+$font-size-11: 72px;
+$font-size-12: 96px;
+
+/* ----- ICONS ----- */
+$font-path: "../../fonts/" !default;
+
+/* ----- LETTER SPACING ----- */
+$letter-spacing: 0.3px;
+
+/* ----- COLORS ----- */
+$color-black: #000;
+$color-white: #fff;
+$color-blue: blue;
+$color-red: red;
+
+/* ----- TRANSITION ----- */
+$transition: 0.3s all ease-in-out;
